@@ -56,7 +56,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bttNovoPedido = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.TabPedidos.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -90,7 +89,6 @@
             // 
             this.TabInicio.BackColor = System.Drawing.Color.White;
             this.TabInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TabInicio.Controls.Add(this.button2);
             this.TabInicio.Controls.Add(this.pictureBox3);
             this.TabInicio.Controls.Add(this.pictureBox4);
             this.TabInicio.Controls.Add(this.pictureBox1);
@@ -358,15 +356,6 @@
             this.bttNovoPedido.UseVisualStyleBackColor = false;
             this.bttNovoPedido.Click += new System.EventHandler(this.button2_Click_2);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(527, 264);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 51);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "botão teste git";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -424,7 +413,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.Button button2;
     }
 }
 
