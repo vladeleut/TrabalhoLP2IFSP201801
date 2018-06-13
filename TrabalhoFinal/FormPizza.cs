@@ -17,19 +17,18 @@ namespace TrabalhoFinal
             InitializeComponent();
         }
 
-        private void checkedListBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            
-        }
+      
 
         private void button1_Click(object sender, EventArgs e)
         {
             
-            TelaPedido listaPedido = new TelaPedido();
-            foreach (string s in checkedListBox.CheckedItems)
-                listaPedido.ListaPedido(s);
             Close();
                 
 
+        }
+
+        private void btnCancelaPedido_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     } }
