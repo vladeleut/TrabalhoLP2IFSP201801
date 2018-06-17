@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace TrabalhoFinal
 {
-    class Caixa
+    public class Caixa
     {
-        DateTime abertura;
-        DateTime fechamento;
-
-        float valorTotal;//vamos usar para o valor que está no caixa aberto
-
+        private static CaixaC caixa = null;
+        public static CaixaC getInstance()
+        {
+            if(caixa == null)
+            {
+                caixa = new CaixaC();
+            }
+            return caixa;
+        }
     }
 }

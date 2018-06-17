@@ -29,61 +29,75 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
-            this.TabPedidos = new System.Windows.Forms.TabControl();
+            this.tabGeral = new System.Windows.Forms.TabControl();
             this.TabInicio = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabCaixa = new System.Windows.Forms.TabPage();
+            this.panDadosDoCaixa = new System.Windows.Forms.Panel();
+            this.lblAbertura = new System.Windows.Forms.Label();
+            this.lblAbertoEm = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.btnFechaCaixa = new System.Windows.Forms.Button();
+            this.tabTelaPedido = new System.Windows.Forms.TabPage();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPedidosAbertos = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Pedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Cliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPedidosFechados = new System.Windows.Forms.TabPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bttNovoPedido = new System.Windows.Forms.Button();
-            this.TabPedidos.SuspendLayout();
+            this.tabProdutos = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgProdutos = new System.Windows.Forms.DataGridView();
+            this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.tabPage2.SuspendLayout();
+            this.tabCaixa.SuspendLayout();
+            this.panDadosDoCaixa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            this.tabPage3.SuspendLayout();
+            this.tabTelaPedido.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.tabPedidosAbertos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.tabPage4.SuspendLayout();
+            this.tabPedidosFechados.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.tabProdutos.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
             this.SuspendLayout();
             // 
-            // TabPedidos
+            // tabGeral
             // 
-            this.TabPedidos.Controls.Add(this.TabInicio);
-            this.TabPedidos.Controls.Add(this.tabPage2);
-            this.TabPedidos.Controls.Add(this.tabPage3);
-            this.TabPedidos.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TabPedidos.Location = new System.Drawing.Point(12, 12);
-            this.TabPedidos.Name = "TabPedidos";
-            this.TabPedidos.SelectedIndex = 0;
-            this.TabPedidos.Size = new System.Drawing.Size(776, 426);
-            this.TabPedidos.TabIndex = 1;
+            this.tabGeral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabGeral.Controls.Add(this.TabInicio);
+            this.tabGeral.Controls.Add(this.tabCaixa);
+            this.tabGeral.Controls.Add(this.tabTelaPedido);
+            this.tabGeral.Controls.Add(this.tabProdutos);
+            this.tabGeral.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabGeral.Location = new System.Drawing.Point(12, 12);
+            this.tabGeral.Name = "tabGeral";
+            this.tabGeral.SelectedIndex = 0;
+            this.tabGeral.Size = new System.Drawing.Size(776, 448);
+            this.tabGeral.TabIndex = 1;
             // 
             // TabInicio
             // 
@@ -97,25 +111,28 @@
             this.TabInicio.Location = new System.Drawing.Point(4, 24);
             this.TabInicio.Name = "TabInicio";
             this.TabInicio.Padding = new System.Windows.Forms.Padding(3);
-            this.TabInicio.Size = new System.Drawing.Size(768, 398);
+            this.TabInicio.Size = new System.Drawing.Size(768, 420);
             this.TabInicio.TabIndex = 0;
             this.TabInicio.Text = "Início";
             this.TabInicio.Click += new System.EventHandler(this.TabInicio_Click);
             // 
             // pictureBox4
             // 
+            this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(482, 20);
+            this.pictureBox4.Location = new System.Drawing.Point(597, 95);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(156, 55);
+            this.pictureBox4.Size = new System.Drawing.Size(107, 45);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
             // pictureBox3
             // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-4, 321);
+            this.pictureBox3.Location = new System.Drawing.Point(-4, 343);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(776, 69);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -124,23 +141,24 @@
             // 
             // pictureBox1
             // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(167, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(250, 45);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(428, 189);
+            this.pictureBox1.Size = new System.Drawing.Size(261, 159);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
             // button1
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(278, 235);
+            this.button1.Location = new System.Drawing.Point(280, 267);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(191, 70);
             this.button1.TabIndex = 3;
@@ -150,29 +168,54 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(207, 192);
+            this.label1.Location = new System.Drawing.Point(205, 246);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(358, 18);
             this.label1.TabIndex = 2;
             this.label1.Text = "Seja bem vindo! Para iniciar, abra o caixa:";
             // 
-            // tabPage2
+            // tabCaixa
             // 
-            this.tabPage2.Controls.Add(this.dataGridView3);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Location = new System.Drawing.Point(4, 24);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(768, 398);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Caixa";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabCaixa.Controls.Add(this.panDadosDoCaixa);
+            this.tabCaixa.Controls.Add(this.dataGridView3);
+            this.tabCaixa.Controls.Add(this.button3);
+            this.tabCaixa.Controls.Add(this.btnFechaCaixa);
+            this.tabCaixa.Location = new System.Drawing.Point(4, 24);
+            this.tabCaixa.Name = "tabCaixa";
+            this.tabCaixa.Padding = new System.Windows.Forms.Padding(3);
+            this.tabCaixa.Size = new System.Drawing.Size(768, 420);
+            this.tabCaixa.TabIndex = 1;
+            this.tabCaixa.Text = "Caixa";
+            this.tabCaixa.UseVisualStyleBackColor = true;
+            // 
+            // panDadosDoCaixa
+            // 
+            this.panDadosDoCaixa.Controls.Add(this.lblAbertura);
+            this.panDadosDoCaixa.Controls.Add(this.lblAbertoEm);
+            this.panDadosDoCaixa.Location = new System.Drawing.Point(356, 155);
+            this.panDadosDoCaixa.Name = "panDadosDoCaixa";
+            this.panDadosDoCaixa.Size = new System.Drawing.Size(237, 100);
+            this.panDadosDoCaixa.TabIndex = 9;
+            // 
+            // lblAbertura
+            // 
+            this.lblAbertura.AutoSize = true;
+            this.lblAbertura.Location = new System.Drawing.Point(58, 43);
+            this.lblAbertura.Name = "lblAbertura";
+            this.lblAbertura.Size = new System.Drawing.Size(0, 15);
+            this.lblAbertura.TabIndex = 9;
+            // 
+            // lblAbertoEm
+            // 
+            this.lblAbertoEm.AutoSize = true;
+            this.lblAbertoEm.Location = new System.Drawing.Point(81, 13);
+            this.lblAbertoEm.Name = "lblAbertoEm";
+            this.lblAbertoEm.Size = new System.Drawing.Size(84, 15);
+            this.lblAbertoEm.TabIndex = 8;
+            this.lblAbertoEm.Text = "Aberto em:";
             // 
             // dataGridView3
             // 
@@ -189,7 +232,7 @@
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.Size = new System.Drawing.Size(346, 392);
+            this.dataGridView3.Size = new System.Drawing.Size(346, 414);
             this.dataGridView3.TabIndex = 7;
             // 
             // Column1
@@ -219,28 +262,29 @@
             this.button3.Text = "Pedidos";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnFechaCaixa
             // 
-            this.button4.Location = new System.Drawing.Point(643, 293);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(91, 23);
-            this.button4.TabIndex = 4;
-            this.button4.Text = "Fechar Caixa";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnFechaCaixa.Location = new System.Drawing.Point(643, 293);
+            this.btnFechaCaixa.Name = "btnFechaCaixa";
+            this.btnFechaCaixa.Size = new System.Drawing.Size(91, 23);
+            this.btnFechaCaixa.TabIndex = 4;
+            this.btnFechaCaixa.Text = "Fechar Caixa";
+            this.btnFechaCaixa.UseVisualStyleBackColor = true;
+            this.btnFechaCaixa.Click += new System.EventHandler(this.btnFechaCaixa_Click);
             // 
-            // tabPage3
+            // tabTelaPedido
             // 
-            this.tabPage3.Controls.Add(this.pictureBox5);
-            this.tabPage3.Controls.Add(this.pictureBox2);
-            this.tabPage3.Controls.Add(this.tabControl1);
-            this.tabPage3.Controls.Add(this.bttNovoPedido);
-            this.tabPage3.Location = new System.Drawing.Point(4, 24);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(768, 398);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Pedidos";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.tabTelaPedido.Controls.Add(this.pictureBox5);
+            this.tabTelaPedido.Controls.Add(this.pictureBox2);
+            this.tabTelaPedido.Controls.Add(this.tabControl1);
+            this.tabTelaPedido.Controls.Add(this.bttNovoPedido);
+            this.tabTelaPedido.Location = new System.Drawing.Point(4, 24);
+            this.tabTelaPedido.Name = "tabTelaPedido";
+            this.tabTelaPedido.Padding = new System.Windows.Forms.Padding(3);
+            this.tabTelaPedido.Size = new System.Drawing.Size(768, 420);
+            this.tabTelaPedido.TabIndex = 2;
+            this.tabTelaPedido.Text = "Pedidos";
+            this.tabTelaPedido.UseVisualStyleBackColor = true;
             // 
             // pictureBox5
             // 
@@ -264,24 +308,24 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPedidosAbertos);
+            this.tabControl1.Controls.Add(this.tabPedidosFechados);
             this.tabControl1.Location = new System.Drawing.Point(0, 199);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(765, 198);
             this.tabControl1.TabIndex = 7;
             // 
-            // tabPage1
+            // tabPedidosAbertos
             // 
-            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
-            this.tabPage1.Controls.Add(this.dataGridView1);
-            this.tabPage1.Location = new System.Drawing.Point(4, 24);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(757, 170);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Abertos";
+            this.tabPedidosAbertos.BackColor = System.Drawing.Color.Transparent;
+            this.tabPedidosAbertos.Controls.Add(this.dataGridView1);
+            this.tabPedidosAbertos.Location = new System.Drawing.Point(4, 24);
+            this.tabPedidosAbertos.Name = "tabPedidosAbertos";
+            this.tabPedidosAbertos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPedidosAbertos.Size = new System.Drawing.Size(757, 170);
+            this.tabPedidosAbertos.TabIndex = 0;
+            this.tabPedidosAbertos.Text = "Abertos";
             // 
             // dataGridView1
             // 
@@ -308,16 +352,16 @@
             this.Cliente.Name = "Cliente";
             this.Cliente.Width = 200;
             // 
-            // tabPage4
+            // tabPedidosFechados
             // 
-            this.tabPage4.Controls.Add(this.dataGridView2);
-            this.tabPage4.Location = new System.Drawing.Point(4, 24);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(757, 170);
-            this.tabPage4.TabIndex = 1;
-            this.tabPage4.Text = "Fechados";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.tabPedidosFechados.Controls.Add(this.dataGridView2);
+            this.tabPedidosFechados.Location = new System.Drawing.Point(4, 24);
+            this.tabPedidosFechados.Name = "tabPedidosFechados";
+            this.tabPedidosFechados.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPedidosFechados.Size = new System.Drawing.Size(757, 170);
+            this.tabPedidosFechados.TabIndex = 1;
+            this.tabPedidosFechados.Text = "Fechados";
+            this.tabPedidosFechados.UseVisualStyleBackColor = true;
             // 
             // dataGridView2
             // 
@@ -356,47 +400,83 @@
             this.bttNovoPedido.UseVisualStyleBackColor = false;
             this.bttNovoPedido.Click += new System.EventHandler(this.button2_Click_2);
             // 
+            // tabProdutos
+            // 
+            this.tabProdutos.Controls.Add(this.panel1);
+            this.tabProdutos.Location = new System.Drawing.Point(4, 24);
+            this.tabProdutos.Name = "tabProdutos";
+            this.tabProdutos.Padding = new System.Windows.Forms.Padding(3);
+            this.tabProdutos.Size = new System.Drawing.Size(768, 420);
+            this.tabProdutos.TabIndex = 3;
+            this.tabProdutos.Text = "Produtos";
+            this.tabProdutos.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dgProdutos);
+            this.panel1.Location = new System.Drawing.Point(4, 222);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(761, 195);
+            this.panel1.TabIndex = 0;
+            // 
+            // dgProdutos
+            // 
+            this.dgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgProdutos.Location = new System.Drawing.Point(0, 0);
+            this.dgProdutos.Name = "dgProdutos";
+            this.dgProdutos.Size = new System.Drawing.Size(761, 195);
+            this.dgProdutos.TabIndex = 0;
+            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.TabPedidos);
+            this.ClientSize = new System.Drawing.Size(800, 472);
+            this.Controls.Add(this.tabGeral);
             this.Name = "Inicio";
             this.Text = "Form1";
-            this.TabPedidos.ResumeLayout(false);
+            this.tabGeral.ResumeLayout(false);
             this.TabInicio.ResumeLayout(false);
             this.TabInicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.tabPage2.ResumeLayout(false);
+            this.tabCaixa.ResumeLayout(false);
+            this.panDadosDoCaixa.ResumeLayout(false);
+            this.panDadosDoCaixa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            this.tabPage3.ResumeLayout(false);
+            this.tabTelaPedido.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.tabPedidosAbertos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.tabPage4.ResumeLayout(false);
+            this.tabPedidosFechados.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.tabProdutos.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl TabPedidos;
+        private System.Windows.Forms.TabControl tabGeral;
         private System.Windows.Forms.TabPage TabInicio;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabCaixa;
+        private System.Windows.Forms.TabPage tabTelaPedido;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFechaCaixa;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage tabPedidosAbertos;
+        private System.Windows.Forms.TabPage tabPedidosFechados;
         private System.Windows.Forms.Button bttNovoPedido;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
@@ -413,6 +493,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.TabPage tabProdutos;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgProdutos;
+        private System.Windows.Forms.Panel panDadosDoCaixa;
+        private System.Windows.Forms.Label lblAbertura;
+        private System.Windows.Forms.Label lblAbertoEm;
     }
 }
 
