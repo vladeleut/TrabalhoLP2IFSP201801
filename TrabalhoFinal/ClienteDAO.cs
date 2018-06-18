@@ -21,7 +21,7 @@ namespace TrabalhoFinal
             Cliente cliente = null;
             MySqlConnection conn = Database.GetInstance().GetConnection();
 
-            string qry = "Select telefone,nome,logradouro, nro, complemento, referencia, observacao where telefone like '%" + telefone +"%'");
+            string qry = "Select telefone,nome,logradouro, nro, complemento, referencia, observacao where telefone like '%" + telefone +"%'";
             if (conn.State != System.Data.ConnectionState.Open)
             {
                 conn.Open();
@@ -47,7 +47,7 @@ namespace TrabalhoFinal
 
 
 
-
+        /*
 
         /// <summary>
         /// editado aé aqui.
@@ -131,6 +131,6 @@ namespace TrabalhoFinal
             dr.Close();
             conn.Close();
             return lista;
-        }
+        }*/
     }
 }

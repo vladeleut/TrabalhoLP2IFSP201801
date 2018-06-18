@@ -25,7 +25,7 @@ namespace TrabalhoFinal
         private void button1_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();
-            clientes.Add(new Cliente(long.Parse(txtTelefone.Text), txtNome.Text, txtLogradouro.Text, int.Parse(txtNumero.Text)));
+            //clientes.Add(new Cliente(long.Parse(txtTelefone.Text), txtNome.Text, txtLogradouro.Text, int.Parse(txtNumero.Text)));
             
             Close();
         }
