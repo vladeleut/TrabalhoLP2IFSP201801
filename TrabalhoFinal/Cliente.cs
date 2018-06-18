@@ -10,14 +10,14 @@ namespace TrabalhoFinal
 {
     class Cliente
     {
-        long telefone;
+        string telefone;
         string nome;
         string logradouro;
         int numero;
         string complemento;
         string referencia;
         string observacao;
-
+        /*
         public Cliente(long telefone, string nome, string logradouro, int numero)
         {
             this.telefone = telefone;
@@ -25,10 +25,8 @@ namespace TrabalhoFinal
             this.logradouro = logradouro;
             this.numero = numero;
         }
-
-       
-
-        public long Telefone { get { return telefone; } set { telefone = value; } }
+        */
+        public String Telefone { get { return telefone; } set { telefone = value; } }
         public string Nome { get { return nome; } set { nome = value; } }
         public string Logradouro { get { return logradouro; } set { logradouro = value; } }
         public int Numero { get { return numero; } set { numero = value; } }

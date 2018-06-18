@@ -67,7 +67,7 @@ namespace TrabalhoFinal
             if (Caixa.getInstance().IsAberto)
             {
                 Caixa.getInstance().FechaCaixa();
-                String msg = "Caixa fechado com sucesso às" + Caixa.getInstance().Fechamento.ToString();
+                String msg = "Caixa fechado com sucesso às " + Caixa.getInstance().Fechamento.ToString();
                 MessageBox.Show(msg, "", MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
                 
             }

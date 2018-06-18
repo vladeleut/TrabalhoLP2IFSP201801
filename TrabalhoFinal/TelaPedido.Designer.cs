@@ -74,7 +74,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(39, 27);
+            this.label3.Location = new System.Drawing.Point(37, 9);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(70, 15);
             this.label3.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(124, 25);
+            this.txtTelefone.Location = new System.Drawing.Point(122, 7);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(145, 20);
             this.txtTelefone.TabIndex = 3;
@@ -91,7 +91,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(61, 51);
+            this.label4.Location = new System.Drawing.Point(59, 33);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(47, 15);
             this.label4.TabIndex = 4;
@@ -101,7 +101,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(20, 84);
+            this.label5.Location = new System.Drawing.Point(18, 66);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(88, 15);
             this.label5.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(46, 112);
+            this.label6.Location = new System.Drawing.Point(44, 94);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(62, 15);
             this.label6.TabIndex = 6;
@@ -121,7 +121,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(3, 139);
+            this.label7.Location = new System.Drawing.Point(1, 121);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(105, 15);
             this.label7.TabIndex = 7;
@@ -131,7 +131,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(25, 166);
+            this.label8.Location = new System.Drawing.Point(23, 148);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(81, 15);
             this.label8.TabIndex = 8;
@@ -141,7 +141,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(19, 195);
+            this.label9.Location = new System.Drawing.Point(17, 177);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 15);
             this.label9.TabIndex = 9;
@@ -165,47 +165,47 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(596, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(272, 230);
+            this.panel1.Size = new System.Drawing.Size(272, 214);
             this.panel1.TabIndex = 10;
             // 
             // txtObservacao
             // 
-            this.txtObservacao.Location = new System.Drawing.Point(124, 195);
+            this.txtObservacao.Location = new System.Drawing.Point(122, 177);
             this.txtObservacao.Name = "txtObservacao";
             this.txtObservacao.Size = new System.Drawing.Size(145, 20);
             this.txtObservacao.TabIndex = 15;
             // 
             // txtReferencia
             // 
-            this.txtReferencia.Location = new System.Drawing.Point(124, 166);
+            this.txtReferencia.Location = new System.Drawing.Point(122, 148);
             this.txtReferencia.Name = "txtReferencia";
             this.txtReferencia.Size = new System.Drawing.Size(145, 20);
             this.txtReferencia.TabIndex = 14;
             // 
             // txtComplemento
             // 
-            this.txtComplemento.Location = new System.Drawing.Point(124, 139);
+            this.txtComplemento.Location = new System.Drawing.Point(122, 121);
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(145, 20);
             this.txtComplemento.TabIndex = 13;
             // 
             // txtNumero
             // 
-            this.txtNumero.Location = new System.Drawing.Point(124, 112);
+            this.txtNumero.Location = new System.Drawing.Point(122, 94);
             this.txtNumero.Name = "txtNumero";
             this.txtNumero.Size = new System.Drawing.Size(145, 20);
             this.txtNumero.TabIndex = 12;
             // 
             // txtLogradouro
             // 
-            this.txtLogradouro.Location = new System.Drawing.Point(124, 82);
+            this.txtLogradouro.Location = new System.Drawing.Point(122, 64);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(145, 20);
             this.txtLogradouro.TabIndex = 11;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(124, 51);
+            this.txtNome.Location = new System.Drawing.Point(122, 33);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(145, 20);
             this.txtNome.TabIndex = 10;
@@ -214,7 +214,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.button1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(624, 273);
+            this.button1.Location = new System.Drawing.Point(636, 283);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(218, 74);
             this.button1.TabIndex = 11;
@@ -281,7 +281,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 450);
+            this.ClientSize = new System.Drawing.Size(880, 381);
             this.Controls.Add(this.bttAdcOutro);
             this.Controls.Add(this.bttAdcBebida);
             this.Controls.Add(this.bttAdcLanche);

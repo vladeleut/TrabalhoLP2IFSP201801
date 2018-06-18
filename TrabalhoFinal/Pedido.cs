@@ -4,14 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace TrabalhoFinal
 {
     class Pedido
     {
         int nro_pedido;
-        DateTime data;
-        DateTime hora_inicio;
+        DateTime aberturaPedido;
+        DateTime fechamentoPedido;
         Cliente cliente;
+        float total;
+        int formaDePagamento;//1 Dinheiro, 2 Débito, 3 Crédito,...
         List<Produto> itens = new List<Produto>();
         Boolean Aberto = false;
         public int Nro_pedido { get => nro_pedido; set => nro_pedido = value; }
