@@ -121,6 +121,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>trabalhofinalDataSet3.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="TelaCadastroProduto.resx">
+      <DependentUpon>TelaCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>
     </EmbeddedResource>

@@ -30,11 +30,7 @@ namespace TrabalhoFinal
             Close();
         }
 
-        public void ListaPedido(string pedidos)
-        {
-            listBox1.Items.Clear();
-            listBox1.Items.Add(pedidos);
-        }
+        
 
         private void bttAdcLanche_Click(object sender, EventArgs e)
         {
