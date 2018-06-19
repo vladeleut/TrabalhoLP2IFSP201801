@@ -51,6 +51,16 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="DataSetLanche.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetLanche.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPizzas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetPizzas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +101,26 @@
     <Compile Include="TelaPedido.Designer.cs">
       <DependentUpon>TelaPedido.cs</DependentUpon>
     </Compile>
+    <Compile Include="trabalhofinalDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>trabalhofinalDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="trabalhofinalDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>trabalhofinalDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="trabalhofinalDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>trabalhofinalDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="trabalhofinalDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>trabalhofinalDataSet3.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -118,6 +148,28 @@
     <EmbeddedResource Include="TelaPedido.resx">
       <DependentUpon>TelaPedido.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetLanche.xsc">
+      <DependentUpon>DataSetLanche.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetLanche.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetLanche.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetLanche.xss">
+      <DependentUpon>DataSetLanche.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPizzas.xsc">
+      <DependentUpon>DataSetPizzas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetPizzas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetPizzas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetPizzas.xss">
+      <DependentUpon>DataSetPizzas.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -127,6 +179,50 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="trabalhofinalDataSet.xsc">
+      <DependentUpon>trabalhofinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>trabalhofinalDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="trabalhofinalDataSet.xss">
+      <DependentUpon>trabalhofinalDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet1.xsc">
+      <DependentUpon>trabalhofinalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>trabalhofinalDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="trabalhofinalDataSet1.xss">
+      <DependentUpon>trabalhofinalDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet2.xsc">
+      <DependentUpon>trabalhofinalDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>trabalhofinalDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="trabalhofinalDataSet2.xss">
+      <DependentUpon>trabalhofinalDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet3.xsc">
+      <DependentUpon>trabalhofinalDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="trabalhofinalDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>trabalhofinalDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="trabalhofinalDataSet3.xss">
+      <DependentUpon>trabalhofinalDataSet3.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

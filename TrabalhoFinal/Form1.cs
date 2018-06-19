@@ -78,5 +78,16 @@ namespace TrabalhoFinal
             }
             //lblFechamento.Text = Caixa.getInstance().getAbertura().ToString();
         }
+
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'trabalhofinalDataSet2.pedido'. Você pode movê-la ou removê-la conforme necessário.
+            this.pedidoTableAdapter2.Fill(this.trabalhofinalDataSet2.pedido);
+            // TODO: esta linha de código carrega dados na tabela 'trabalhofinalDataSet1.pedido'. Você pode movê-la ou removê-la conforme necessário.
+            this.pedidoTableAdapter1.Fill(this.trabalhofinalDataSet1.pedido);
+            // TODO: esta linha de código carrega dados na tabela 'trabalhofinalDataSet.pedido'. Você pode movê-la ou removê-la conforme necessário.
+            this.pedidoTableAdapter.Fill(this.trabalhofinalDataSet.pedido);
+
+        }
     }
 }

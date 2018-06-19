@@ -28,18 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAddPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.Bebida = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trabalhofinalDataSet3 = new TrabalhoFinal.trabalhofinalDataSet3();
+            this.bebidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bebidaTableAdapter = new TrabalhoFinal.trabalhofinalDataSet3TableAdapters.bebidaTableAdapter();
+            this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bebidaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPedido
@@ -68,10 +75,13 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Bebida,
-            this.Preço});
+            this.codDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.precoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.bebidaBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(240, 319);
@@ -98,18 +108,6 @@
             this.label2.Text = "Pedido:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // Bebida
-            // 
-            this.Bebida.HeaderText = "Bebida";
-            this.Bebida.Name = "Bebida";
-            this.Bebida.Width = 130;
-            // 
-            // Preço
-            // 
-            this.Preço.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            // 
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -133,6 +131,38 @@
             this.dataGridViewTextBoxColumn2.HeaderText = "Preço";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             // 
+            // trabalhofinalDataSet3
+            // 
+            this.trabalhofinalDataSet3.DataSetName = "trabalhofinalDataSet3";
+            this.trabalhofinalDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // bebidaBindingSource
+            // 
+            this.bebidaBindingSource.DataMember = "bebida";
+            this.bebidaBindingSource.DataSource = this.trabalhofinalDataSet3;
+            // 
+            // bebidaTableAdapter
+            // 
+            this.bebidaTableAdapter.ClearBeforeFill = true;
+            // 
+            // codDataGridViewTextBoxColumn
+            // 
+            this.codDataGridViewTextBoxColumn.DataPropertyName = "cod";
+            this.codDataGridViewTextBoxColumn.HeaderText = "cod";
+            this.codDataGridViewTextBoxColumn.Name = "codDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // precoDataGridViewTextBoxColumn
+            // 
+            this.precoDataGridViewTextBoxColumn.DataPropertyName = "preco";
+            this.precoDataGridViewTextBoxColumn.HeaderText = "preco";
+            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
+            // 
             // FormBebida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -146,8 +176,11 @@
             this.Controls.Add(this.label1);
             this.Name = "FormBebida";
             this.Text = "FormBebida";
+            this.Load += new System.EventHandler(this.FormBebida_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bebidaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,11 +191,15 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button btnCancelaPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Bebida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private trabalhofinalDataSet3 trabalhofinalDataSet3;
+        private System.Windows.Forms.BindingSource bebidaBindingSource;
+        private trabalhofinalDataSet3TableAdapters.bebidaTableAdapter bebidaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
     }
 }

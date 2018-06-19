@@ -31,4 +31,11 @@ namespace TrabalhoFinal
         {
             Close();
         }
+
+        private void FormPizza_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'dataSetPizzas.pizza'. Você pode movê-la ou removê-la conforme necessário.
+            this.pizzaTableAdapter.Fill(this.dataSetPizzas.pizza);
+
+        }
     } }

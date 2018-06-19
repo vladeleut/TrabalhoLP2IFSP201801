@@ -26,5 +26,12 @@ namespace TrabalhoFinal
         {
             Close();
         }
+
+        private void FormLanche_Load(object sender, EventArgs e)
+        {
+            // TODO: esta linha de código carrega dados na tabela 'dataSetLanche.lanche'. Você pode movê-la ou removê-la conforme necessário.
+            this.lancheTableAdapter.Fill(this.dataSetLanche.lanche);
+
+        }
     }
 }

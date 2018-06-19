@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddPedido = new System.Windows.Forms.Button();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
@@ -37,15 +38,21 @@
             this.Adicional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Pizza1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Pizza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataSetPizzas = new TrabalhoFinal.DataSetPizzas();
+            this.pizzaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pizzaTableAdapter = new TrabalhoFinal.DataSetPizzasTableAdapters.pizzaTableAdapter();
+            this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPizzas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -136,29 +143,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(412, 143);
             this.dataGridView2.TabIndex = 16;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Pizza1,
-            this.Preço1});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(280, 390);
-            this.dataGridView1.TabIndex = 15;
-            // 
-            // Pizza1
-            // 
-            this.Pizza1.HeaderText = "Pizza1";
-            this.Pizza1.Name = "Pizza1";
-            this.Pizza1.Width = 160;
-            // 
-            // Preço1
-            // 
-            this.Preço1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Preço1.HeaderText = "Preço1";
-            this.Preço1.Name = "Preço1";
-            // 
             // Pizza
             // 
             this.Pizza.HeaderText = "Pizza";
@@ -177,6 +161,52 @@
             this.Preço.HeaderText = "Preço";
             this.Preço.Name = "Preço";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.codDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.precoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.pizzaBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 39);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(280, 390);
+            this.dataGridView1.TabIndex = 15;
+            // 
+            // dataSetPizzas
+            // 
+            this.dataSetPizzas.DataSetName = "DataSetPizzas";
+            this.dataSetPizzas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pizzaBindingSource
+            // 
+            this.pizzaBindingSource.DataMember = "pizza";
+            this.pizzaBindingSource.DataSource = this.dataSetPizzas;
+            // 
+            // pizzaTableAdapter
+            // 
+            this.pizzaTableAdapter.ClearBeforeFill = true;
+            // 
+            // codDataGridViewTextBoxColumn
+            // 
+            this.codDataGridViewTextBoxColumn.DataPropertyName = "cod";
+            this.codDataGridViewTextBoxColumn.HeaderText = "cod";
+            this.codDataGridViewTextBoxColumn.Name = "codDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // precoDataGridViewTextBoxColumn
+            // 
+            this.precoDataGridViewTextBoxColumn.DataPropertyName = "preco";
+            this.precoDataGridViewTextBoxColumn.HeaderText = "preco";
+            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
+            // 
             // FormPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -192,9 +222,12 @@
             this.Controls.Add(this.label1);
             this.Name = "FormPizza";
             this.Text = "FormPizza";
+            this.Load += new System.EventHandler(this.FormPizza_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetPizzas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,7 +247,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pizza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pizza1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preço1;
+        private DataSetPizzas dataSetPizzas;
+        private System.Windows.Forms.BindingSource pizzaBindingSource;
+        private DataSetPizzasTableAdapters.pizzaTableAdapter pizzaTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
     }
 }

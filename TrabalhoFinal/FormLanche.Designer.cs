@@ -28,24 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnAddPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.Lanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Adicional = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
-            this.Lanche1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSetLanche = new TrabalhoFinal.DataSetLanche();
+            this.lancheBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lancheTableAdapter = new TrabalhoFinal.DataSetLancheTableAdapters.lancheTableAdapter();
+            this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetLanche)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lancheBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPedido
@@ -73,10 +80,14 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Lanche1,
-            this.Preço1});
+            this.codDataGridViewTextBoxColumn,
+            this.nomeDataGridViewTextBoxColumn,
+            this.precoDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.lancheBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(280, 387);
@@ -94,6 +105,24 @@
             this.dataGridView2.Size = new System.Drawing.Size(412, 143);
             this.dataGridView2.TabIndex = 10;
             // 
+            // Lanche
+            // 
+            this.Lanche.HeaderText = "Lanche";
+            this.Lanche.Name = "Lanche";
+            this.Lanche.Width = 200;
+            // 
+            // Quantidade
+            // 
+            this.Quantidade.HeaderText = "Quatidade";
+            this.Quantidade.Name = "Quantidade";
+            this.Quantidade.Width = 85;
+            // 
+            // Preço
+            // 
+            this.Preço.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Preço.HeaderText = "Preço";
+            this.Preço.Name = "Preço";
+            // 
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -104,6 +133,18 @@
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(240, 205);
             this.dataGridView3.TabIndex = 11;
+            // 
+            // Adicional
+            // 
+            this.Adicional.HeaderText = "Adicional";
+            this.Adicional.Name = "Adicional";
+            this.Adicional.Width = 130;
+            // 
+            // Valor
+            // 
+            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
             // 
             // label2
             // 
@@ -125,36 +166,6 @@
             this.label3.TabIndex = 13;
             this.label3.Text = "Adicionais:";
             // 
-            // Lanche
-            // 
-            this.Lanche.HeaderText = "Lanche";
-            this.Lanche.Name = "Lanche";
-            this.Lanche.Width = 200;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quatidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.Width = 85;
-            // 
-            // Preço
-            // 
-            this.Preço.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            // 
-            // Adicional
-            // 
-            this.Adicional.HeaderText = "Adicional";
-            this.Adicional.Name = "Adicional";
-            this.Adicional.Width = 130;
-            // 
-            // Valor
-            // 
-            this.Valor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            // 
             // btnCancelaPedido
             // 
             this.btnCancelaPedido.Location = new System.Drawing.Point(662, 382);
@@ -165,17 +176,37 @@
             this.btnCancelaPedido.UseVisualStyleBackColor = true;
             this.btnCancelaPedido.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Lanche1
+            // dataSetLanche
             // 
-            this.Lanche1.HeaderText = "Lanche1";
-            this.Lanche1.Name = "Lanche1";
-            this.Lanche1.Width = 160;
+            this.dataSetLanche.DataSetName = "DataSetLanche";
+            this.dataSetLanche.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // Preço1
+            // lancheBindingSource
             // 
-            this.Preço1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Preço1.HeaderText = "Preço1";
-            this.Preço1.Name = "Preço1";
+            this.lancheBindingSource.DataMember = "lanche";
+            this.lancheBindingSource.DataSource = this.dataSetLanche;
+            // 
+            // lancheTableAdapter
+            // 
+            this.lancheTableAdapter.ClearBeforeFill = true;
+            // 
+            // codDataGridViewTextBoxColumn
+            // 
+            this.codDataGridViewTextBoxColumn.DataPropertyName = "cod";
+            this.codDataGridViewTextBoxColumn.HeaderText = "cod";
+            this.codDataGridViewTextBoxColumn.Name = "codDataGridViewTextBoxColumn";
+            // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            // 
+            // precoDataGridViewTextBoxColumn
+            // 
+            this.precoDataGridViewTextBoxColumn.DataPropertyName = "preco";
+            this.precoDataGridViewTextBoxColumn.HeaderText = "preco";
+            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
             // 
             // FormLanche
             // 
@@ -192,9 +223,12 @@
             this.Controls.Add(this.label1);
             this.Name = "FormLanche";
             this.Text = "FormLanche";
+            this.Load += new System.EventHandler(this.FormLanche_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetLanche)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lancheBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,8 +238,6 @@
         private System.Windows.Forms.Button btnAddPedido;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Lanche1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preço1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lanche;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
@@ -216,5 +248,11 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelaPedido;
+        private DataSetLanche dataSetLanche;
+        private System.Windows.Forms.BindingSource lancheBindingSource;
+        private DataSetLancheTableAdapters.lancheTableAdapter lancheTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
     }
 }
