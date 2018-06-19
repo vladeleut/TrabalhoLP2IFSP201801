@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace TrabalhoFinal
 {
-    public partial class FormBebida : Form
+    public partial class TelaBebida : Form
     {
-        public FormBebida()
+        public TelaBebida()
         {
             InitializeComponent();
         }

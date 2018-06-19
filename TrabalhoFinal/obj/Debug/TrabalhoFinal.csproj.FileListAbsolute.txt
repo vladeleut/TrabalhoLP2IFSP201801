@@ -60,10 +60,6 @@ C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\Traba
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\bin\Debug\TrabalhoFinal.pdb
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.csprojResolveAssemblyReference.cache
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.Inicio.resources
-C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.Form2.resources
-C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.FormBebida.resources
-C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.FormLanche.resources
-C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.FormPizza.resources
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.Properties.Resources.resources
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaPedido.resources
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.csproj.GenerateResource.cache
@@ -72,3 +68,6 @@ C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\Traba
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.pdb
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\bin\Debug\MySql.Data.dll
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.csproj.CopyComplete
+C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaBebida.resources
+C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaLanche.resources
+C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaPizza.resources

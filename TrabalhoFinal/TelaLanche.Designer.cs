@@ -1,6 +1,6 @@
 ﻿namespace TrabalhoFinal
 {
-    partial class FormLanche
+    partial class TelaLanche
     {
         /// <summary>
         /// Required designer variable.

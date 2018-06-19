@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace TrabalhoFinal
 {
-    public partial class Form2 : Form
+    public partial class TelaCadastroProduto : Form
     {
-        public Form2()
+        public TelaCadastroProduto()
         {
             InitializeComponent();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            TelaPedido pedido = new TelaPedido();
-            pedido.Show();
         }
     }
 }

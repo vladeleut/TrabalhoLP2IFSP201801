@@ -1,6 +1,6 @@
 ﻿namespace TrabalhoFinal
 {
-    partial class FormBebida
+    partial class TelaBebida
     {
         /// <summary>
         /// Required designer variable.

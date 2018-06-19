@@ -19,7 +19,7 @@ namespace TrabalhoFinal
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FormPizza pizza = new FormPizza();
+            TelaPizza pizza = new TelaPizza();
             pizza.ShowDialog();
         }
         private void button1_Click(object sender, EventArgs e)
@@ -38,13 +38,13 @@ namespace TrabalhoFinal
 
         private void bttAdcLanche_Click(object sender, EventArgs e)
         {
-            FormLanche lanche = new FormLanche();
+            TelaLanche lanche = new TelaLanche();
             lanche.ShowDialog();
         }
 
         private void bttAdcBebida_Click(object sender, EventArgs e)
         {
-            FormBebida bebida = new FormBebida();
+            TelaBebida bebida = new TelaBebida();
             bebida.ShowDialog();
         }
 

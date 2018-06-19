@@ -1,6 +1,6 @@
 ﻿namespace TrabalhoFinal
 {
-    partial class FormPizza
+    partial class TelaPizza
     {
         /// <summary>
         /// Required designer variable.

@@ -10,32 +10,28 @@ using System.Windows.Forms;
 
 namespace TrabalhoFinal
 {
-    public partial class FormPizza : Form
+    public partial class TelaLanche : Form
     {
-        public FormPizza()
+        public TelaLanche()
         {
             InitializeComponent();
         }
 
-      
-
         private void button1_Click(object sender, EventArgs e)
         {
-            
             Close();
-                
-
         }
 
-        private void btnCancelaPedido_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void FormPizza_Load(object sender, EventArgs e)
+        private void FormLanche_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSetPizzas.pizza'. Você pode movê-la ou removê-la conforme necessário.
-            this.pizzaTableAdapter.Fill(this.dataSetPizzas.pizza);
+            // TODO: esta linha de código carrega dados na tabela 'dataSetLanche.lanche'. Você pode movê-la ou removê-la conforme necessário.
+            this.lancheTableAdapter.Fill(this.dataSetLanche.lanche);
 
         }
-    } }
+    }
+}

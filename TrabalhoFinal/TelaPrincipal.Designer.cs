@@ -48,27 +48,24 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnFechaCaixa = new System.Windows.Forms.Button();
             this.tabTelaPedido = new System.Windows.Forms.TabPage();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bttNovoPedido = new System.Windows.Forms.Button();
-            this.tabProdutos = new System.Windows.Forms.TabPage();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dgProdutos = new System.Windows.Forms.DataGridView();
             this.panDGPedidos = new System.Windows.Forms.Panel();
-            this.trabalhofinalDataSet = new TrabalhoFinal.trabalhofinalDataSet();
-            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pedidoTableAdapter = new TrabalhoFinal.trabalhofinalDataSetTableAdapters.pedidoTableAdapter();
             this.dgPedidos = new System.Windows.Forms.DataGridView();
-            this.trabalhofinalDataSet1 = new TrabalhoFinal.trabalhofinalDataSet1();
-            this.pedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pedidoTableAdapter1 = new TrabalhoFinal.trabalhofinalDataSet1TableAdapters.pedidoTableAdapter();
             this.nroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.trabalhofinalDataSet2 = new TrabalhoFinal.trabalhofinalDataSet2();
             this.pedidoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.trabalhofinalDataSet2 = new TrabalhoFinal.trabalhofinalDataSet2();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bttNovoPedido = new System.Windows.Forms.Button();
+            this.trabalhofinalDataSet = new TrabalhoFinal.trabalhofinalDataSet();
+            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pedidoTableAdapter = new TrabalhoFinal.trabalhofinalDataSetTableAdapters.pedidoTableAdapter();
+            this.trabalhofinalDataSet1 = new TrabalhoFinal.trabalhofinalDataSet1();
+            this.pedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.pedidoTableAdapter1 = new TrabalhoFinal.trabalhofinalDataSet1TableAdapters.pedidoTableAdapter();
             this.pedidoTableAdapter2 = new TrabalhoFinal.trabalhofinalDataSet2TableAdapters.pedidoTableAdapter();
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
@@ -79,19 +76,16 @@
             this.panDadosDoCaixa.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.tabTelaPedido.SuspendLayout();
+            this.panDGPedidos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.tabProdutos.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).BeginInit();
-            this.panDGPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabGeral
@@ -102,7 +96,6 @@
             this.tabGeral.Controls.Add(this.TabInicio);
             this.tabGeral.Controls.Add(this.tabCaixa);
             this.tabGeral.Controls.Add(this.tabTelaPedido);
-            this.tabGeral.Controls.Add(this.tabProdutos);
             this.tabGeral.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabGeral.Location = new System.Drawing.Point(12, 12);
             this.tabGeral.Name = "tabGeral";
@@ -131,9 +124,9 @@
             // 
             this.pictureBox4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(597, 95);
+            this.pictureBox4.Location = new System.Drawing.Point(517, 85);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(107, 45);
+            this.pictureBox4.Size = new System.Drawing.Size(187, 97);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
@@ -216,8 +209,9 @@
             this.lblAbertura.AutoSize = true;
             this.lblAbertura.Location = new System.Drawing.Point(58, 43);
             this.lblAbertura.Name = "lblAbertura";
-            this.lblAbertura.Size = new System.Drawing.Size(0, 15);
+            this.lblAbertura.Size = new System.Drawing.Size(106, 15);
             this.lblAbertura.TabIndex = 9;
+            this.lblAbertura.Text = "Caixa Fechado";
             // 
             // lblAbertoEm
             // 
@@ -233,12 +227,14 @@
             this.dataGridView3.AllowUserToAddRows = false;
             this.dataGridView3.AllowUserToDeleteRows = false;
             this.dataGridView3.AllowUserToOrderColumns = true;
+            this.dataGridView3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3});
-            this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Left;
             this.dataGridView3.Location = new System.Drawing.Point(3, 3);
             this.dataGridView3.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView3.Name = "dataGridView3";
@@ -297,70 +293,6 @@
             this.tabTelaPedido.Text = "Pedidos";
             this.tabTelaPedido.UseVisualStyleBackColor = true;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 122);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(768, 71);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 9;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(549, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(209, 113);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 8;
-            this.pictureBox2.TabStop = false;
-            // 
-            // bttNovoPedido
-            // 
-            this.bttNovoPedido.BackColor = System.Drawing.Color.LawnGreen;
-            this.bttNovoPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttNovoPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttNovoPedido.Location = new System.Drawing.Point(61, 28);
-            this.bttNovoPedido.Name = "bttNovoPedido";
-            this.bttNovoPedido.Size = new System.Drawing.Size(195, 76);
-            this.bttNovoPedido.TabIndex = 6;
-            this.bttNovoPedido.Text = "Novo Pedido";
-            this.bttNovoPedido.UseVisualStyleBackColor = false;
-            this.bttNovoPedido.Click += new System.EventHandler(this.button2_Click_2);
-            // 
-            // tabProdutos
-            // 
-            this.tabProdutos.Controls.Add(this.panel1);
-            this.tabProdutos.Location = new System.Drawing.Point(4, 24);
-            this.tabProdutos.Name = "tabProdutos";
-            this.tabProdutos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProdutos.Size = new System.Drawing.Size(768, 420);
-            this.tabProdutos.TabIndex = 3;
-            this.tabProdutos.Text = "Produtos";
-            this.tabProdutos.UseVisualStyleBackColor = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.dgProdutos);
-            this.panel1.Location = new System.Drawing.Point(4, 222);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(761, 195);
-            this.panel1.TabIndex = 0;
-            // 
-            // dgProdutos
-            // 
-            this.dgProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgProdutos.Location = new System.Drawing.Point(0, 0);
-            this.dgProdutos.Name = "dgProdutos";
-            this.dgProdutos.Size = new System.Drawing.Size(761, 195);
-            this.dgProdutos.TabIndex = 0;
-            // 
             // panDGPedidos
             // 
             this.panDGPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
@@ -370,20 +302,6 @@
             this.panDGPedidos.Name = "panDGPedidos";
             this.panDGPedidos.Size = new System.Drawing.Size(761, 217);
             this.panDGPedidos.TabIndex = 11;
-            // 
-            // trabalhofinalDataSet
-            // 
-            this.trabalhofinalDataSet.DataSetName = "trabalhofinalDataSet";
-            this.trabalhofinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pedidoBindingSource
-            // 
-            this.pedidoBindingSource.DataMember = "pedido";
-            this.pedidoBindingSource.DataSource = this.trabalhofinalDataSet;
-            // 
-            // pedidoTableAdapter
-            // 
-            this.pedidoTableAdapter.ClearBeforeFill = true;
             // 
             // dgPedidos
             // 
@@ -403,20 +321,6 @@
             this.dgPedidos.ReadOnly = true;
             this.dgPedidos.Size = new System.Drawing.Size(761, 217);
             this.dgPedidos.TabIndex = 0;
-            // 
-            // trabalhofinalDataSet1
-            // 
-            this.trabalhofinalDataSet1.DataSetName = "trabalhofinalDataSet1";
-            this.trabalhofinalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pedidoBindingSource1
-            // 
-            this.pedidoBindingSource1.DataMember = "pedido";
-            this.pedidoBindingSource1.DataSource = this.trabalhofinalDataSet1;
-            // 
-            // pedidoTableAdapter1
-            // 
-            this.pedidoTableAdapter1.ClearBeforeFill = true;
             // 
             // nroDataGridViewTextBoxColumn
             // 
@@ -453,15 +357,76 @@
             this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
             this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // pedidoBindingSource2
+            // 
+            this.pedidoBindingSource2.DataMember = "pedido";
+            this.pedidoBindingSource2.DataSource = this.trabalhofinalDataSet2;
+            // 
             // trabalhofinalDataSet2
             // 
             this.trabalhofinalDataSet2.DataSetName = "trabalhofinalDataSet2";
             this.trabalhofinalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // pedidoBindingSource2
+            // pictureBox5
             // 
-            this.pedidoBindingSource2.DataMember = "pedido";
-            this.pedidoBindingSource2.DataSource = this.trabalhofinalDataSet2;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 122);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(768, 71);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 9;
+            this.pictureBox5.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(549, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(209, 113);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 8;
+            this.pictureBox2.TabStop = false;
+            // 
+            // bttNovoPedido
+            // 
+            this.bttNovoPedido.BackColor = System.Drawing.Color.LawnGreen;
+            this.bttNovoPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.bttNovoPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bttNovoPedido.Location = new System.Drawing.Point(61, 28);
+            this.bttNovoPedido.Name = "bttNovoPedido";
+            this.bttNovoPedido.Size = new System.Drawing.Size(195, 76);
+            this.bttNovoPedido.TabIndex = 6;
+            this.bttNovoPedido.Text = "Novo Pedido";
+            this.bttNovoPedido.UseVisualStyleBackColor = false;
+            this.bttNovoPedido.Click += new System.EventHandler(this.button2_Click_2);
+            // 
+            // trabalhofinalDataSet
+            // 
+            this.trabalhofinalDataSet.DataSetName = "trabalhofinalDataSet";
+            this.trabalhofinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pedidoBindingSource
+            // 
+            this.pedidoBindingSource.DataMember = "pedido";
+            this.pedidoBindingSource.DataSource = this.trabalhofinalDataSet;
+            // 
+            // pedidoTableAdapter
+            // 
+            this.pedidoTableAdapter.ClearBeforeFill = true;
+            // 
+            // trabalhofinalDataSet1
+            // 
+            this.trabalhofinalDataSet1.DataSetName = "trabalhofinalDataSet1";
+            this.trabalhofinalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // pedidoBindingSource1
+            // 
+            this.pedidoBindingSource1.DataMember = "pedido";
+            this.pedidoBindingSource1.DataSource = this.trabalhofinalDataSet1;
+            // 
+            // pedidoTableAdapter1
+            // 
+            this.pedidoTableAdapter1.ClearBeforeFill = true;
             // 
             // pedidoTableAdapter2
             // 
@@ -487,19 +452,16 @@
             this.panDadosDoCaixa.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabTelaPedido.ResumeLayout(false);
+            this.panDGPedidos.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.tabProdutos.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgProdutos)).EndInit();
-            this.panDGPedidos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -524,9 +486,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.TabPage tabProdutos;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dgProdutos;
         private System.Windows.Forms.Panel panDadosDoCaixa;
         private System.Windows.Forms.Label lblAbertura;
         private System.Windows.Forms.Label lblAbertoEm;
