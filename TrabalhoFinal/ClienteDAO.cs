@@ -8,13 +8,13 @@ using MySql.Data.MySqlClient;
 namespace TrabalhoFinal
 {
     class ClienteDAO
-    {
+    {/*
         public void Create(Cliente cliente)
         {
-            Database dbBiblioteca = Database.GetInstance();
+            Database db = Database.GetInstance();
             string qry = string.Format("INSERT INTO cliente(telefone,nome,logradouro, nro, complemento, referencia, observacao) values ('{0}', '{1}','{2}','{4}', '{5}','{6}')",
                                         cliente.Telefone, cliente.Nome, cliente.Logradouro, cliente.Numero, cliente.Complemento, cliente.Referencia, cliente.Observacao);
-            dbBiblioteca.ExecuteSQL(qry);
+            db.ExecuteSQL(qry);
         }
         public Cliente Read(string telefone)
         {
@@ -44,21 +44,13 @@ namespace TrabalhoFinal
             conn.Close();
             return cliente;
         }
-
-
-
-        /*
-
-        /// <summary>
-        /// editado aé aqui.
-        /// </summary>
-        /// <param name="cliente"></param>
+        
         public void Update(Cliente cliente)
         {
-            Database dbBiblioteca = Database.GetInstance();
+            Database db = Database.GetInstance();
             string qry = string.Format("UPDATE aluno SET nome = '{0}', cpf = '{1}' dtnasc = '{2}' WHERE codigo = {3}",
                                         aluno.Nome, aluno.CPF, aluno.DataNasc.ToString("yyyy-MM-dd"), aluno.Codigo);
-            dbBiblioteca.ExecuteSQL(qry);
+            db.ExecuteSQL(qry);
         }
         public void Delete(int codigo)
         {
@@ -66,7 +58,8 @@ namespace TrabalhoFinal
             string qry = "DELETE FROM aluno WHERE codigo = " + codigo;
             dbBiblioteca.ExecuteSQL(qry);
         }
-        public List<Aluno> ListAll()
+
+        public List<Cliente> ListAll()
         {
             List<Aluno> lista = new List<Aluno>();
             Aluno aluno;

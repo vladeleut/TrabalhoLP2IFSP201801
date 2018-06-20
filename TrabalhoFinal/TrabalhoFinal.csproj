@@ -61,6 +61,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetPizzas.xsd</DependentUpon>
     </Compile>
+    <Compile Include="ProdutoDAO.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

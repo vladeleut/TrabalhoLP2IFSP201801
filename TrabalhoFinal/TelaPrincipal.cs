@@ -16,13 +16,13 @@ namespace TrabalhoFinal
         {
             
             InitializeComponent();
-            //this.WindowState = FormWindowState.Maximized;
+            this.WindowState = FormWindowState.Maximized;
             
         }
 
        
 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void btnAbreCaixaClick(object sender, EventArgs e)
         {
             
             if (Caixa.getInstance().IsAberto)
@@ -88,6 +88,12 @@ namespace TrabalhoFinal
             // TODO: esta linha de código carrega dados na tabela 'trabalhofinalDataSet.pedido'. Você pode movê-la ou removê-la conforme necessário.
             this.pedidoTableAdapter.Fill(this.trabalhofinalDataSet.pedido);
 
+        }
+
+        private void btnChamaProduto_Click(object sender, EventArgs e)
+        {
+            TelaCadastroProduto TelaProd = new TelaCadastroProduto();
+            TelaProd.ShowDialog();
         }
     }
 }

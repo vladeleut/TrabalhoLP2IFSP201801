@@ -16,7 +16,8 @@ namespace TrabalhoFinal
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Database db = Database.GetInstance();
+            Application.Run(new Inicio() );
         }
     }
 }

@@ -35,16 +35,17 @@
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAbreCaixa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabCaixa = new System.Windows.Forms.TabPage();
-            this.panDadosDoCaixa = new System.Windows.Forms.Panel();
-            this.lblAbertura = new System.Windows.Forms.Label();
-            this.lblAbertoEm = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panDadosDoCaixa = new System.Windows.Forms.Panel();
+            this.lblAbertura = new System.Windows.Forms.Label();
+            this.lblAbertoEm = new System.Windows.Forms.Label();
             this.btnFechaCaixa = new System.Windows.Forms.Button();
             this.tabTelaPedido = new System.Windows.Forms.TabPage();
             this.panDGPedidos = new System.Windows.Forms.Panel();
@@ -66,15 +67,16 @@
             this.pedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pedidoTableAdapter1 = new TrabalhoFinal.trabalhofinalDataSet1TableAdapters.pedidoTableAdapter();
             this.pedidoTableAdapter2 = new TrabalhoFinal.trabalhofinalDataSet2TableAdapters.pedidoTableAdapter();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnChamaProduto = new System.Windows.Forms.Button();
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCaixa.SuspendLayout();
-            this.panDadosDoCaixa.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panDadosDoCaixa.SuspendLayout();
             this.tabTelaPedido.SuspendLayout();
             this.panDGPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).BeginInit();
@@ -86,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabGeral
@@ -108,10 +109,11 @@
             // 
             this.TabInicio.BackColor = System.Drawing.Color.White;
             this.TabInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.TabInicio.Controls.Add(this.btnChamaProduto);
             this.TabInicio.Controls.Add(this.pictureBox4);
             this.TabInicio.Controls.Add(this.pictureBox3);
             this.TabInicio.Controls.Add(this.pictureBox1);
-            this.TabInicio.Controls.Add(this.button1);
+            this.TabInicio.Controls.Add(this.btnAbreCaixa);
             this.TabInicio.Controls.Add(this.label1);
             this.TabInicio.Location = new System.Drawing.Point(4, 24);
             this.TabInicio.Name = "TabInicio";
@@ -157,19 +159,19 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // button1
+            // btnAbreCaixa
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(280, 267);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(191, 70);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Abrir Caixa";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            this.btnAbreCaixa.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnAbreCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnAbreCaixa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAbreCaixa.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbreCaixa.Location = new System.Drawing.Point(280, 267);
+            this.btnAbreCaixa.Name = "btnAbreCaixa";
+            this.btnAbreCaixa.Size = new System.Drawing.Size(191, 70);
+            this.btnAbreCaixa.TabIndex = 3;
+            this.btnAbreCaixa.Text = "Abrir Caixa";
+            this.btnAbreCaixa.UseVisualStyleBackColor = false;
+            this.btnAbreCaixa.Click += new System.EventHandler(this.btnAbreCaixaClick);
             // 
             // label1
             // 
@@ -195,33 +197,16 @@
             this.tabCaixa.TabIndex = 1;
             this.tabCaixa.Text = "Caixa";
             // 
-            // panDadosDoCaixa
+            // panel1
             // 
-            this.panDadosDoCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.panDadosDoCaixa.Controls.Add(this.lblAbertura);
-            this.panDadosDoCaixa.Controls.Add(this.lblAbertoEm);
-            this.panDadosDoCaixa.Location = new System.Drawing.Point(375, 320);
-            this.panDadosDoCaixa.Name = "panDadosDoCaixa";
-            this.panDadosDoCaixa.Size = new System.Drawing.Size(237, 100);
-            this.panDadosDoCaixa.TabIndex = 9;
-            // 
-            // lblAbertura
-            // 
-            this.lblAbertura.AutoSize = true;
-            this.lblAbertura.Location = new System.Drawing.Point(58, 43);
-            this.lblAbertura.Name = "lblAbertura";
-            this.lblAbertura.Size = new System.Drawing.Size(106, 15);
-            this.lblAbertura.TabIndex = 9;
-            this.lblAbertura.Text = "Caixa Fechado";
-            // 
-            // lblAbertoEm
-            // 
-            this.lblAbertoEm.AutoSize = true;
-            this.lblAbertoEm.Location = new System.Drawing.Point(80, 14);
-            this.lblAbertoEm.Name = "lblAbertoEm";
-            this.lblAbertoEm.Size = new System.Drawing.Size(84, 15);
-            this.lblAbertoEm.TabIndex = 8;
-            this.lblAbertoEm.Text = "Aberto em:";
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel1.Controls.Add(this.dataGridView3);
+            this.panel1.Location = new System.Drawing.Point(0, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(359, 408);
+            this.panel1.TabIndex = 10;
             // 
             // dataGridView3
             // 
@@ -258,6 +243,34 @@
             this.Column3.HeaderText = "Forma de Pagamento";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
+            // 
+            // panDadosDoCaixa
+            // 
+            this.panDadosDoCaixa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.panDadosDoCaixa.Controls.Add(this.lblAbertura);
+            this.panDadosDoCaixa.Controls.Add(this.lblAbertoEm);
+            this.panDadosDoCaixa.Location = new System.Drawing.Point(375, 320);
+            this.panDadosDoCaixa.Name = "panDadosDoCaixa";
+            this.panDadosDoCaixa.Size = new System.Drawing.Size(237, 100);
+            this.panDadosDoCaixa.TabIndex = 9;
+            // 
+            // lblAbertura
+            // 
+            this.lblAbertura.AutoSize = true;
+            this.lblAbertura.Location = new System.Drawing.Point(58, 43);
+            this.lblAbertura.Name = "lblAbertura";
+            this.lblAbertura.Size = new System.Drawing.Size(106, 15);
+            this.lblAbertura.TabIndex = 9;
+            this.lblAbertura.Text = "Caixa Fechado";
+            // 
+            // lblAbertoEm
+            // 
+            this.lblAbertoEm.AutoSize = true;
+            this.lblAbertoEm.Location = new System.Drawing.Point(80, 14);
+            this.lblAbertoEm.Name = "lblAbertoEm";
+            this.lblAbertoEm.Size = new System.Drawing.Size(84, 15);
+            this.lblAbertoEm.TabIndex = 8;
+            this.lblAbertoEm.Text = "Aberto em:";
             // 
             // btnFechaCaixa
             // 
@@ -428,16 +441,19 @@
             // 
             this.pedidoTableAdapter2.ClearBeforeFill = true;
             // 
-            // panel1
+            // btnChamaProduto
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.Controls.Add(this.dataGridView3);
-            this.panel1.Location = new System.Drawing.Point(0, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(359, 408);
-            this.panel1.TabIndex = 10;
+            this.btnChamaProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnChamaProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnChamaProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChamaProduto.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChamaProduto.Location = new System.Drawing.Point(567, 267);
+            this.btnChamaProduto.Name = "btnChamaProduto";
+            this.btnChamaProduto.Size = new System.Drawing.Size(191, 70);
+            this.btnChamaProduto.TabIndex = 10;
+            this.btnChamaProduto.Text = "Produtos";
+            this.btnChamaProduto.UseVisualStyleBackColor = false;
+            this.btnChamaProduto.Click += new System.EventHandler(this.btnChamaProduto_Click);
             // 
             // Inicio
             // 
@@ -455,9 +471,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCaixa.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.panDadosDoCaixa.ResumeLayout(false);
             this.panDadosDoCaixa.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.tabTelaPedido.ResumeLayout(false);
             this.panDGPedidos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).EndInit();
@@ -469,7 +486,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -478,7 +494,7 @@
 
         private System.Windows.Forms.TabControl tabGeral;
         private System.Windows.Forms.TabPage TabInicio;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAbreCaixa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabPage tabCaixa;
         private System.Windows.Forms.TabPage tabTelaPedido;
@@ -513,6 +529,7 @@
         private System.Windows.Forms.BindingSource pedidoBindingSource2;
         private trabalhofinalDataSet2TableAdapters.pedidoTableAdapter pedidoTableAdapter2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnChamaProduto;
     }
 }
 

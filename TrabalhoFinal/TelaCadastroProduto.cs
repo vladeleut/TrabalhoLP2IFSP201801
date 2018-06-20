@@ -16,5 +16,22 @@ namespace TrabalhoFinal
         {
             InitializeComponent();
         }
+
+        private void btnCadastraProduto_Click(object sender, EventArgs e)
+        {
+            Produto prod = getDTO();
+            ProdutoDAO prodDAO = new ProdutoDAO();
+            prodDAO.Create(prod);
+        }
+
+        private Produto getDTO()
+        {
+            Produto produto = new Produto();
+            produto.Tipo = cbTipo.Text;
+            produto.Nome = txtNomeProd.Text;
+            produto.Preço = float.Parse(txtPrecoProd.Text);
+
+            return produto;
+        }
     }
 }
