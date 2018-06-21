@@ -12,7 +12,7 @@ namespace TrabalhoFinal
     {
         private static MySqlConnection conn;
         private static Database instance;
-        private const string connString = "Server = localhost; Database = trabalhoFinal; Uid = root; Pwd = admin;";
+        private const string connString = "Server = localhost; Database = delivery; Uid = root; Pwd = admin;";
 
         private Database()
         {
@@ -107,21 +107,5 @@ namespace TrabalhoFinal
                 MessageBox.Show(e.ToString());
             }
         }
-
-
-        /*
-        public void ExecuteSQL(string qry)
-        {
-            if (conn.State != System.Data.ConnectionState.Open)
-            {
-                conn.Open();
-            }
-            MySqlCommand comm = new MySqlCommand(qry, conn);
-            comm.ExecuteNonQuery();
-            conn.Close();
-        }*/
-        
-
-
     }
 }

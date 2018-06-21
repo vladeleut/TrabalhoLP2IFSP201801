@@ -11,11 +11,11 @@ namespace TrabalhoFinal
         int codigo;
         string nome;
         string tipo;
-        float preço;
+        string preco;
 
         public int Codigo { get => codigo; set => codigo = value; }
         public string Nome { get => nome; set => nome = value; }
         public string Tipo { get => tipo; set => tipo = value; }
-        public float Preço { get => preço; set => preço = value; }
+        public string Preco { get => preco; set => preco = value; }
     }
 }

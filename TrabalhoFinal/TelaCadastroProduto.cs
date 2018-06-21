@@ -22,16 +22,28 @@ namespace TrabalhoFinal
             Produto prod = getDTO();
             ProdutoDAO prodDAO = new ProdutoDAO();
             prodDAO.Create(prod);
+            dgListaProd.Refresh();
         }
 
         private Produto getDTO()
         {
             Produto produto = new Produto();
-            produto.Tipo = cbTipo.Text;
+            produto.Tipo = txtTipoProd.Text;
             produto.Nome = txtNomeProd.Text;
-            produto.Preço = float.Parse(txtPrecoProd.Text);
+            produto.Preco = txtPrecoProd.Text;
 
             return produto;
+        }
+
+        private void TelaCadastroProduto_Load(object sender, EventArgs e)
+        {
+            ProdutoDAO prodDAO = new ProdutoDAO();
+            List<Produto> lista = prodDAO.listaProdutos();
+
+            foreach (Produto p in lista)
+            {
+                dgListaProd.Rows.Add(p.Tipo, p.Codigo, p.Nome, p.Preco);
+            }
         }
     }
 }
