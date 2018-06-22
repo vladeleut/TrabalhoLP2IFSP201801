@@ -13,7 +13,7 @@ namespace TrabalhoFinal
         {
             Database dbDelivery = Database.GetInstance();
 
-            string qry = "insert into produto (Codigo, telefone, nome, logradouro, bairro, complemento, referencia, observacao) values (@Codigo,@Telefone, @Nome, @Logradouro, @Bairro, @Complemento, @Referencia, @Observacao)";
+            string qry = "insert into cliente (Codigo, telefone, nome, logradouro, bairro, complemento, referencia, observacao) values (@Codigo,@Telefone, @Nome, @Logradouro, @Bairro, @Complemento, @Referencia, @Observacao)";
 
             MySqlCommand comm = new MySqlCommand(qry); //seta parâmetros
             comm.Parameters.AddWithValue("@Nome", cliente.Nome);

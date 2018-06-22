@@ -79,6 +79,7 @@
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="Database.cs" />
+    <Compile Include="PedidoDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>

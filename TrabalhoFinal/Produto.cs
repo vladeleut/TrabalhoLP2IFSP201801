@@ -13,9 +13,9 @@ namespace TrabalhoFinal
         string tipo;
         string preco;
 
-        public int Codigo { get => codigo; set => codigo = value; }
-        public string Nome { get => nome; set => nome = value; }
-        public string Tipo { get => tipo; set => tipo = value; }
-        public string Preco { get => preco; set => preco = value; }
+        public int Codigo { get { return codigo; } set { codigo = value; } }
+        public string Nome { get { return nome; } set { nome = value; } }
+        public string Tipo { get {return tipo; } set { tipo = value; } }
+        public string Preco { get { return preco; } set { preco = value; } }
     }
 }
