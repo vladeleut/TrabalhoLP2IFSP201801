@@ -42,14 +42,6 @@
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.pizzaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetPizzas = new TrabalhoFinal.DataSetPizzas();
-            this.pizzaTableAdapter = new TrabalhoFinal.DataSetPizzasTableAdapters.pizzaTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPizzas)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -165,20 +157,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(280, 390);
             this.dataGridView1.TabIndex = 15;
-            // 
-            // pizzaBindingSource
-            // 
-            this.pizzaBindingSource.DataMember = "pizza";
-            this.pizzaBindingSource.DataSource = this.dataSetPizzas;
-            // 
-            // dataSetPizzas
-            // 
-            this.dataSetPizzas.DataSetName = "DataSetPizzas";
-            this.dataSetPizzas.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pizzaTableAdapter
-            // 
-            this.pizzaTableAdapter.ClearBeforeFill = true;
+           
             // 
             // TelaPizza
             // 
@@ -196,11 +175,6 @@
             this.Name = "TelaPizza";
             this.Text = "FormPizza";
             this.Load += new System.EventHandler(this.FormPizza_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pizzaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetPizzas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,8 +194,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Pizza;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
-        private DataSetPizzas dataSetPizzas;
-        private System.Windows.Forms.BindingSource pizzaBindingSource;
-        private DataSetPizzasTableAdapters.pizzaTableAdapter pizzaTableAdapter;
+        
     }
 }

@@ -12,7 +12,7 @@ namespace TrabalhoFinal
     {
         private static MySqlConnection conn;
         private static Database instance;
-        private const string connString = "Server = localhost; Database = TrabalhoFinal; Uid = root; Pwd = admin;";
+        private const string connString = "Server = localhost; Database = delivery; Uid = root; Pwd = admin;";
 
         private Database()
         {
@@ -68,13 +68,13 @@ namespace TrabalhoFinal
                 MySqlCommand comm;//gera comandos através da conexão (?)
                 StringBuilder qry = new StringBuilder();
 
-                qry.AppendLine("create database if not exists TrabalhoFinal");
+                qry.AppendLine("create database if not exists delivery");
 
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
 
                 //use database
-                conn.ChangeDatabase("TrabalhoFinal");
+                conn.ChangeDatabase("delivery");
 
                 qry.Clear();
                 qry.AppendLine("create table if not exists cliente(");

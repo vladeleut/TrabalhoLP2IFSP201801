@@ -31,15 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.btnAddPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.bebidaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.trabalhofinalDataSet3 = new TrabalhoFinal.trabalhofinalDataSet3();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.bebidaTableAdapter = new TrabalhoFinal.trabalhofinalDataSet3TableAdapters.bebidaTableAdapter();
             this.dgPedidoTempBebida = new System.Windows.Forms.DataGridView();
             this.dgBebidas = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.bebidaBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidoTempBebida)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).BeginInit();
             this.SuspendLayout();
@@ -68,16 +63,6 @@
             this.label1.Text = "Bebidas:";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // bebidaBindingSource
-            // 
-            this.bebidaBindingSource.DataMember = "bebida";
-            this.bebidaBindingSource.DataSource = this.trabalhofinalDataSet3;
-            // 
-            // trabalhofinalDataSet3
-            // 
-            this.trabalhofinalDataSet3.DataSetName = "trabalhofinalDataSet3";
-            this.trabalhofinalDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // btnCancelaPedido
             // 
             this.btnCancelaPedido.Location = new System.Drawing.Point(414, 338);
@@ -98,10 +83,6 @@
             this.label2.TabIndex = 22;
             this.label2.Text = "Pedido:";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // bebidaTableAdapter
-            // 
-            this.bebidaTableAdapter.ClearBeforeFill = true;
             // 
             // dgPedidoTempBebida
             // 
@@ -133,8 +114,6 @@
             this.Name = "TelaBebida";
             this.Text = "FormBebida";
             this.Load += new System.EventHandler(this.FormBebida_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.bebidaBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidoTempBebida)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgBebidas)).EndInit();
             this.ResumeLayout(false);
@@ -147,9 +126,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCancelaPedido;
         private System.Windows.Forms.Label label2;
-        private trabalhofinalDataSet3 trabalhofinalDataSet3;
-        private System.Windows.Forms.BindingSource bebidaBindingSource;
-        private trabalhofinalDataSet3TableAdapters.bebidaTableAdapter bebidaTableAdapter;
         private System.Windows.Forms.DataGridView dgPedidoTempBebida;
         private System.Windows.Forms.DataGridView dgBebidas;
     }

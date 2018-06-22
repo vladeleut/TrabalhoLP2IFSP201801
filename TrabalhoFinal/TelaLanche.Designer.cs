@@ -42,17 +42,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
-            this.dataSetLanche = new TrabalhoFinal.DataSetLanche();
-            this.lancheBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.lancheTableAdapter = new TrabalhoFinal.DataSetLancheTableAdapters.lancheTableAdapter();
-            this.codDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetLanche)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lancheBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPedido
@@ -80,19 +69,13 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.codDataGridViewTextBoxColumn,
-            this.nomeDataGridViewTextBoxColumn,
-            this.precoDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.lancheBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 39);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(280, 387);
             this.dataGridView1.TabIndex = 9;
-            // 
+            
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -176,39 +159,7 @@
             this.btnCancelaPedido.UseVisualStyleBackColor = true;
             this.btnCancelaPedido.Click += new System.EventHandler(this.button2_Click);
             // 
-            // dataSetLanche
-            // 
-            this.dataSetLanche.DataSetName = "DataSetLanche";
-            this.dataSetLanche.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lancheBindingSource
-            // 
-            this.lancheBindingSource.DataMember = "lanche";
-            this.lancheBindingSource.DataSource = this.dataSetLanche;
-            // 
-            // lancheTableAdapter
-            // 
-            this.lancheTableAdapter.ClearBeforeFill = true;
-            // 
-            // codDataGridViewTextBoxColumn
-            // 
-            this.codDataGridViewTextBoxColumn.DataPropertyName = "cod";
-            this.codDataGridViewTextBoxColumn.HeaderText = "cod";
-            this.codDataGridViewTextBoxColumn.Name = "codDataGridViewTextBoxColumn";
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "nome";
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            // 
-            // precoDataGridViewTextBoxColumn
-            // 
-            this.precoDataGridViewTextBoxColumn.DataPropertyName = "preco";
-            this.precoDataGridViewTextBoxColumn.HeaderText = "preco";
-            this.precoDataGridViewTextBoxColumn.Name = "precoDataGridViewTextBoxColumn";
-            // 
-            // FormLanche
+            // TelaLanche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -221,14 +172,9 @@
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddPedido);
             this.Controls.Add(this.label1);
-            this.Name = "FormLanche";
+            this.Name = "TelaLanche";
             this.Text = "FormLanche";
             this.Load += new System.EventHandler(this.FormLanche_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetLanche)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.lancheBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,11 +194,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelaPedido;
-        private DataSetLanche dataSetLanche;
-        private System.Windows.Forms.BindingSource lancheBindingSource;
-        private DataSetLancheTableAdapters.lancheTableAdapter lancheTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precoDataGridViewTextBoxColumn;
+       
     }
 }

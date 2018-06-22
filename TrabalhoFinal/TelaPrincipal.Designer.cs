@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.tabGeral = new System.Windows.Forms.TabControl();
             this.TabInicio = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAbreCaixa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -49,24 +49,9 @@
             this.tabTelaPedido = new System.Windows.Forms.TabPage();
             this.panDGPedidos = new System.Windows.Forms.Panel();
             this.dgPedidos = new System.Windows.Forms.DataGridView();
-            this.nroDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aberturaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechamentoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pedidoBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.trabalhofinalDataSet2 = new TrabalhoFinal.trabalhofinalDataSet2();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.bttNovoPedido = new System.Windows.Forms.Button();
-            this.trabalhofinalDataSet = new TrabalhoFinal.trabalhofinalDataSet();
-            this.pedidoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pedidoTableAdapter = new TrabalhoFinal.trabalhofinalDataSetTableAdapters.pedidoTableAdapter();
-            this.trabalhofinalDataSet1 = new TrabalhoFinal.trabalhofinalDataSet1();
-            this.pedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.pedidoTableAdapter1 = new TrabalhoFinal.trabalhofinalDataSet1TableAdapters.pedidoTableAdapter();
-            this.pedidoTableAdapter2 = new TrabalhoFinal.trabalhofinalDataSet2TableAdapters.pedidoTableAdapter();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabGerenciamento = new System.Windows.Forms.TabPage();
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
@@ -74,6 +59,7 @@
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCaixa.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -82,15 +68,8 @@
             this.tabTelaPedido.SuspendLayout();
             this.panDGPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.tabGerenciamento.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -137,6 +116,18 @@
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-4, 343);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(776, 69);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -303,67 +294,14 @@
             // 
             // dgPedidos
             // 
-            this.dgPedidos.AutoGenerateColumns = false;
             this.dgPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.nroDataGridViewTextBoxColumn,
-            this.aberturaDataGridViewTextBoxColumn,
-            this.fechamentoDataGridViewTextBoxColumn,
-            this.totalDataGridViewTextBoxColumn,
-            this.clienteDataGridViewTextBoxColumn});
-            this.dgPedidos.DataSource = this.pedidoBindingSource2;
             this.dgPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPedidos.Location = new System.Drawing.Point(0, 0);
             this.dgPedidos.Name = "dgPedidos";
             this.dgPedidos.ReadOnly = true;
             this.dgPedidos.Size = new System.Drawing.Size(764, 220);
             this.dgPedidos.TabIndex = 0;
-            // 
-            // nroDataGridViewTextBoxColumn
-            // 
-            this.nroDataGridViewTextBoxColumn.DataPropertyName = "nro";
-            this.nroDataGridViewTextBoxColumn.HeaderText = "nro";
-            this.nroDataGridViewTextBoxColumn.Name = "nroDataGridViewTextBoxColumn";
-            this.nroDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // aberturaDataGridViewTextBoxColumn
-            // 
-            this.aberturaDataGridViewTextBoxColumn.DataPropertyName = "abertura";
-            this.aberturaDataGridViewTextBoxColumn.HeaderText = "abertura";
-            this.aberturaDataGridViewTextBoxColumn.Name = "aberturaDataGridViewTextBoxColumn";
-            this.aberturaDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // fechamentoDataGridViewTextBoxColumn
-            // 
-            this.fechamentoDataGridViewTextBoxColumn.DataPropertyName = "fechamento";
-            this.fechamentoDataGridViewTextBoxColumn.HeaderText = "fechamento";
-            this.fechamentoDataGridViewTextBoxColumn.Name = "fechamentoDataGridViewTextBoxColumn";
-            this.fechamentoDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // totalDataGridViewTextBoxColumn
-            // 
-            this.totalDataGridViewTextBoxColumn.DataPropertyName = "total";
-            this.totalDataGridViewTextBoxColumn.HeaderText = "total";
-            this.totalDataGridViewTextBoxColumn.Name = "totalDataGridViewTextBoxColumn";
-            this.totalDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // clienteDataGridViewTextBoxColumn
-            // 
-            this.clienteDataGridViewTextBoxColumn.DataPropertyName = "cliente";
-            this.clienteDataGridViewTextBoxColumn.HeaderText = "cliente";
-            this.clienteDataGridViewTextBoxColumn.Name = "clienteDataGridViewTextBoxColumn";
-            this.clienteDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // pedidoBindingSource2
-            // 
-            this.pedidoBindingSource2.DataMember = "pedido";
-            this.pedidoBindingSource2.DataSource = this.trabalhofinalDataSet2;
-            // 
-            // trabalhofinalDataSet2
-            // 
-            this.trabalhofinalDataSet2.DataSetName = "trabalhofinalDataSet2";
-            this.trabalhofinalDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // pictureBox5
             // 
@@ -400,50 +338,6 @@
             this.bttNovoPedido.Text = "Novo Pedido";
             this.bttNovoPedido.UseVisualStyleBackColor = false;
             this.bttNovoPedido.Click += new System.EventHandler(this.button2_Click_2);
-            // 
-            // trabalhofinalDataSet
-            // 
-            this.trabalhofinalDataSet.DataSetName = "trabalhofinalDataSet";
-            this.trabalhofinalDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pedidoBindingSource
-            // 
-            this.pedidoBindingSource.DataMember = "pedido";
-            this.pedidoBindingSource.DataSource = this.trabalhofinalDataSet;
-            // 
-            // pedidoTableAdapter
-            // 
-            this.pedidoTableAdapter.ClearBeforeFill = true;
-            // 
-            // trabalhofinalDataSet1
-            // 
-            this.trabalhofinalDataSet1.DataSetName = "trabalhofinalDataSet1";
-            this.trabalhofinalDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // pedidoBindingSource1
-            // 
-            this.pedidoBindingSource1.DataMember = "pedido";
-            this.pedidoBindingSource1.DataSource = this.trabalhofinalDataSet1;
-            // 
-            // pedidoTableAdapter1
-            // 
-            this.pedidoTableAdapter1.ClearBeforeFill = true;
-            // 
-            // pedidoTableAdapter2
-            // 
-            this.pedidoTableAdapter2.ClearBeforeFill = true;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-4, 343);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(776, 69);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
             // 
             // tabGerenciamento
             // 
@@ -511,6 +405,7 @@
             this.TabInicio.ResumeLayout(false);
             this.TabInicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCaixa.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -520,15 +415,8 @@
             this.tabTelaPedido.ResumeLayout(false);
             this.panDGPedidos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.tabGerenciamento.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -556,21 +444,7 @@
         private System.Windows.Forms.Label lblAbertura;
         private System.Windows.Forms.Label lblAbertoEm;
         private System.Windows.Forms.Panel panDGPedidos;
-        private trabalhofinalDataSet trabalhofinalDataSet;
-        private System.Windows.Forms.BindingSource pedidoBindingSource;
-        private trabalhofinalDataSetTableAdapters.pedidoTableAdapter pedidoTableAdapter;
         private System.Windows.Forms.DataGridView dgPedidos;
-        private trabalhofinalDataSet1 trabalhofinalDataSet1;
-        private System.Windows.Forms.BindingSource pedidoBindingSource1;
-        private trabalhofinalDataSet1TableAdapters.pedidoTableAdapter pedidoTableAdapter1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn aberturaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechamentoDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clienteDataGridViewTextBoxColumn;
-        private trabalhofinalDataSet2 trabalhofinalDataSet2;
-        private System.Windows.Forms.BindingSource pedidoBindingSource2;
-        private trabalhofinalDataSet2TableAdapters.pedidoTableAdapter pedidoTableAdapter2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.TabPage tabGerenciamento;
