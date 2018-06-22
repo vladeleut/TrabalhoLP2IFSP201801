@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,6 +51,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
+            this.mtxtDDD = new System.Windows.Forms.MaskedTextBox();
+            this.mtxtTelCliente = new System.Windows.Forms.MaskedTextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -76,13 +77,6 @@
             this.label3.Size = new System.Drawing.Size(70, 15);
             this.label3.TabIndex = 2;
             this.label3.Text = "Telefone";
-            // 
-            // txtTelefone
-            // 
-            this.txtTelefone.Location = new System.Drawing.Point(122, 7);
-            this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(145, 20);
-            this.txtTelefone.TabIndex = 3;
             // 
             // label4
             // 
@@ -146,6 +140,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.mtxtTelCliente);
+            this.panel1.Controls.Add(this.mtxtDDD);
             this.panel1.Controls.Add(this.txtObservacao);
             this.panel1.Controls.Add(this.txtReferencia);
             this.panel1.Controls.Add(this.txtComplemento);
@@ -153,7 +149,6 @@
             this.panel1.Controls.Add(this.txtLogradouro);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtTelefone);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label8);
@@ -198,14 +193,14 @@
             this.txtLogradouro.Location = new System.Drawing.Point(122, 64);
             this.txtLogradouro.Name = "txtLogradouro";
             this.txtLogradouro.Size = new System.Drawing.Size(145, 20);
-            this.txtLogradouro.TabIndex = 11;
+            this.txtLogradouro.TabIndex = 3;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(122, 33);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(145, 20);
-            this.txtNome.TabIndex = 10;
+            this.txtNome.TabIndex = 2;
             // 
             // button1
             // 
@@ -293,6 +288,24 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // mtxtDDD
+            // 
+            this.mtxtDDD.Location = new System.Drawing.Point(122, 7);
+            this.mtxtDDD.Mask = "(00)";
+            this.mtxtDDD.Name = "mtxtDDD";
+            this.mtxtDDD.Size = new System.Drawing.Size(25, 20);
+            this.mtxtDDD.TabIndex = 16;
+            // 
+            // mtxtTelCliente
+            // 
+            this.mtxtTelCliente.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold);
+            this.mtxtTelCliente.Location = new System.Drawing.Point(153, 7);
+            this.mtxtTelCliente.Mask = "00000-0000";
+            this.mtxtTelCliente.Name = "mtxtTelCliente";
+            this.mtxtTelCliente.Size = new System.Drawing.Size(114, 23);
+            this.mtxtTelCliente.TabIndex = 17;
+            this.mtxtTelCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // TelaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,6 +322,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TelaPedido";
             this.Text = "TelaPedido";
+            this.Load += new System.EventHandler(this.TelaPedido_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -322,7 +336,6 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtTelefone;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
@@ -344,5 +357,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MaskedTextBox mtxtTelCliente;
+        private System.Windows.Forms.MaskedTextBox mtxtDDD;
     }
 }

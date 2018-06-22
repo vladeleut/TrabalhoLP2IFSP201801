@@ -54,5 +54,13 @@ namespace TrabalhoFinal
             outro.StartPosition = FormStartPosition.CenterScreen;
             outro.ShowDialog();
         }
+
+        private void TelaPedido_Load(object sender, EventArgs e)
+        {
+            mtxtDDD.Text = "16";
+            //carregar lista para o tel
+        }
+
+        
     }
 }

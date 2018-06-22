@@ -12,7 +12,7 @@ namespace TrabalhoFinal
     {
         private static MySqlConnection conn;
         private static Database instance;
-        private const string connString = "Server = localhost; Database = TrabalhoFinal; Uid = root; Pwd = admin;";
+        private const string connString = "Server = localhost; Database = delivery; Uid = root; Pwd = admin;";
 
         private Database()
         {
@@ -68,17 +68,17 @@ namespace TrabalhoFinal
                 MySqlCommand comm;//gera comandos através da conexão (?)
                 StringBuilder qry = new StringBuilder();
 
-                qry.AppendLine("create database if not exists TrabalhoFinal");
+                qry.AppendLine("create database if not exists delivery");
 
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
 
                 //use database
-                conn.ChangeDatabase("TrabalhoFinal");
+                conn.ChangeDatabase("delivery");
 
                 qry.Clear();
                 qry.AppendLine("create table if not exists cliente(");
-                qry.AppendLine("codigo int not null auto_increment,");
+                qry.AppendLine("codigo int auto_increment,");
                 qry.AppendLine("telefone varchar(14) not null,");
                 qry.AppendLine("nome varchar(80),");
                 qry.AppendLine("logradouro varchar(150),");
@@ -102,17 +102,17 @@ namespace TrabalhoFinal
                 comm.ExecuteNonQuery();
 
 
-/*
+
                 qry.Clear();
                 qry.AppendLine("create table if not exists pedido(");
                 qry.AppendLine("nro_pedido int auto_increment,");
-                qry.AppendLine("aberturaPedido varchar(2A0),");
+                qry.AppendLine("aberturaPedido varchar(20),");
                 qry.AppendLine("fechamentoPedido varchar(20),");
                 qry.AppendLine("total float,");
                 qry.AppendLine("constraint pedido_pk primary key(nro_pedido));");
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
-                */
+                
             }
             catch (Exception e )
             {

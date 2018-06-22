@@ -13,7 +13,7 @@ namespace TrabalhoFinal
         {
             Database dbDelivery = Database.GetInstance();
 
-            string qry = "insert into cliente (Codigo, telefone, nome, logradouro, bairro, complemento, referencia, observacao) values (@Codigo,@Telefone, @Nome, @Logradouro, @Bairro, @Complemento, @Referencia, @Observacao)";
+            string qry = "insert into cliente (telefone, nome, logradouro, bairro, complemento, referencia, observacao) values (@Telefone, @Nome, @Logradouro, @Bairro, @Complemento, @Referencia, @Observacao)";
 
             MySqlCommand comm = new MySqlCommand(qry); //seta parâmetros
             comm.Parameters.AddWithValue("@Nome", cliente.Nome);
@@ -27,7 +27,7 @@ namespace TrabalhoFinal
             dbDelivery.ExecuteSQL(comm);
         }
 
-        public Cliente Read(int codigo)
+        public Cliente Read(string tel)
         {
             MySqlConnection conn = Database.GetInstance().GetConnection();
             Cliente cliente = null;
@@ -35,9 +35,9 @@ namespace TrabalhoFinal
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = "Select codigo,telefone, nome, logradouro, bairro, complemento, referencia, observacao from cliente where codigo = @Codigo";
+            string qry = "Select codigo, telefone, nome, logradouro, bairro, complemento, referencia, observacao from cliente where telefone like @Telefone";
             MySqlCommand comm = new MySqlCommand(qry, conn);
-            comm.Parameters.AddWithValue("@Codigo", codigo);
+            comm.Parameters.AddWithValue("@Telefone", tel);
 
             MySqlDataReader dr = comm.ExecuteReader();
 

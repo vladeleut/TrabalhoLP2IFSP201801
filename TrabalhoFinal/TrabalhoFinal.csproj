@@ -81,6 +81,12 @@
     <Compile Include="Database.cs" />
     <Compile Include="PedidoDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />
+    <Compile Include="TelaCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaCliente.Designer.cs">
+      <DependentUpon>TelaCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="TelaPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </Compile>
     <EmbeddedResource Include="TelaCadastroProduto.resx">
       <DependentUpon>TelaCadastroProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaCliente.resx">
+      <DependentUpon>TelaCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TelaPrincipal.resx">
       <DependentUpon>TelaPrincipal.cs</DependentUpon>

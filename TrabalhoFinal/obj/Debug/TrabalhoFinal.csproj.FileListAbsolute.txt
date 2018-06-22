@@ -84,3 +84,4 @@ C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFina
 C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.application
 C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaOutros.resources
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaOutros.resources
+C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaCliente.resources

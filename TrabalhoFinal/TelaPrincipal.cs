@@ -95,5 +95,12 @@ namespace TrabalhoFinal
             TelaProd.StartPosition = FormStartPosition.CenterScreen;
             TelaProd.ShowDialog();
         }
+
+        private void btnCliente_Click(object sender, EventArgs e)
+        {
+            TelaCliente TelaCli = new TelaCliente();
+            TelaCli.StartPosition = FormStartPosition.CenterScreen;
+            TelaCli.ShowDialog();
+        }
     }
 }
