@@ -77,7 +77,7 @@ namespace TrabalhoFinal
                 conn.ChangeDatabase("delivery");
 
                 qry.Clear();
-                qry.AppendLine(" create table if not exists cliente(");
+                qry.AppendLine("create table if not exists cliente(");
                 qry.AppendLine("codigo int not null auto_increment,");
                 qry.AppendLine("telefone varchar(14) not null,");
                 qry.AppendLine("nome varchar(80),");
@@ -101,6 +101,8 @@ namespace TrabalhoFinal
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
 
+
+            
             }
             catch (Exception e )
             {

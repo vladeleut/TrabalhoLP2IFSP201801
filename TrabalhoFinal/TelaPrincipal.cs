@@ -16,6 +16,7 @@ namespace TrabalhoFinal
         {
             
             InitializeComponent();
+            TelaCadastroProduto TelaProd = new TelaCadastroProduto();
             this.WindowState = FormWindowState.Maximized;
             
         }
@@ -33,11 +34,12 @@ namespace TrabalhoFinal
             {
                 Caixa.getInstance().AbreCaixa();
                 MessageBox.Show("Caixa aberto com sucesso!!", "Operção concluida", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                //btnChamaProduto.Enabled = true;
             }
             lblAbertura.Text = Caixa.getInstance().Abertura.ToString();
             
+
            
-            //TabInicio.SelectedTab = tabPage2;
 
         }
 

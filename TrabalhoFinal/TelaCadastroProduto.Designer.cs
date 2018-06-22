@@ -36,7 +36,7 @@
             this.txtCodigoProd = new System.Windows.Forms.TextBox();
             this.txtPrecoProd = new System.Windows.Forms.TextBox();
             this.txtNomeProd = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnTelaProdCancela = new System.Windows.Forms.Button();
             this.panProdutos = new System.Windows.Forms.Panel();
             this.lblPesqProd = new System.Windows.Forms.Label();
             this.dgListaProd = new System.Windows.Forms.DataGridView();
@@ -46,7 +46,8 @@
             this.dgProdColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaProdutos = new System.Windows.Forms.TextBox();
             this.btnEditarProd = new System.Windows.Forms.Button();
-            this.txtTipoProd = new System.Windows.Forms.TextBox();
+            this.cbTipoProd = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaProd)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +55,7 @@
             // btnCadastraProduto
             // 
             this.btnCadastraProduto.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastraProduto.Location = new System.Drawing.Point(36, 233);
+            this.btnCadastraProduto.Location = new System.Drawing.Point(38, 209);
             this.btnCadastraProduto.Name = "btnCadastraProduto";
             this.btnCadastraProduto.Size = new System.Drawing.Size(101, 35);
             this.btnCadastraProduto.TabIndex = 0;
@@ -66,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(33, 33);
+            this.label1.Location = new System.Drawing.Point(62, 34);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 18);
             this.label1.TabIndex = 1;
@@ -76,7 +77,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 77);
+            this.label2.Location = new System.Drawing.Point(52, 77);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 18);
             this.label2.TabIndex = 2;
@@ -86,7 +87,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(35, 119);
+            this.label3.Location = new System.Drawing.Point(54, 119);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 18);
             this.label3.TabIndex = 3;
@@ -106,32 +107,34 @@
             // 
             this.txtCodigoProd.Location = new System.Drawing.Point(115, 159);
             this.txtCodigoProd.Name = "txtCodigoProd";
+            this.txtCodigoProd.ReadOnly = true;
             this.txtCodigoProd.Size = new System.Drawing.Size(70, 20);
-            this.txtCodigoProd.TabIndex = 6;
+            this.txtCodigoProd.TabIndex = 3;
             // 
             // txtPrecoProd
             // 
             this.txtPrecoProd.Location = new System.Drawing.Point(115, 117);
             this.txtPrecoProd.Name = "txtPrecoProd";
             this.txtPrecoProd.Size = new System.Drawing.Size(70, 20);
-            this.txtPrecoProd.TabIndex = 7;
+            this.txtPrecoProd.TabIndex = 2;
             // 
             // txtNomeProd
             // 
             this.txtNomeProd.Location = new System.Drawing.Point(115, 78);
             this.txtNomeProd.Name = "txtNomeProd";
             this.txtNomeProd.Size = new System.Drawing.Size(145, 20);
-            this.txtNomeProd.TabIndex = 8;
+            this.txtNomeProd.TabIndex = 1;
             // 
-            // button2
+            // btnTelaProdCancela
             // 
-            this.button2.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(196, 233);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(100, 35);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnTelaProdCancela.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTelaProdCancela.Location = new System.Drawing.Point(198, 209);
+            this.btnTelaProdCancela.Name = "btnTelaProdCancela";
+            this.btnTelaProdCancela.Size = new System.Drawing.Size(100, 35);
+            this.btnTelaProdCancela.TabIndex = 5;
+            this.btnTelaProdCancela.Text = "Cancelar";
+            this.btnTelaProdCancela.UseVisualStyleBackColor = true;
+            this.btnTelaProdCancela.Click += new System.EventHandler(this.btnTelaProdCancela_Click);
             // 
             // panProdutos
             // 
@@ -157,7 +160,6 @@
             // 
             this.dgListaProd.AllowUserToAddRows = false;
             this.dgListaProd.AllowUserToDeleteRows = false;
-            this.dgListaProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgListaProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgListaProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgProdColTipo,
@@ -169,30 +171,36 @@
             this.dgListaProd.ReadOnly = true;
             this.dgListaProd.Size = new System.Drawing.Size(483, 265);
             this.dgListaProd.TabIndex = 1;
+            this.dgListaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaProd_MouseClick);
+            this.dgListaProd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaProd_CellContentDoubleClick);
             // 
             // dgProdColTipo
             // 
             this.dgProdColTipo.HeaderText = "Tipo";
             this.dgProdColTipo.Name = "dgProdColTipo";
             this.dgProdColTipo.ReadOnly = true;
+            this.dgProdColTipo.Width = 110;
             // 
             // dgProdColCodigo
             // 
             this.dgProdColCodigo.HeaderText = "Código";
             this.dgProdColCodigo.Name = "dgProdColCodigo";
             this.dgProdColCodigo.ReadOnly = true;
+            this.dgProdColCodigo.Width = 110;
             // 
             // dgProdColNome
             // 
             this.dgProdColNome.HeaderText = "Nome";
             this.dgProdColNome.Name = "dgProdColNome";
             this.dgProdColNome.ReadOnly = true;
+            this.dgProdColNome.Width = 110;
             // 
             // dgProdColPreco
             // 
             this.dgProdColPreco.HeaderText = "Preço";
             this.dgProdColPreco.Name = "dgProdColPreco";
             this.dgProdColPreco.ReadOnly = true;
+            this.dgProdColPreco.Width = 110;
             // 
             // txtPesquisaProdutos
             // 
@@ -204,29 +212,41 @@
             // btnEditarProd
             // 
             this.btnEditarProd.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditarProd.Location = new System.Drawing.Point(115, 274);
+            this.btnEditarProd.Location = new System.Drawing.Point(38, 274);
             this.btnEditarProd.Name = "btnEditarProd";
             this.btnEditarProd.Size = new System.Drawing.Size(101, 35);
-            this.btnEditarProd.TabIndex = 11;
+            this.btnEditarProd.TabIndex = 6;
             this.btnEditarProd.Text = "Editar";
             this.btnEditarProd.UseVisualStyleBackColor = true;
             // 
-            // txtTipoProd
+            // cbTipoProd
             // 
-            this.txtTipoProd.Location = new System.Drawing.Point(115, 31);
-            this.txtTipoProd.Name = "txtTipoProd";
-            this.txtTipoProd.Size = new System.Drawing.Size(145, 20);
-            this.txtTipoProd.TabIndex = 12;
+            this.cbTipoProd.FormattingEnabled = true;
+            this.cbTipoProd.Location = new System.Drawing.Point(115, 34);
+            this.cbTipoProd.Name = "cbTipoProd";
+            this.cbTipoProd.Size = new System.Drawing.Size(145, 21);
+            this.cbTipoProd.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(197, 274);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(101, 35);
+            this.button1.TabIndex = 11;
+            this.button1.Text = "Editar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // TelaCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 321);
-            this.Controls.Add(this.txtTipoProd);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.cbTipoProd);
             this.Controls.Add(this.btnEditarProd);
             this.Controls.Add(this.panProdutos);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnTelaProdCancela);
             this.Controls.Add(this.txtNomeProd);
             this.Controls.Add(this.txtPrecoProd);
             this.Controls.Add(this.txtCodigoProd);
@@ -256,7 +276,7 @@
         private System.Windows.Forms.TextBox txtCodigoProd;
         private System.Windows.Forms.TextBox txtPrecoProd;
         private System.Windows.Forms.TextBox txtNomeProd;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnTelaProdCancela;
         private System.Windows.Forms.Panel panProdutos;
         private System.Windows.Forms.DataGridView dgListaProd;
         private System.Windows.Forms.TextBox txtPesquisaProdutos;
@@ -266,6 +286,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColPreco;
         private System.Windows.Forms.Button btnEditarProd;
         private System.Windows.Forms.Label lblPesqProd;
-        private System.Windows.Forms.TextBox txtTipoProd;
+        private System.Windows.Forms.ComboBox cbTipoProd;
+        private System.Windows.Forms.Button button1;
     }
 }

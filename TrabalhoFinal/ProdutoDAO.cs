@@ -23,7 +23,7 @@ namespace TrabalhoFinal
             dbDelivery.ExecuteSQL(comm);
         }
 
-        /*public Produto Read(int codigo)
+        public Produto Read(int codigo)
         {
             MySqlConnection conn = Database.GetInstance().GetConnection();
             Produto prod = null;
@@ -31,7 +31,7 @@ namespace TrabalhoFinal
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = "Select * from produto where codigo = @Codigo";
+            string qry = "Select codigo, nome, preco, tipo from produto where codigo = @Codigo";
             MySqlCommand comm = new MySqlCommand(qry, conn);
             comm.Parameters.AddWithValue("@Codigo", codigo);
 
@@ -51,10 +51,33 @@ namespace TrabalhoFinal
             conn.Close();
 
             return prod;
-        }*/
+        }
 
-        //Delete
-        //Update
+        public void Delete(int cod)
+        {
+            Database dbDelivery = Database.GetInstance();
+
+            string qry = "DELETE from produto where codigo = @cod";
+
+            MySqlCommand comm = new MySqlCommand(qry); //seta parâmetros
+            comm.Parameters.AddWithValue("@cod", cod);
+
+            dbDelivery.ExecuteSQL(comm);
+        }
+        
+        public void Update(Produto prod)
+        {
+            Database dbDelivery = Database.GetInstance();
+            String qry = "UPDATE produto set nome = @Nome, tipo = @Tipo, preco = @Preco where codigo = @Codigo;";
+
+            MySqlCommand comm = new MySqlCommand(qry);
+
+            comm.Parameters.AddWithValue("@Nome", prod.Nome);
+            comm.Parameters.AddWithValue("@Tipo", prod.Tipo);
+            comm.Parameters.AddWithValue("@Preco", prod.Preco);
+
+            dbDelivery.ExecuteSQL(comm);
+        }
 
         public List<Produto> listaProdutos()
         {
@@ -65,7 +88,7 @@ namespace TrabalhoFinal
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = "Select * from produto";
+            string qry = "Select codigo, nome, preco, tipo from produto";
             MySqlCommand comm = new MySqlCommand(qry, conn);
 
             MySqlDataReader dr = comm.ExecuteReader();
@@ -76,7 +99,7 @@ namespace TrabalhoFinal
                 Produto prod = new Produto();
                 prod.Codigo = dr.GetInt32(0);
                 prod.Nome = dr.GetString(1);
-                prod.Preco = dr.GetString(2);   //dr.GetFloat(2);
+                prod.Preco = dr.GetString(2);
                 prod.Tipo = dr.GetString(3);
 
 

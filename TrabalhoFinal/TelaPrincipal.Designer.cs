@@ -33,7 +33,6 @@
             this.tabGeral = new System.Windows.Forms.TabControl();
             this.TabInicio = new System.Windows.Forms.TabPage();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnAbreCaixa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -67,11 +66,14 @@
             this.pedidoBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.pedidoTableAdapter1 = new TrabalhoFinal.trabalhofinalDataSet1TableAdapters.pedidoTableAdapter();
             this.pedidoTableAdapter2 = new TrabalhoFinal.trabalhofinalDataSet2TableAdapters.pedidoTableAdapter();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.tabGerenciamento = new System.Windows.Forms.TabPage();
+            this.btnVendas = new System.Windows.Forms.Button();
+            this.btnCliente = new System.Windows.Forms.Button();
             this.btnChamaProduto = new System.Windows.Forms.Button();
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabCaixa.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,6 +90,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabGerenciamento.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabGeral
@@ -98,6 +102,7 @@
             this.tabGeral.Controls.Add(this.TabInicio);
             this.tabGeral.Controls.Add(this.tabCaixa);
             this.tabGeral.Controls.Add(this.tabTelaPedido);
+            this.tabGeral.Controls.Add(this.tabGerenciamento);
             this.tabGeral.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabGeral.Location = new System.Drawing.Point(12, 12);
             this.tabGeral.Name = "tabGeral";
@@ -109,7 +114,6 @@
             // 
             this.TabInicio.BackColor = System.Drawing.Color.White;
             this.TabInicio.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.TabInicio.Controls.Add(this.btnChamaProduto);
             this.TabInicio.Controls.Add(this.pictureBox4);
             this.TabInicio.Controls.Add(this.pictureBox3);
             this.TabInicio.Controls.Add(this.pictureBox1);
@@ -134,18 +138,6 @@
             this.pictureBox4.TabIndex = 9;
             this.pictureBox4.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(-4, 343);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(776, 69);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 8;
-            this.pictureBox3.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -165,7 +157,7 @@
             this.btnAbreCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnAbreCaixa.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAbreCaixa.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAbreCaixa.Location = new System.Drawing.Point(280, 267);
+            this.btnAbreCaixa.Location = new System.Drawing.Point(300, 267);
             this.btnAbreCaixa.Name = "btnAbreCaixa";
             this.btnAbreCaixa.Size = new System.Drawing.Size(191, 70);
             this.btnAbreCaixa.TabIndex = 3;
@@ -441,16 +433,67 @@
             // 
             this.pedidoTableAdapter2.ClearBeforeFill = true;
             // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(-4, 343);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(776, 69);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 8;
+            this.pictureBox3.TabStop = false;
+            // 
+            // tabGerenciamento
+            // 
+            this.tabGerenciamento.Controls.Add(this.btnVendas);
+            this.tabGerenciamento.Controls.Add(this.btnCliente);
+            this.tabGerenciamento.Controls.Add(this.btnChamaProduto);
+            this.tabGerenciamento.Location = new System.Drawing.Point(4, 24);
+            this.tabGerenciamento.Name = "tabGerenciamento";
+            this.tabGerenciamento.Padding = new System.Windows.Forms.Padding(3);
+            this.tabGerenciamento.Size = new System.Drawing.Size(768, 420);
+            this.tabGerenciamento.TabIndex = 3;
+            this.tabGerenciamento.Text = "Gerenciar";
+            this.tabGerenciamento.UseVisualStyleBackColor = true;
+            // 
+            // btnVendas
+            // 
+            this.btnVendas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVendas.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.Location = new System.Drawing.Point(272, 241);
+            this.btnVendas.Name = "btnVendas";
+            this.btnVendas.Size = new System.Drawing.Size(247, 39);
+            this.btnVendas.TabIndex = 15;
+            this.btnVendas.Text = "Mais Vendidos";
+            this.btnVendas.UseVisualStyleBackColor = false;
+            // 
+            // btnCliente
+            // 
+            this.btnCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCliente.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.Location = new System.Drawing.Point(272, 151);
+            this.btnCliente.Name = "btnCliente";
+            this.btnCliente.Size = new System.Drawing.Size(247, 39);
+            this.btnCliente.TabIndex = 14;
+            this.btnCliente.Text = "Clientes";
+            this.btnCliente.UseVisualStyleBackColor = false;
+            // 
             // btnChamaProduto
             // 
             this.btnChamaProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnChamaProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnChamaProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChamaProduto.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChamaProduto.Location = new System.Drawing.Point(567, 267);
+            this.btnChamaProduto.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChamaProduto.Location = new System.Drawing.Point(272, 196);
             this.btnChamaProduto.Name = "btnChamaProduto";
-            this.btnChamaProduto.Size = new System.Drawing.Size(191, 70);
-            this.btnChamaProduto.TabIndex = 10;
+            this.btnChamaProduto.Size = new System.Drawing.Size(247, 39);
+            this.btnChamaProduto.TabIndex = 13;
             this.btnChamaProduto.Text = "Produtos";
             this.btnChamaProduto.UseVisualStyleBackColor = false;
             this.btnChamaProduto.Click += new System.EventHandler(this.btnChamaProduto_Click);
@@ -468,7 +511,6 @@
             this.TabInicio.ResumeLayout(false);
             this.TabInicio.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabCaixa.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
@@ -486,6 +528,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trabalhofinalDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pedidoBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tabGerenciamento.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -502,7 +546,6 @@
         private System.Windows.Forms.Button bttNovoPedido;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -529,6 +572,10 @@
         private System.Windows.Forms.BindingSource pedidoBindingSource2;
         private trabalhofinalDataSet2TableAdapters.pedidoTableAdapter pedidoTableAdapter2;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.TabPage tabGerenciamento;
+        private System.Windows.Forms.Button btnVendas;
+        private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnChamaProduto;
     }
 }
