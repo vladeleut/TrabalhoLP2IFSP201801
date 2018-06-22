@@ -14,6 +14,7 @@ namespace TrabalhoFinal
         string telefone;
         string nome;
         string logradouro;
+        string bairro;
         string complemento;
         string referencia;
         string observacao;
@@ -25,5 +26,6 @@ namespace TrabalhoFinal
         public string Complemento { get { return complemento; } set { complemento = value; } }
         public string Referencia { get { return referencia; } set { referencia = value; } }
         public string Observacao { get { return observacao; } set { observacao = value; } }
+        public string  Bairro { get { return bairro; } set { bairro = value; } }
     }
 }

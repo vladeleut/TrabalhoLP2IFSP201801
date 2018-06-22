@@ -58,7 +58,7 @@
             this.btnCadastraProduto.Location = new System.Drawing.Point(38, 209);
             this.btnCadastraProduto.Name = "btnCadastraProduto";
             this.btnCadastraProduto.Size = new System.Drawing.Size(101, 35);
-            this.btnCadastraProduto.TabIndex = 0;
+            this.btnCadastraProduto.TabIndex = 3;
             this.btnCadastraProduto.Text = "Cadastrar";
             this.btnCadastraProduto.UseVisualStyleBackColor = true;
             this.btnCadastraProduto.Click += new System.EventHandler(this.btnCadastraProduto_Click);
@@ -207,7 +207,7 @@
             this.txtPesquisaProdutos.Location = new System.Drawing.Point(117, 6);
             this.txtPesquisaProdutos.Name = "txtPesquisaProdutos";
             this.txtPesquisaProdutos.Size = new System.Drawing.Size(358, 20);
-            this.txtPesquisaProdutos.TabIndex = 0;
+            this.txtPesquisaProdutos.TabIndex = 20;
             // 
             // btnEditarProd
             // 

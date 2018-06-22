@@ -78,3 +78,8 @@ C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\Traba
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\bin\Debug\TrabalhoFinal.application
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.exe.manifest
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.application
+C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\bin\Debug\TrabalhoFinal.exe.manifest
+C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\bin\Debug\TrabalhoFinal.application
+C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.exe.manifest
+C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.application
+C:\Users\mgobb\Documents\TrabalhoLP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaOutros.resources

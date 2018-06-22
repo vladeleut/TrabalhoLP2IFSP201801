@@ -265,6 +265,7 @@
             this.bttAdcOutro.TabIndex = 24;
             this.bttAdcOutro.Text = "Adicionar Outros";
             this.bttAdcOutro.UseVisualStyleBackColor = false;
+            this.bttAdcOutro.Click += new System.EventHandler(this.bttAdcOutro_Click);
             // 
             // panel2
             // 

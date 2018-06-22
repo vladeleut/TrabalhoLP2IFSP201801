@@ -51,6 +51,7 @@ namespace TrabalhoFinal
         private void button2_Click_2(object sender, EventArgs e)
         {
             TelaPedido pedido = new TelaPedido();
+            pedido.StartPosition = FormStartPosition.CenterScreen;
             pedido.Show();
         }
 
@@ -95,6 +96,7 @@ namespace TrabalhoFinal
         private void btnChamaProduto_Click(object sender, EventArgs e)
         {
             TelaCadastroProduto TelaProd = new TelaCadastroProduto();
+            TelaProd.StartPosition = FormStartPosition.CenterScreen;
             TelaProd.ShowDialog();
         }
     }

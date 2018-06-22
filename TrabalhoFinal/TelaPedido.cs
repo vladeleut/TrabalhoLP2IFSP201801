@@ -20,7 +20,9 @@ namespace TrabalhoFinal
         private void button4_Click(object sender, EventArgs e)
         {
             TelaPizza pizza = new TelaPizza();
+            pizza.StartPosition = FormStartPosition.CenterScreen;
             pizza.ShowDialog();
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -35,17 +37,22 @@ namespace TrabalhoFinal
         private void bttAdcLanche_Click(object sender, EventArgs e)
         {
             TelaLanche lanche = new TelaLanche();
+            lanche.StartPosition = FormStartPosition.CenterScreen;
             lanche.ShowDialog();
         }
 
         private void bttAdcBebida_Click(object sender, EventArgs e)
         {
             TelaBebida bebida = new TelaBebida();
+            bebida.StartPosition = FormStartPosition.CenterScreen;
             bebida.ShowDialog();
         }
 
-      
-
-       
+        private void bttAdcOutro_Click(object sender, EventArgs e)
+        {
+            TelaOutros outro = new TelaOutros();
+            outro.StartPosition = FormStartPosition.CenterScreen;
+            outro.ShowDialog();
+        }
     }
 }
