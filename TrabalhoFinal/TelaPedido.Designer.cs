@@ -32,15 +32,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.mtxtDDD = new System.Windows.Forms.MaskedTextBox();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.txtReferencia = new System.Windows.Forms.TextBox();
             this.txtComplemento = new System.Windows.Forms.TextBox();
-            this.txtNumero = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -51,8 +50,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
-            this.mtxtDDD = new System.Windows.Forms.MaskedTextBox();
-            this.mtxtTelCliente = new System.Windows.Forms.MaskedTextBox();
+            this.cbPeditoTelCliente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -98,16 +96,6 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Logradouro";
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(44, 94);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(62, 15);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Número";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -140,12 +128,11 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.mtxtTelCliente);
+            this.panel1.Controls.Add(this.cbPeditoTelCliente);
             this.panel1.Controls.Add(this.mtxtDDD);
             this.panel1.Controls.Add(this.txtObservacao);
             this.panel1.Controls.Add(this.txtReferencia);
             this.panel1.Controls.Add(this.txtComplemento);
-            this.panel1.Controls.Add(this.txtNumero);
             this.panel1.Controls.Add(this.txtLogradouro);
             this.panel1.Controls.Add(this.txtNome);
             this.panel1.Controls.Add(this.label3);
@@ -154,11 +141,18 @@
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label6);
             this.panel1.Location = new System.Drawing.Point(596, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(272, 213);
             this.panel1.TabIndex = 10;
+            // 
+            // mtxtDDD
+            // 
+            this.mtxtDDD.Location = new System.Drawing.Point(122, 7);
+            this.mtxtDDD.Mask = "(00)";
+            this.mtxtDDD.Name = "mtxtDDD";
+            this.mtxtDDD.Size = new System.Drawing.Size(25, 20);
+            this.mtxtDDD.TabIndex = 16;
             // 
             // txtObservacao
             // 
@@ -180,13 +174,6 @@
             this.txtComplemento.Name = "txtComplemento";
             this.txtComplemento.Size = new System.Drawing.Size(145, 20);
             this.txtComplemento.TabIndex = 13;
-            // 
-            // txtNumero
-            // 
-            this.txtNumero.Location = new System.Drawing.Point(122, 94);
-            this.txtNumero.Name = "txtNumero";
-            this.txtNumero.Size = new System.Drawing.Size(145, 20);
-            this.txtNumero.TabIndex = 12;
             // 
             // txtLogradouro
             // 
@@ -288,23 +275,16 @@
             this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // mtxtDDD
+            // cbPeditoTelCliente
             // 
-            this.mtxtDDD.Location = new System.Drawing.Point(122, 7);
-            this.mtxtDDD.Mask = "(00)";
-            this.mtxtDDD.Name = "mtxtDDD";
-            this.mtxtDDD.Size = new System.Drawing.Size(25, 20);
-            this.mtxtDDD.TabIndex = 16;
-            // 
-            // mtxtTelCliente
-            // 
-            this.mtxtTelCliente.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold);
-            this.mtxtTelCliente.Location = new System.Drawing.Point(153, 7);
-            this.mtxtTelCliente.Mask = "00000-0000";
-            this.mtxtTelCliente.Name = "mtxtTelCliente";
-            this.mtxtTelCliente.Size = new System.Drawing.Size(114, 23);
-            this.mtxtTelCliente.TabIndex = 17;
-            this.mtxtTelCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.cbPeditoTelCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cbPeditoTelCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbPeditoTelCliente.FormattingEnabled = true;
+            this.cbPeditoTelCliente.Location = new System.Drawing.Point(153, 6);
+            this.cbPeditoTelCliente.Name = "cbPeditoTelCliente";
+            this.cbPeditoTelCliente.Size = new System.Drawing.Size(114, 21);
+            this.cbPeditoTelCliente.TabIndex = 17;
+            this.cbPeditoTelCliente.TextChanged += new System.EventHandler(this.cbPeditoTelCliente_TextChanged);
             // 
             // TelaPedido
             // 
@@ -338,7 +318,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
@@ -346,7 +325,6 @@
         private System.Windows.Forms.TextBox txtObservacao;
         private System.Windows.Forms.TextBox txtReferencia;
         private System.Windows.Forms.TextBox txtComplemento;
-        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button button1;
@@ -357,7 +335,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.MaskedTextBox mtxtTelCliente;
         private System.Windows.Forms.MaskedTextBox mtxtDDD;
+        private System.Windows.Forms.ComboBox cbPeditoTelCliente;
     }
 }
