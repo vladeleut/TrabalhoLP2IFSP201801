@@ -15,15 +15,10 @@ namespace TrabalhoFinal
         public TelaPedido()
         {
             InitializeComponent();
+            cbPeditoTelCliente.Select();//inicia a tela de pedido com o cursor no campo de telefone. é só digitar
         }
 
-        private void button4_Click(object sender, EventArgs e)
-        {
-            TelaPizza pizza = new TelaPizza();
-            pizza.StartPosition = FormStartPosition.CenterScreen;
-            pizza.ShowDialog();
-            
-        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             List<Cliente> clientes = new List<Cliente>();
@@ -115,22 +110,59 @@ namespace TrabalhoFinal
             cbPeditoTelCliente.Text = "-";
         }
 
+        
+
+        private void setDTO(Cliente c)
+        {
+            if(!(c is null))
+            {
+                txtComplemento.Text = c.Complemento;
+                txtLogradouro.Text = c.Logradouro;
+                txtNome.Text = c.Nome;
+                txtReferencia.Text = c.Referencia;
+                txtObservacao.Text = c.Observacao;
+            }
+            else
+            {
+                txtComplemento.Text = " ";
+                txtLogradouro.Text = " ";
+                txtNome.Text = " ";
+                txtReferencia.Text = " ";
+                txtObservacao.Text = " ";
+            }
+            
+        }
+        
+
         private void cbPeditoTelCliente_TextChanged(object sender, EventArgs e)
         {
+            
+            int flagClienteCadastrado; //vou definir se preciso cadastrar novo cliente
             ClienteDAO clienteDAO = new ClienteDAO();
             Cliente cli = clienteDAO.Read(cbPeditoTelCliente.Text);
 
             setDTO(cli);
 
+            if (cli.Logradouro is null || cli.Logradouro.Length < 4) // Se o cliente for cadastrado, teremos um retorno (não nulo) no retorno de Read
+                flagClienteCadastrado = 0; //não temos o cliente     //Caso contrário, podemos adicionar seus dados na tabela pois não temos.
+            else
+                flagClienteCadastrado = 1; //temos o cliente e não precisamos fazer nada
+
+            //return flagClienteCadastrado;
         }
 
-        private void setDTO(Cliente c)
+        private void btnCancelaTelaPedido_Click(object sender, EventArgs e) => Close();
+
+        private void btnPedidoAdicionaPizza_Click(object sender, EventArgs e)
         {
-            txtComplemento.Text = c.Complemento;
-            txtLogradouro.Text = c.Logradouro;
-            txtNome.Text = c.Nome;
-            txtReferencia.Text = c.Referencia;
-            txtObservacao.Text = c.Observacao;
+            TelaPizza pizza = new TelaPizza();
+            pizza.StartPosition = FormStartPosition.CenterScreen;
+            pizza.ShowDialog();
+        }
+
+        private void cbPeditoTelCliente_Leave(object sender, EventArgs e)
+        {
+            //if((cbPeditoTelCliente.Text.Length >=8)
         }
     }
 }

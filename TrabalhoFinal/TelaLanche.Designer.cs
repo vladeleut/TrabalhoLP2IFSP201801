@@ -28,10 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnAddPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.Lanche = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,6 +40,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
+            this.dgListaLanche = new System.Windows.Forms.DataGridView();
+            this.dgListaPizzaColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgListaPizzaColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgListaPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListaLanche)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAddPedido
@@ -67,15 +72,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Lanches:";
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 39);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(280, 387);
-            this.dataGridView1.TabIndex = 9;
-            
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -159,22 +155,60 @@
             this.btnCancelaPedido.UseVisualStyleBackColor = true;
             this.btnCancelaPedido.Click += new System.EventHandler(this.button2_Click);
             // 
+            // dgListaLanche
+            // 
+            this.dgListaLanche.AllowUserToAddRows = false;
+            this.dgListaLanche.AllowUserToDeleteRows = false;
+            this.dgListaLanche.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgListaLanche.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgListaLanche.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgListaPizzaColNome,
+            this.dgListaPizzaColPreco,
+            this.dgListaPizzaColCodigo});
+            this.dgListaLanche.Location = new System.Drawing.Point(12, 47);
+            this.dgListaLanche.Name = "dgListaLanche";
+            this.dgListaLanche.ReadOnly = true;
+            this.dgListaLanche.Size = new System.Drawing.Size(280, 390);
+            this.dgListaLanche.TabIndex = 16;
+            // 
+            // dgListaPizzaColNome
+            // 
+            this.dgListaPizzaColNome.HeaderText = "Nome";
+            this.dgListaPizzaColNome.Name = "dgListaPizzaColNome";
+            this.dgListaPizzaColNome.ReadOnly = true;
+            // 
+            // dgListaPizzaColPreco
+            // 
+            this.dgListaPizzaColPreco.HeaderText = "Preço";
+            this.dgListaPizzaColPreco.Name = "dgListaPizzaColPreco";
+            this.dgListaPizzaColPreco.ReadOnly = true;
+            // 
+            // dgListaPizzaColCodigo
+            // 
+            this.dgListaPizzaColCodigo.HeaderText = "Código";
+            this.dgListaPizzaColCodigo.Name = "dgListaPizzaColCodigo";
+            this.dgListaPizzaColCodigo.ReadOnly = true;
+            this.dgListaPizzaColCodigo.Visible = false;
+            // 
             // TelaLanche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 449);
+            this.Controls.Add(this.dgListaLanche);
             this.Controls.Add(this.btnCancelaPedido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAddPedido);
             this.Controls.Add(this.label1);
             this.Name = "TelaLanche";
             this.Text = "FormLanche";
             this.Load += new System.EventHandler(this.FormLanche_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgListaLanche)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -183,7 +217,6 @@
         #endregion
         private System.Windows.Forms.Button btnAddPedido;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Lanche;
         private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
@@ -194,6 +227,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnCancelaPedido;
-       
+        private System.Windows.Forms.DataGridView dgListaLanche;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgListaPizzaColNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgListaPizzaColPreco;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgListaPizzaColCodigo;
     }
 }

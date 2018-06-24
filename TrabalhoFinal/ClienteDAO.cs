@@ -54,6 +54,10 @@ namespace TrabalhoFinal
                 cliente.Observacao = dr.GetString(7);
 
             }
+            else
+            {
+                //
+            }
 
             dr.Close();
             conn.Close();
@@ -99,7 +103,7 @@ namespace TrabalhoFinal
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = "Select codigo,telefone, nome, logradouro, bairro, complemento, referencia, observacao from cliente";
+            string qry = "Select codigo, telefone, nome, logradouro, bairro, complemento, referencia, observacao from cliente";
             MySqlCommand comm = new MySqlCommand(qry, conn);
 
             MySqlDataReader dr = comm.ExecuteReader();

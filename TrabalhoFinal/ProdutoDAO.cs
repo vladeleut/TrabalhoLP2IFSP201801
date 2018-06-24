@@ -110,5 +110,45 @@ namespace TrabalhoFinal
             return listaProd;
         }
 
+        public List<Produto> ListaPorTipo(string tipo)
+        {
+            List<Produto> listaPorTipo = new List<Produto>();
+
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            String qry = "";
+
+            if (tipo.Equals("outros"))
+                qry = "Select codigo, nome, preco, tipo from produto where tipo not in ('lanche','pizza','bebida')  order by tipo, nome;";
+            else
+                qry = "Select codigo, nome, preco, tipo from produto where tipo like @Tipo order by nome;";
+            
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+
+            if(!tipo.Equals("outros"))
+                comm.Parameters.AddWithValue("@Tipo", tipo);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            //precisamos colocar as inf obtidas no objeto
+            while (dr.Read())
+            {
+                Produto prod = new Produto();
+                prod.Codigo = dr.GetInt32(0);
+                prod.Nome = dr.GetString(1);
+                prod.Preco = dr.GetString(2);
+                prod.Tipo = dr.GetString(3);
+
+                listaPorTipo.Add(prod);
+            }
+            dr.Close();
+            conn.Close();
+            return listaPorTipo;
+        }
+
+
     }
 }

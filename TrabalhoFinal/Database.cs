@@ -101,18 +101,28 @@ namespace TrabalhoFinal
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
 
-
-
                 qry.Clear();
-                qry.AppendLine("create table if not exists pedido(");
-                qry.AppendLine("nro_pedido int auto_increment,");
-                qry.AppendLine("aberturaPedido varchar(20),");
-                qry.AppendLine("fechamentoPedido varchar(20),");
-                qry.AppendLine("total float,");
-                qry.AppendLine("constraint pedido_pk primary key(nro_pedido));");
+                qry.AppendLine("create table if not exists pedido_dados(");
+                qry.AppendLine("nro int auto_increment,");
+                qry.AppendLine("aberturaPedido timestamp,");
+                qry.AppendLine("fechamentoPedido timestamp,");
+                qry.AppendLine("formaDePagto varchar(30),");
+                qry.AppendLine("constraint pedido_pk primary key(nro));");
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
-                
+
+                qry.Clear();
+                qry.AppendLine("create table if not exists pedido_itens(");
+                qry.AppendLine("id int auto_increment,");
+                qry.AppendLine("nro_pedido int,");
+                qry.AppendLine("cod_produto int,");
+                qry.AppendLine("qtde_produto float,");
+                qry.AppendLine("constraint pedido_itens_pk primary key(id),");
+                qry.AppendLine("constraint pedido_itens_dados_fk foreign key(nro_pedido) references pedido_dados(nro),");
+                qry.AppendLine("constraint pedido_itens_prod_fk foreign key(cod_produto) references produto(codigo));  ");
+
+                comm = new MySqlCommand(qry.ToString(), conn);
+                comm.ExecuteNonQuery();
             }
             catch (Exception e )
             {

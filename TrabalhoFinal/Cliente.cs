@@ -15,9 +15,9 @@ namespace TrabalhoFinal
         string nome;
         string logradouro;
         string bairro;
-        string complemento;
-        string referencia;
-        string observacao;
+        string complemento = " ";
+        string referencia = " ";
+        string observacao = " ";
         
         public int Codigo { get { return codigo; } set { codigo = value; } }
         public String Telefone { get { return telefone; } set { telefone = value; } }

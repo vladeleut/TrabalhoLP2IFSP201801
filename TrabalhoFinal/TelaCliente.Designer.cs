@@ -34,6 +34,10 @@
             this.panProdutos = new System.Windows.Forms.Panel();
             this.lblPesqProd = new System.Windows.Forms.Label();
             this.dgListaClientes = new System.Windows.Forms.DataGridView();
+            this.dgClienteColTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgClienteColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgClienteColEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgClienteColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaProdutos = new System.Windows.Forms.TextBox();
             this.btnTelaProdCancela = new System.Windows.Forms.Button();
             this.txtNomeCliente = new System.Windows.Forms.TextBox();
@@ -46,16 +50,13 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtObsCliente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dgClienteColTel = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgClienteColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgClienteColEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgClienteColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaClientes)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(163, 209);
             this.button1.Name = "button1";
@@ -72,11 +73,12 @@
             this.cbTelCliente.Location = new System.Drawing.Point(120, 45);
             this.cbTelCliente.Name = "cbTelCliente";
             this.cbTelCliente.Size = new System.Drawing.Size(145, 21);
-            this.cbTelCliente.TabIndex = 12;
+            this.cbTelCliente.TabIndex = 0;
             this.cbTelCliente.SelectionChangeCommitted += new System.EventHandler(this.cbTelCliente_SelectionChangeCommitted);
             // 
             // btnEditarProd
             // 
+            this.btnEditarProd.Enabled = false;
             this.btnEditarProd.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarProd.Location = new System.Drawing.Point(30, 274);
             this.btnEditarProd.Name = "btnEditarProd";
@@ -122,6 +124,31 @@
             this.dgListaClientes.Size = new System.Drawing.Size(578, 265);
             this.dgListaClientes.TabIndex = 1;
             // 
+            // dgClienteColTel
+            // 
+            this.dgClienteColTel.HeaderText = "Telefone";
+            this.dgClienteColTel.Name = "dgClienteColTel";
+            this.dgClienteColTel.ReadOnly = true;
+            // 
+            // dgClienteColNome
+            // 
+            this.dgClienteColNome.HeaderText = "Nome";
+            this.dgClienteColNome.Name = "dgClienteColNome";
+            this.dgClienteColNome.ReadOnly = true;
+            // 
+            // dgClienteColEndereco
+            // 
+            this.dgClienteColEndereco.HeaderText = "Endereço";
+            this.dgClienteColEndereco.Name = "dgClienteColEndereco";
+            this.dgClienteColEndereco.ReadOnly = true;
+            // 
+            // dgClienteColCodigo
+            // 
+            this.dgClienteColCodigo.HeaderText = "Código";
+            this.dgClienteColCodigo.Name = "dgClienteColCodigo";
+            this.dgClienteColCodigo.ReadOnly = true;
+            this.dgClienteColCodigo.Visible = false;
+            // 
             // txtPesquisaProdutos
             // 
             this.txtPesquisaProdutos.Location = new System.Drawing.Point(117, 6);
@@ -138,20 +165,21 @@
             this.btnTelaProdCancela.TabIndex = 21;
             this.btnTelaProdCancela.Text = "Cancelar";
             this.btnTelaProdCancela.UseVisualStyleBackColor = true;
+            this.btnTelaProdCancela.Click += new System.EventHandler(this.btnTelaProdCancela_Click);
             // 
             // txtNomeCliente
             // 
             this.txtNomeCliente.Location = new System.Drawing.Point(120, 73);
             this.txtNomeCliente.Name = "txtNomeCliente";
             this.txtNomeCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtNomeCliente.TabIndex = 13;
+            this.txtNomeCliente.TabIndex = 1;
             // 
             // txtEndCliente
             // 
             this.txtEndCliente.Location = new System.Drawing.Point(120, 99);
             this.txtEndCliente.Name = "txtEndCliente";
             this.txtEndCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtEndCliente.TabIndex = 15;
+            this.txtEndCliente.TabIndex = 2;
             // 
             // label3
             // 
@@ -189,7 +217,7 @@
             this.btnCadastraProduto.Location = new System.Drawing.Point(30, 209);
             this.btnCadastraProduto.Name = "btnCadastraProduto";
             this.btnCadastraProduto.Size = new System.Drawing.Size(101, 35);
-            this.btnCadastraProduto.TabIndex = 19;
+            this.btnCadastraProduto.TabIndex = 5;
             this.btnCadastraProduto.Text = "Cadastrar";
             this.btnCadastraProduto.UseVisualStyleBackColor = true;
             this.btnCadastraProduto.Click += new System.EventHandler(this.btnCadastraProduto_Click);
@@ -199,7 +227,7 @@
             this.txtBairroCliente.Location = new System.Drawing.Point(120, 125);
             this.txtBairroCliente.Name = "txtBairroCliente";
             this.txtBairroCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtBairroCliente.TabIndex = 25;
+            this.txtBairroCliente.TabIndex = 3;
             // 
             // label4
             // 
@@ -216,7 +244,7 @@
             this.txtObsCliente.Location = new System.Drawing.Point(120, 151);
             this.txtObsCliente.Name = "txtObsCliente";
             this.txtObsCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtObsCliente.TabIndex = 27;
+            this.txtObsCliente.TabIndex = 4;
             // 
             // label5
             // 
@@ -227,31 +255,6 @@
             this.label5.Size = new System.Drawing.Size(117, 18);
             this.label5.TabIndex = 28;
             this.label5.Text = "Observações";
-            // 
-            // dgClienteColTel
-            // 
-            this.dgClienteColTel.HeaderText = "Telefone";
-            this.dgClienteColTel.Name = "dgClienteColTel";
-            this.dgClienteColTel.ReadOnly = true;
-            // 
-            // dgClienteColNome
-            // 
-            this.dgClienteColNome.HeaderText = "Nome";
-            this.dgClienteColNome.Name = "dgClienteColNome";
-            this.dgClienteColNome.ReadOnly = true;
-            // 
-            // dgClienteColEndereco
-            // 
-            this.dgClienteColEndereco.HeaderText = "Endereço";
-            this.dgClienteColEndereco.Name = "dgClienteColEndereco";
-            this.dgClienteColEndereco.ReadOnly = true;
-            // 
-            // dgClienteColCodigo
-            // 
-            this.dgClienteColCodigo.HeaderText = "Código";
-            this.dgClienteColCodigo.Name = "dgClienteColCodigo";
-            this.dgClienteColCodigo.ReadOnly = true;
-            this.dgClienteColCodigo.Visible = false;
             // 
             // TelaCliente
             // 

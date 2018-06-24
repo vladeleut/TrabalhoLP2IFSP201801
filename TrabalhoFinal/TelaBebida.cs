@@ -43,8 +43,11 @@ namespace TrabalhoFinal
 
         private void FormBebida_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'trabalhofinalDataSet3.bebida'. Você pode movê-la ou removê-la conforme necessário.
+            ProdutoDAO bebidaDAO = new ProdutoDAO();
+            List<Produto> lista = bebidaDAO.ListaPorTipo("bebida");
 
+            foreach (Produto p in lista)
+                dgListaBebidas.Rows.Add(p.Nome, p.Preco, p.Codigo);
         }
     }
 }

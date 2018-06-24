@@ -22,14 +22,14 @@ namespace TrabalhoFinal
             Cliente cli = getDTO();
             ClienteDAO cliDAO = new ClienteDAO();
             cliDAO.Create(cli);
+            String endereco = cli.Logradouro;
 
-            /*
-            //atualiza o datagrid com a nova informação inserida. precisa atualizar o combo box. 
-            //limpa as informações inseridas.
-            dgListaProd.Rows.Add(prod.Tipo, prod.Codigo, prod.Nome, prod.Preco);
-            cbTipoProd.Text = "";
-            txtNomeProd.Text = "";
-            txtPrecoProd.Text = "";*/
+            if (!cli.Complemento.Equals(" "))
+                endereco += ", " + cli.Complemento; //se tiver complemento vem antes do bairro
+
+            endereco += ", " + cli.Bairro; //bairro sempre vai ter
+
+            dgListaClientes.Rows.Add(cli.Telefone, cli.Nome, endereco);
         }
 
 
@@ -62,8 +62,12 @@ namespace TrabalhoFinal
 
             foreach (Cliente c in lista)
             {
-                string endereco = "";
-                endereco = c.Logradouro + ", " + c.Complemento + ", " + c.Bairro + ", " + c.Observacao;
+                String endereco = c.Logradouro;
+
+                if (!c.Complemento.Equals(" "))
+                    endereco += ", " + c.Complemento; //se tiver complemento vem antes do bairro
+
+                endereco += ", " + c.Bairro;
                 dgListaClientes.Rows.Add(c.Telefone, c.Nome, endereco , c.Codigo);
 
                 if (!listaAux.Contains(c.Telefone))
@@ -84,5 +88,7 @@ namespace TrabalhoFinal
             setDTO(cliDAO.Read(tel));
             */
         }
+
+        private void btnTelaProdCancela_Click(object sender, EventArgs e) => Close();
     }
 }

@@ -16,26 +16,13 @@ namespace TrabalhoFinal
         {
             InitializeComponent();
         }
-
-      
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            
-            Close();
-                
-
-        }
-
-        private void btnCancelaPedido_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void FormPizza_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSetPizzas.pizza'. Você pode movê-la ou removê-la conforme necessário.
-            
+            ProdutoDAO pizzaDAO = new ProdutoDAO();
+            List<Produto> lista = pizzaDAO.ListaPorTipo("pizza");
 
-        }
+            foreach (Produto p in lista)
+                dgListaPizza.Rows.Add(p.Nome, p.Preco, p.Codigo);
+
+            }
     } }

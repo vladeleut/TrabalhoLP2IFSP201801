@@ -40,14 +40,14 @@
             this.panProdutos = new System.Windows.Forms.Panel();
             this.lblPesqProd = new System.Windows.Forms.Label();
             this.dgListaProd = new System.Windows.Forms.DataGridView();
-            this.dgProdColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProdColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProdColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgProdColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtPesquisaProdutos = new System.Windows.Forms.TextBox();
             this.btnEditarProd = new System.Windows.Forms.Button();
             this.cbTipoProd = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.dgProdColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProdColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProdColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgProdColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaProd)).BeginInit();
             this.SuspendLayout();
@@ -160,6 +160,7 @@
             // 
             this.dgListaProd.AllowUserToAddRows = false;
             this.dgListaProd.AllowUserToDeleteRows = false;
+            this.dgListaProd.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgListaProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgListaProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgProdColTipo,
@@ -174,39 +175,11 @@
             this.dgListaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaProd_MouseClick);
             this.dgListaProd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaProd_CellContentDoubleClick);
             // 
-            // dgProdColTipo
-            // 
-            this.dgProdColTipo.HeaderText = "Tipo";
-            this.dgProdColTipo.Name = "dgProdColTipo";
-            this.dgProdColTipo.ReadOnly = true;
-            this.dgProdColTipo.Width = 110;
-            // 
-            // dgProdColCodigo
-            // 
-            this.dgProdColCodigo.HeaderText = "Código";
-            this.dgProdColCodigo.Name = "dgProdColCodigo";
-            this.dgProdColCodigo.ReadOnly = true;
-            this.dgProdColCodigo.Width = 110;
-            // 
-            // dgProdColNome
-            // 
-            this.dgProdColNome.HeaderText = "Nome";
-            this.dgProdColNome.Name = "dgProdColNome";
-            this.dgProdColNome.ReadOnly = true;
-            this.dgProdColNome.Width = 110;
-            // 
-            // dgProdColPreco
-            // 
-            this.dgProdColPreco.HeaderText = "Preço";
-            this.dgProdColPreco.Name = "dgProdColPreco";
-            this.dgProdColPreco.ReadOnly = true;
-            this.dgProdColPreco.Width = 110;
-            // 
             // txtPesquisaProdutos
             // 
             this.txtPesquisaProdutos.Location = new System.Drawing.Point(117, 6);
             this.txtPesquisaProdutos.Name = "txtPesquisaProdutos";
-            this.txtPesquisaProdutos.Size = new System.Drawing.Size(358, 20);
+            this.txtPesquisaProdutos.Size = new System.Drawing.Size(366, 20);
             this.txtPesquisaProdutos.TabIndex = 20;
             // 
             // btnEditarProd
@@ -236,6 +209,31 @@
             this.button1.TabIndex = 11;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // dgProdColTipo
+            // 
+            this.dgProdColTipo.HeaderText = "Tipo";
+            this.dgProdColTipo.Name = "dgProdColTipo";
+            this.dgProdColTipo.ReadOnly = true;
+            // 
+            // dgProdColCodigo
+            // 
+            this.dgProdColCodigo.HeaderText = "Código";
+            this.dgProdColCodigo.Name = "dgProdColCodigo";
+            this.dgProdColCodigo.ReadOnly = true;
+            this.dgProdColCodigo.Visible = false;
+            // 
+            // dgProdColNome
+            // 
+            this.dgProdColNome.HeaderText = "Nome";
+            this.dgProdColNome.Name = "dgProdColNome";
+            this.dgProdColNome.ReadOnly = true;
+            // 
+            // dgProdColPreco
+            // 
+            this.dgProdColPreco.HeaderText = "Preço";
+            this.dgProdColPreco.Name = "dgProdColPreco";
+            this.dgProdColPreco.ReadOnly = true;
             // 
             // TelaCadastroProduto
             // 
@@ -280,13 +278,13 @@
         private System.Windows.Forms.Panel panProdutos;
         private System.Windows.Forms.DataGridView dgListaProd;
         private System.Windows.Forms.TextBox txtPesquisaProdutos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColTipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColCodigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColNome;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColPreco;
         private System.Windows.Forms.Button btnEditarProd;
         private System.Windows.Forms.Label lblPesqProd;
         private System.Windows.Forms.ComboBox cbTipoProd;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColCodigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColNome;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColPreco;
     }
 }

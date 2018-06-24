@@ -29,8 +29,11 @@ namespace TrabalhoFinal
 
         private void FormLanche_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'dataSetLanche.lanche'. Você pode movê-la ou removê-la conforme necessário.
-            
+            ProdutoDAO lancheDAO = new ProdutoDAO();
+            List<Produto> lista = lancheDAO.ListaPorTipo("lanche");
+
+            foreach (Produto p in lista)
+                dgListaLanche.Rows.Add(p.Nome, p.Preco, p.Codigo);
 
         }
     }

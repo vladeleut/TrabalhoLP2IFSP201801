@@ -56,6 +56,12 @@
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnChamaProduto = new System.Windows.Forms.Button();
+            this.btnGerenciaTaxasDeEntrega = new System.Windows.Forms.Button();
+            this.dgPedidosColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -294,8 +300,17 @@
             // 
             // dgPedidos
             // 
+            this.dgPedidos.AllowUserToAddRows = false;
+            this.dgPedidos.AllowUserToDeleteRows = false;
+            this.dgPedidos.AllowUserToOrderColumns = true;
             this.dgPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgPedidosColNro,
+            this.dgPedidosSituacao,
+            this.dgPedidosCliente,
+            this.dgPedidosBairro,
+            this.dgPedidosValor});
             this.dgPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPedidos.Location = new System.Drawing.Point(0, 0);
             this.dgPedidos.Name = "dgPedidos";
@@ -341,6 +356,7 @@
             // 
             // tabGerenciamento
             // 
+            this.tabGerenciamento.Controls.Add(this.btnGerenciaTaxasDeEntrega);
             this.tabGerenciamento.Controls.Add(this.btnVendas);
             this.tabGerenciamento.Controls.Add(this.btnCliente);
             this.tabGerenciamento.Controls.Add(this.btnChamaProduto);
@@ -392,6 +408,49 @@
             this.btnChamaProduto.Text = "Produtos";
             this.btnChamaProduto.UseVisualStyleBackColor = false;
             this.btnChamaProduto.Click += new System.EventHandler(this.btnChamaProduto_Click);
+            // 
+            // btnGerenciaTaxasDeEntrega
+            // 
+            this.btnGerenciaTaxasDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGerenciaTaxasDeEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGerenciaTaxasDeEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciaTaxasDeEntrega.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerenciaTaxasDeEntrega.Location = new System.Drawing.Point(272, 286);
+            this.btnGerenciaTaxasDeEntrega.Name = "btnGerenciaTaxasDeEntrega";
+            this.btnGerenciaTaxasDeEntrega.Size = new System.Drawing.Size(247, 39);
+            this.btnGerenciaTaxasDeEntrega.TabIndex = 16;
+            this.btnGerenciaTaxasDeEntrega.Text = "Taxas de Entrega";
+            this.btnGerenciaTaxasDeEntrega.UseVisualStyleBackColor = false;
+            // 
+            // dgPedidosColNro
+            // 
+            this.dgPedidosColNro.HeaderText = "Número";
+            this.dgPedidosColNro.Name = "dgPedidosColNro";
+            this.dgPedidosColNro.ReadOnly = true;
+            // 
+            // dgPedidosSituacao
+            // 
+            this.dgPedidosSituacao.HeaderText = "Situação";
+            this.dgPedidosSituacao.Name = "dgPedidosSituacao";
+            this.dgPedidosSituacao.ReadOnly = true;
+            // 
+            // dgPedidosCliente
+            // 
+            this.dgPedidosCliente.HeaderText = "Cliente";
+            this.dgPedidosCliente.Name = "dgPedidosCliente";
+            this.dgPedidosCliente.ReadOnly = true;
+            // 
+            // dgPedidosBairro
+            // 
+            this.dgPedidosBairro.HeaderText = "Bairro";
+            this.dgPedidosBairro.Name = "dgPedidosBairro";
+            this.dgPedidosBairro.ReadOnly = true;
+            // 
+            // dgPedidosValor
+            // 
+            this.dgPedidosValor.HeaderText = "Valor";
+            this.dgPedidosValor.Name = "dgPedidosValor";
+            this.dgPedidosValor.ReadOnly = true;
             // 
             // Inicio
             // 
@@ -452,6 +511,12 @@
         private System.Windows.Forms.Button btnVendas;
         private System.Windows.Forms.Button btnCliente;
         private System.Windows.Forms.Button btnChamaProduto;
+        private System.Windows.Forms.Button btnGerenciaTaxasDeEntrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosColNro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosSituacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosBairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosValor;
     }
 }
 
