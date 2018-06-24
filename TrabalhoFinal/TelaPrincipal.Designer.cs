@@ -51,16 +51,17 @@
             this.dgPedidos = new System.Windows.Forms.DataGridView();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.bttNovoPedido = new System.Windows.Forms.Button();
+            this.btnNovoPedido = new System.Windows.Forms.Button();
             this.tabGerenciamento = new System.Windows.Forms.TabPage();
+            this.btnGerenciaTaxasDeEntrega = new System.Windows.Forms.Button();
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnChamaProduto = new System.Windows.Forms.Button();
-            this.btnGerenciaTaxasDeEntrega = new System.Windows.Forms.Button();
             this.dgPedidosColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidosSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidosBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosColTempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidosValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
@@ -278,7 +279,7 @@
             this.tabTelaPedido.Controls.Add(this.panDGPedidos);
             this.tabTelaPedido.Controls.Add(this.pictureBox5);
             this.tabTelaPedido.Controls.Add(this.pictureBox2);
-            this.tabTelaPedido.Controls.Add(this.bttNovoPedido);
+            this.tabTelaPedido.Controls.Add(this.btnNovoPedido);
             this.tabTelaPedido.Location = new System.Drawing.Point(4, 24);
             this.tabTelaPedido.Name = "tabTelaPedido";
             this.tabTelaPedido.Padding = new System.Windows.Forms.Padding(3);
@@ -310,6 +311,7 @@
             this.dgPedidosSituacao,
             this.dgPedidosCliente,
             this.dgPedidosBairro,
+            this.dgPedidosColTempo,
             this.dgPedidosValor});
             this.dgPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPedidos.Location = new System.Drawing.Point(0, 0);
@@ -340,19 +342,19 @@
             this.pictureBox2.TabIndex = 8;
             this.pictureBox2.TabStop = false;
             // 
-            // bttNovoPedido
+            // btnNovoPedido
             // 
-            this.bttNovoPedido.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.bttNovoPedido.BackColor = System.Drawing.Color.LawnGreen;
-            this.bttNovoPedido.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.bttNovoPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bttNovoPedido.Location = new System.Drawing.Point(61, 28);
-            this.bttNovoPedido.Name = "bttNovoPedido";
-            this.bttNovoPedido.Size = new System.Drawing.Size(195, 76);
-            this.bttNovoPedido.TabIndex = 6;
-            this.bttNovoPedido.Text = "Novo Pedido";
-            this.bttNovoPedido.UseVisualStyleBackColor = false;
-            this.bttNovoPedido.Click += new System.EventHandler(this.button2_Click_2);
+            this.btnNovoPedido.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.btnNovoPedido.BackColor = System.Drawing.Color.LawnGreen;
+            this.btnNovoPedido.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnNovoPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoPedido.Location = new System.Drawing.Point(61, 28);
+            this.btnNovoPedido.Name = "btnNovoPedido";
+            this.btnNovoPedido.Size = new System.Drawing.Size(195, 76);
+            this.btnNovoPedido.TabIndex = 6;
+            this.btnNovoPedido.Text = "Novo Pedido";
+            this.btnNovoPedido.UseVisualStyleBackColor = false;
+            this.btnNovoPedido.Click += new System.EventHandler(this.btnNovoPedido_Click);
             // 
             // tabGerenciamento
             // 
@@ -367,6 +369,19 @@
             this.tabGerenciamento.TabIndex = 3;
             this.tabGerenciamento.Text = "Gerenciar";
             this.tabGerenciamento.UseVisualStyleBackColor = true;
+            // 
+            // btnGerenciaTaxasDeEntrega
+            // 
+            this.btnGerenciaTaxasDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGerenciaTaxasDeEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnGerenciaTaxasDeEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGerenciaTaxasDeEntrega.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerenciaTaxasDeEntrega.Location = new System.Drawing.Point(272, 286);
+            this.btnGerenciaTaxasDeEntrega.Name = "btnGerenciaTaxasDeEntrega";
+            this.btnGerenciaTaxasDeEntrega.Size = new System.Drawing.Size(247, 39);
+            this.btnGerenciaTaxasDeEntrega.TabIndex = 16;
+            this.btnGerenciaTaxasDeEntrega.Text = "Taxas de Entrega";
+            this.btnGerenciaTaxasDeEntrega.UseVisualStyleBackColor = false;
             // 
             // btnVendas
             // 
@@ -409,19 +424,6 @@
             this.btnChamaProduto.UseVisualStyleBackColor = false;
             this.btnChamaProduto.Click += new System.EventHandler(this.btnChamaProduto_Click);
             // 
-            // btnGerenciaTaxasDeEntrega
-            // 
-            this.btnGerenciaTaxasDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.btnGerenciaTaxasDeEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnGerenciaTaxasDeEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGerenciaTaxasDeEntrega.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGerenciaTaxasDeEntrega.Location = new System.Drawing.Point(272, 286);
-            this.btnGerenciaTaxasDeEntrega.Name = "btnGerenciaTaxasDeEntrega";
-            this.btnGerenciaTaxasDeEntrega.Size = new System.Drawing.Size(247, 39);
-            this.btnGerenciaTaxasDeEntrega.TabIndex = 16;
-            this.btnGerenciaTaxasDeEntrega.Text = "Taxas de Entrega";
-            this.btnGerenciaTaxasDeEntrega.UseVisualStyleBackColor = false;
-            // 
             // dgPedidosColNro
             // 
             this.dgPedidosColNro.HeaderText = "Número";
@@ -446,6 +448,12 @@
             this.dgPedidosBairro.Name = "dgPedidosBairro";
             this.dgPedidosBairro.ReadOnly = true;
             // 
+            // dgPedidosColTempo
+            // 
+            this.dgPedidosColTempo.HeaderText = "Tempo";
+            this.dgPedidosColTempo.Name = "dgPedidosColTempo";
+            this.dgPedidosColTempo.ReadOnly = true;
+            // 
             // dgPedidosValor
             // 
             this.dgPedidosValor.HeaderText = "Valor";
@@ -458,6 +466,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 472);
             this.Controls.Add(this.tabGeral);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicio";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Inicio_Load);
@@ -491,7 +500,7 @@
         private System.Windows.Forms.TabPage tabCaixa;
         private System.Windows.Forms.TabPage tabTelaPedido;
         private System.Windows.Forms.Button btnFechaCaixa;
-        private System.Windows.Forms.Button bttNovoPedido;
+        private System.Windows.Forms.Button btnNovoPedido;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox5;
@@ -516,6 +525,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosSituacao;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosBairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosColTempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosValor;
     }
 }

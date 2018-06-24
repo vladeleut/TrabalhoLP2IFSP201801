@@ -13,14 +13,18 @@ namespace TrabalhoFinal
         {
             Database dbDelivery = Database.GetInstance();
 
-            string qry = "insert into pedido (aberturaPedido, fechamentoPedido, total) values (@AberturaPedido, @FechamentoPedido, @Total)";
+            string qry = "insert into pedido_dados (aberturaPedido) values (sysdate());";
 
-            MySqlCommand comm = new MySqlCommand(qry); //seta parâmetros
-            comm.Parameters.AddWithValue("@AberturaPedido", pedido.AberturaPedido);
-            comm.Parameters.AddWithValue("@FechamentoPedido", pedido.FechamentoPedido);
-            comm.Parameters.AddWithValue("@Total", pedido.Total);
+            MySqlCommand comm = new MySqlCommand(qry); 
 
             dbDelivery.ExecuteSQL(comm);
+        }
+
+        public void AbrePedidoNovo(Pedido pedido)
+        {
+            
+
+            //return pedido.Nro_pedido;
         }
 
         public Pedido Read(int nro_pedido)
@@ -43,7 +47,6 @@ namespace TrabalhoFinal
                 pedido.Nro_pedido = dr.GetInt32(0);
                 pedido.AberturaPedido = dr.GetDateTime(1);
                 pedido.FechamentoPedido = dr.GetDateTime(2);
-                pedido.Total = dr.GetFloat(3);
 
             }
 
@@ -74,41 +77,55 @@ namespace TrabalhoFinal
 
             comm.Parameters.AddWithValue("@AberturaPedido", pedido.AberturaPedido);
             comm.Parameters.AddWithValue("@FechamentoPedido", pedido.FechamentoPedido);
-            comm.Parameters.AddWithValue("@Total", pedido.Total);
+            //comm.Parameters.AddWithValue("@Total", pedido.Total);
 
             dbDelivery.ExecuteSQL(comm);
         }
 
-        public List<Pedido> listaPedidos()
+        public List<Pedido> ListaPedidos()
         {
-            List<Pedido> listaPedido = new List<Pedido>();
+            List<Pedido> listaPedidos = new List<Pedido>();
 
             MySqlConnection conn = Database.GetInstance().GetConnection();
 
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = "Select cnro_pedido, aberturaPedido, fechamentoPedido, total from pedido";
+            string qry = "select pd.nro, pd.situacao, pd.cliente, c.nome, c.bairro, timediff(sysdate(), pd.aberturaPedido) from pedido_dados pd, cliente c where c.codigo = pd.cliente;"; 
+    
             MySqlCommand comm = new MySqlCommand(qry, conn);
 
             MySqlDataReader dr = comm.ExecuteReader();
 
-            //precisamos coocar as inf obtias no objeto
+            //precisamos colocar as inf obtidas no objeto
             while (dr.Read())
             {
                 Pedido pedido = new Pedido();
+
                 pedido.Nro_pedido = dr.GetInt32(0);
-                pedido.AberturaPedido = dr.GetDateTime(1);
-                pedido.FechamentoPedido = dr.GetDateTime(2);
-                pedido.Total = dr.GetFloat(3);
+                pedido.Situacao = dr.GetString(1);
+                pedido.Cliente = dr.GetInt32(2);
+                pedido.NomeCliente = dr.GetString(3);
+                pedido.BairroCliente = dr.GetString(4);
+                pedido.Tempo = dr.GetString(5);
 
-
-                listaPedido.Add(pedido);
+                listaPedidos.Add(pedido);
             }
             dr.Close();
             conn.Close();
-            return listaPedido;
+            return listaPedidos;
         }
+
+        /*
+        public int CriaPedido()
+        {
+            //?
+            
+            Pedido pedido = new Pedido();
+            pedido
+
+            return ()
+        }*/
 
     }
 }

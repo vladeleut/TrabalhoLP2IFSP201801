@@ -43,17 +43,6 @@ namespace TrabalhoFinal
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click_2(object sender, EventArgs e)
-        {
-            TelaPedido pedido = new TelaPedido();
-            pedido.StartPosition = FormStartPosition.CenterScreen;
-            pedido.Show();
-        }
 
         private void TabInicio_Click(object sender, EventArgs e)
         {
@@ -84,9 +73,14 @@ namespace TrabalhoFinal
 
         private void Inicio_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'trabalhofinalDataSet2.pedido'. Você pode movê-la ou removê-la conforme necessário.
-            
+            //preenche lista de pedidos recentes abertos e fechados
+            PedidoDAO pedido = new PedidoDAO();
+            List<Pedido> lista = pedido.ListaPedidos();
 
+            foreach (Pedido p in lista)
+            {
+                dgPedidos.Rows.Add(p.Nro_pedido, p.Situacao, p.NomeCliente, p.BairroCliente, p.Tempo);
+            }
         }
 
         private void btnChamaProduto_Click(object sender, EventArgs e)
@@ -101,6 +95,15 @@ namespace TrabalhoFinal
             TelaCliente TelaCli = new TelaCliente();
             TelaCli.StartPosition = FormStartPosition.CenterScreen;
             TelaCli.ShowDialog();
+        }
+
+        private void btnNovoPedido_Click(object sender, EventArgs e)
+        {
+            //tela editar pedido?
+            TelaPedido telaPedido = new TelaPedido();
+            telaPedido.StartPosition = FormStartPosition.CenterScreen;
+            telaPedido.Show();
+
         }
     }
 }

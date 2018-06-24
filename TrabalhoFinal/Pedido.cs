@@ -12,24 +12,25 @@ namespace TrabalhoFinal
         int nro_pedido;
         DateTime aberturaPedido;
         DateTime fechamentoPedido;
-        float total;
-        int formaDePagamento;//1 Dinheiro, 2 Débito, 3 Crédito,...
+        String formaPagto;
+        int cliente; //pesquisar no banco o cliente e recuperar dados via cruzamento de tabelas
+        String nomeCliente;
+        String situacao;
+        String bairroCliente;
+        String tempo;
 
-        //Falta no banco de dados e DAO esses dois
-        Cliente cliente;
-        List<Produto> itens = new List<Produto>();
-
-   
-
-        Boolean Aberto = false;
+        List<ItemPedido> itens = new List<ItemPedido>();
 
         public int Nro_pedido { get { return nro_pedido; } set { nro_pedido = value; } }
         public DateTime AberturaPedido { get {return aberturaPedido; } set { aberturaPedido = value; } }
         public DateTime FechamentoPedido { get {return fechamentoPedido; } set { fechamentoPedido = value; } }
-        public float Total { get {return total; } set { total = value; } }
-        public int FormaDePagamento { get {return formaDePagamento; } set { formaDePagamento = value; } }
-        internal Cliente Cliente { get {return cliente; } set { cliente = value; } }
+        public String FormaPagto { get {return formaPagto; } set { formaPagto = value; } }
+        public int Cliente { get { return cliente; } set { cliente = value; } }
+        public String NomeCliente { get { return nomeCliente; } set { nomeCliente = value; } }
+        public String Situacao { get {return situacao; } set { situacao = value; } }
+        public List<ItemPedido> Itens { get { return Itens; } set { Itens = value; } }
+        public String BairroCliente { get { return bairroCliente; } set { bairroCliente = value; } }
+        public String Tempo { get { return tempo; } set { tempo = value; } }
 
-       
     }
 }

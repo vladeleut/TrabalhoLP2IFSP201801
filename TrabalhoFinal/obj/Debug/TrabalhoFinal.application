@@ -7,14 +7,14 @@
     <framework targetVersion="4.6.1" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="TrabalhoFinal.exe.manifest" size="4182">
+    <dependentAssembly dependencyType="install" codebase="TrabalhoFinal.exe.manifest" size="4656">
       <assemblyIdentity name="TrabalhoFinal.exe" version="1.0.0.1" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>x29x2dei35cwTDzvOx3EaDDQrTIB42Ba9gbwFwQSO4I=</dsig:DigestValue>
+        <dsig:DigestValue>/aZWqP0VrCFhm9pgw5rRK6jcSci3d9F73KHXiaggN2k=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
