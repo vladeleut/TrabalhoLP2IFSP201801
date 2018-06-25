@@ -176,7 +176,7 @@ namespace TrabalhoFinal
 
         public int EncontraPedidoNovo()
         {
-            int nroPedido = 0;
+            int nroPedido = 150;
 
             MySqlConnection conn = Database.GetInstance().GetConnection();
 
@@ -209,7 +209,7 @@ namespace TrabalhoFinal
                 conn.Open();
 
 
-            //vou ter q ler os dados do pedido e a lista de prodoutos separadamente. vamos para os dados do pedido:
+            //vou ter q ler os dados do pedido e a lista de produtos separadamente. vamos para os dados do pedido:
             string qry = "select aberturaPedido, ifnull(cliente, 0) from pedido_dados  where nro = @Numero;";
             MySqlCommand comm = new MySqlCommand(qry, conn);
             comm.Parameters.AddWithValue("@Numero", nroPedido);
@@ -254,6 +254,19 @@ namespace TrabalhoFinal
 
             comm.Parameters.AddWithValue("@FlagNovoStatus", novoEstado);
             comm.Parameters.AddWithValue("@Nro_pedido", nroPedido);
+
+            dbDelivery.ExecuteSQL(comm);
+        }
+
+        public void RemoveItemDoPedido(int codigoProduto, int nro_pedido)
+        {
+            Database dbDelivery = Database.GetInstance();
+
+            string qry = "DELETE from pedido_itens where nro_pedido = @Nro_pedido and cod_produto = @Codigo";
+
+            MySqlCommand comm = new MySqlCommand(qry); //seta parâmetros
+            comm.Parameters.AddWithValue("@Nro_pedido", nro_pedido);
+            comm.Parameters.AddWithValue("@Codigo", codigoProduto);
 
             dbDelivery.ExecuteSQL(comm);
         }

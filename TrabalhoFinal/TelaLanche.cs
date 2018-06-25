@@ -91,5 +91,23 @@ namespace TrabalhoFinal
             }
             this.Close();
         }
+
+        private void dgPedidoTempLanche_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            Produto temp = new Produto();
+            temp.Codigo = int.Parse(dgPedidoTempLanche.Rows[e.RowIndex].Cells[2].Value.ToString());
+            temp.Nome = dgPedidoTempLanche.Rows[e.RowIndex].Cells[0].Value.ToString();
+            temp.Preco = dgPedidoTempLanche.Rows[e.RowIndex].Cells[1].Value.ToString();
+            dgListaLanche.Enabled = true;
+            valorDoLanche = 0;
+            lblValorLanche.Text = "R$" + valorDoLanche.ToString();
+            lblValorLanche.Visible = true;
+            temp.Tipo = "Lanche";//nessa tela só pode ser lanche
+            //adiciona item no pedido temporario pedido
+            pedidoTemp.Remove(temp);
+            //adiciona item no datagrid
+            dgPedidoTempLanche.Rows.Clear();
+            pedidoTemp = new List<Produto>();
+        }
     }
 }

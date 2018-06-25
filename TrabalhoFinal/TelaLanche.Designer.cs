@@ -32,7 +32,13 @@
             this.btnAddPedido = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.dgPedidoTempLanche = new System.Windows.Forms.DataGridView();
+            this.dgPedidoTempLancheCoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidoTempLancheColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidoTempLancheCoICódigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgAdicionaisLanche = new System.Windows.Forms.DataGridView();
+            this.dgAdicionaisLancheColAdc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgAdicionaisLancheColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgAdicionaisLancheColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnCancelaPedido = new System.Windows.Forms.Button();
@@ -41,14 +47,8 @@
             this.dgListaPizzaColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgListaPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblAvisoLanche = new System.Windows.Forms.Label();
-            this.dgPedidoTempLancheCoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidoTempLancheColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidoTempLancheCoICódigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTelaValor = new System.Windows.Forms.Label();
             this.lblValorLanche = new System.Windows.Forms.Label();
-            this.dgAdicionaisLancheColAdc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgAdicionaisLancheColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgAdicionaisLancheColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidoTempLanche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAdicionaisLanche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaLanche)).BeginInit();
@@ -92,6 +92,28 @@
             this.dgPedidoTempLanche.ReadOnly = true;
             this.dgPedidoTempLanche.Size = new System.Drawing.Size(412, 143);
             this.dgPedidoTempLanche.TabIndex = 10;
+            this.dgPedidoTempLanche.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgPedidoTempLanche_CellMouseDoubleClick);
+            // 
+            // dgPedidoTempLancheCoItem
+            // 
+            this.dgPedidoTempLancheCoItem.HeaderText = "Item";
+            this.dgPedidoTempLancheCoItem.Name = "dgPedidoTempLancheCoItem";
+            this.dgPedidoTempLancheCoItem.ReadOnly = true;
+            // 
+            // dgPedidoTempLancheColTipo
+            // 
+            this.dgPedidoTempLancheColTipo.HeaderText = "Tipo";
+            this.dgPedidoTempLancheColTipo.Name = "dgPedidoTempLancheColTipo";
+            this.dgPedidoTempLancheColTipo.ReadOnly = true;
+            this.dgPedidoTempLancheColTipo.Visible = false;
+            // 
+            // dgPedidoTempLancheCoICódigo
+            // 
+            this.dgPedidoTempLancheCoICódigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgPedidoTempLancheCoICódigo.HeaderText = "Código";
+            this.dgPedidoTempLancheCoICódigo.Name = "dgPedidoTempLancheCoICódigo";
+            this.dgPedidoTempLancheCoICódigo.ReadOnly = true;
+            this.dgPedidoTempLancheCoICódigo.Visible = false;
             // 
             // dgAdicionaisLanche
             // 
@@ -108,6 +130,28 @@
             this.dgAdicionaisLanche.Size = new System.Drawing.Size(240, 183);
             this.dgAdicionaisLanche.TabIndex = 11;
             this.dgAdicionaisLanche.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgAdicionaisLanche_CellMouseDoubleClick);
+            // 
+            // dgAdicionaisLancheColAdc
+            // 
+            this.dgAdicionaisLancheColAdc.FillWeight = 60F;
+            this.dgAdicionaisLancheColAdc.HeaderText = "Adicional";
+            this.dgAdicionaisLancheColAdc.Name = "dgAdicionaisLancheColAdc";
+            this.dgAdicionaisLancheColAdc.ReadOnly = true;
+            this.dgAdicionaisLancheColAdc.Width = 130;
+            // 
+            // dgAdicionaisLancheColPreco
+            // 
+            this.dgAdicionaisLancheColPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgAdicionaisLancheColPreco.HeaderText = "Preço";
+            this.dgAdicionaisLancheColPreco.Name = "dgAdicionaisLancheColPreco";
+            this.dgAdicionaisLancheColPreco.ReadOnly = true;
+            // 
+            // dgAdicionaisLancheColCodigo
+            // 
+            this.dgAdicionaisLancheColCodigo.HeaderText = "Código";
+            this.dgAdicionaisLancheColCodigo.Name = "dgAdicionaisLancheColCodigo";
+            this.dgAdicionaisLancheColCodigo.ReadOnly = true;
+            this.dgAdicionaisLancheColCodigo.Visible = false;
             // 
             // label2
             // 
@@ -188,27 +232,6 @@
             this.lblAvisoLanche.TabIndex = 17;
             this.lblAvisoLanche.Text = "! Adicione apenas um lanche por vez!";
             // 
-            // dgPedidoTempLancheCoItem
-            // 
-            this.dgPedidoTempLancheCoItem.HeaderText = "Item";
-            this.dgPedidoTempLancheCoItem.Name = "dgPedidoTempLancheCoItem";
-            this.dgPedidoTempLancheCoItem.ReadOnly = true;
-            // 
-            // dgPedidoTempLancheColTipo
-            // 
-            this.dgPedidoTempLancheColTipo.HeaderText = "Tipo";
-            this.dgPedidoTempLancheColTipo.Name = "dgPedidoTempLancheColTipo";
-            this.dgPedidoTempLancheColTipo.ReadOnly = true;
-            this.dgPedidoTempLancheColTipo.Visible = false;
-            // 
-            // dgPedidoTempLancheCoICódigo
-            // 
-            this.dgPedidoTempLancheCoICódigo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgPedidoTempLancheCoICódigo.HeaderText = "Código";
-            this.dgPedidoTempLancheCoICódigo.Name = "dgPedidoTempLancheCoICódigo";
-            this.dgPedidoTempLancheCoICódigo.ReadOnly = true;
-            this.dgPedidoTempLancheCoICódigo.Visible = false;
-            // 
             // lblTelaValor
             // 
             this.lblTelaValor.AutoSize = true;
@@ -232,28 +255,6 @@
             this.lblValorLanche.TabIndex = 19;
             this.lblValorLanche.Text = "R$";
             this.lblValorLanche.Visible = false;
-            // 
-            // dgAdicionaisLancheColAdc
-            // 
-            this.dgAdicionaisLancheColAdc.FillWeight = 60F;
-            this.dgAdicionaisLancheColAdc.HeaderText = "Adicional";
-            this.dgAdicionaisLancheColAdc.Name = "dgAdicionaisLancheColAdc";
-            this.dgAdicionaisLancheColAdc.ReadOnly = true;
-            this.dgAdicionaisLancheColAdc.Width = 130;
-            // 
-            // dgAdicionaisLancheColPreco
-            // 
-            this.dgAdicionaisLancheColPreco.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgAdicionaisLancheColPreco.HeaderText = "Preço";
-            this.dgAdicionaisLancheColPreco.Name = "dgAdicionaisLancheColPreco";
-            this.dgAdicionaisLancheColPreco.ReadOnly = true;
-            // 
-            // dgAdicionaisLancheColCodigo
-            // 
-            this.dgAdicionaisLancheColCodigo.HeaderText = "Código";
-            this.dgAdicionaisLancheColCodigo.Name = "dgAdicionaisLancheColCodigo";
-            this.dgAdicionaisLancheColCodigo.ReadOnly = true;
-            this.dgAdicionaisLancheColCodigo.Visible = false;
             // 
             // TelaLanche
             // 

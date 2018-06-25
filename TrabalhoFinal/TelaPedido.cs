@@ -42,7 +42,8 @@ namespace TrabalhoFinal
         }
         private void TelaPedido_Load(object sender, EventArgs e)
         {
-            //este bloco (até "Bloco termina aqui") trata do carregamendo dos dados dos clientes que já estão no banco
+            //este bloco (até "Bloco termina aqui") trata do carregamendo dos dados dos 
+            //clientes que já estão no banco
             mtxtDDD.Text = "16";
             ClienteDAO cliDAO = new ClienteDAO();
             List<Cliente> lista = cliDAO.listaCliente();
@@ -72,7 +73,7 @@ namespace TrabalhoFinal
             ProdutoDAO produtos = new ProdutoDAO();
             List<Produto> listaDeItens = produtos.ListaItensDoPedidoPorNumero(pedidoDAO.EncontraPedidoNovo());
             foreach (Produto p in listaDeItens)
-                dgPedido.Rows.Add(p.Nome, p.Preco, p.Qtde);
+                dgPedido.Rows.Add(p.Nome, p.Preco, p.Qtde, p.Codigo);
         }
 
 
@@ -158,7 +159,7 @@ namespace TrabalhoFinal
             return flagClienteCadastrado;*/
         }
 
-        private void btnCancelaTelaPedido_Click(object sender, EventArgs e) => Close();
+        
 
         private void btnPedidoAdicionaPizza_Click(object sender, EventArgs e)
         {
@@ -188,10 +189,40 @@ namespace TrabalhoFinal
 
             this.Close();
         }
+        private void btnCancelaTelaPedido_Click(object sender, EventArgs e)
+        {
+            ClienteDAO clienteDAO = new ClienteDAO();
+            PedidoDAO pedidoDAO = new PedidoDAO();
+            pedidoDAO.AtualizaEstado(pedidoDAO.EncontraPedidoNovo(), 5);
+            pedidoDAO.AssociaClientePedido(clienteDAO.EcontraNroCliente(cbPeditoTelCliente.Text), pedidoDAO.EncontraPedidoNovo());
+            this.Close();
+        }
 
         private void TelaPedido_MouseEnter(object sender, EventArgs e)
         {
             AtualizaDataGrid();
+        }
+
+        private void dgPedido_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //remover item aqui. item já está no pedido, então preciso remover do pedido where nro = nro do pedido aberto
+            PedidoDAO pedidoDAO = new PedidoDAO(); 
+            Pedido pedidoAtual = pedidoDAO.PedidoNro(pedidoDAO.EncontraPedidoNovo());
+            
+            int codProduto = int.Parse(dgPedido.Rows[e.RowIndex].Cells[3].Value.ToString());
+            int nroPedido = pedidoDAO.EncontraPedidoNovo();
+
+            pedidoDAO.RemoveItemDoPedido(codProduto, nroPedido);
+
+
+            AtualizaDataGrid();
+        }
+
+        private void btnNovoCliente_Click(object sender, EventArgs e)
+        {
+            TelaCliente telaCliente = new TelaCliente();
+            telaCliente.StartPosition = FormStartPosition.CenterScreen;
+            telaCliente.ShowDialog();
         }
     }
 }

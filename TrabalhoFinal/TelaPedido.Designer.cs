@@ -60,6 +60,8 @@
             this.dgPedidoCoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColQtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidoColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnNovoCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).BeginInit();
@@ -255,7 +257,7 @@
             // 
             this.btnFinalizaPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnFinalizaPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizaPedido.Location = new System.Drawing.Point(643, 260);
+            this.btnFinalizaPedido.Location = new System.Drawing.Point(645, 289);
             this.btnFinalizaPedido.Name = "btnFinalizaPedido";
             this.btnFinalizaPedido.Size = new System.Drawing.Size(218, 74);
             this.btnFinalizaPedido.TabIndex = 11;
@@ -342,20 +344,25 @@
             // 
             // dgPedido
             // 
+            this.dgPedido.AllowUserToAddRows = false;
+            this.dgPedido.AllowUserToDeleteRows = false;
             this.dgPedido.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgPedidoCoItem,
             this.dgPedidoColPreco,
-            this.dgPedidoColQtde});
+            this.dgPedidoColQtde,
+            this.dgPedidoColCodigo});
             this.dgPedido.Location = new System.Drawing.Point(0, 3);
             this.dgPedido.Name = "dgPedido";
+            this.dgPedido.ReadOnly = true;
             this.dgPedido.Size = new System.Drawing.Size(300, 248);
             this.dgPedido.TabIndex = 0;
+            this.dgPedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPedido_CellContentDoubleClick);
             // 
             // btnCancelaTelaPedido
             // 
-            this.btnCancelaTelaPedido.Location = new System.Drawing.Point(718, 340);
+            this.btnCancelaTelaPedido.Location = new System.Drawing.Point(708, 377);
             this.btnCancelaTelaPedido.Name = "btnCancelaTelaPedido";
             this.btnCancelaTelaPedido.Size = new System.Drawing.Size(87, 29);
             this.btnCancelaTelaPedido.TabIndex = 10;
@@ -368,25 +375,47 @@
             // 
             this.dgPedidoCoItem.HeaderText = "Item";
             this.dgPedidoCoItem.Name = "dgPedidoCoItem";
+            this.dgPedidoCoItem.ReadOnly = true;
             this.dgPedidoCoItem.Width = 123;
             // 
             // dgPedidoColPreco
             // 
             this.dgPedidoColPreco.HeaderText = "Preço";
             this.dgPedidoColPreco.Name = "dgPedidoColPreco";
+            this.dgPedidoColPreco.ReadOnly = true;
             this.dgPedidoColPreco.Width = 60;
             // 
             // dgPedidoColQtde
             // 
             this.dgPedidoColQtde.HeaderText = "Quantidade";
             this.dgPedidoColQtde.Name = "dgPedidoColQtde";
+            this.dgPedidoColQtde.ReadOnly = true;
             this.dgPedidoColQtde.Width = 70;
+            // 
+            // dgPedidoColCodigo
+            // 
+            this.dgPedidoColCodigo.HeaderText = "Código";
+            this.dgPedidoColCodigo.Name = "dgPedidoColCodigo";
+            this.dgPedidoColCodigo.ReadOnly = true;
+            this.dgPedidoColCodigo.Visible = false;
+            // 
+            // btnNovoCliente
+            // 
+            this.btnNovoCliente.Location = new System.Drawing.Point(708, 254);
+            this.btnNovoCliente.Name = "btnNovoCliente";
+            this.btnNovoCliente.Size = new System.Drawing.Size(87, 29);
+            this.btnNovoCliente.TabIndex = 26;
+            this.btnNovoCliente.TabStop = false;
+            this.btnNovoCliente.Text = "Cancelar";
+            this.btnNovoCliente.UseVisualStyleBackColor = true;
+            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
             // 
             // TelaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(880, 418);
+            this.Controls.Add(this.btnNovoCliente);
             this.Controls.Add(this.btnCancelaTelaPedido);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btnPedidoAdicionaOutros);
@@ -444,5 +473,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoCoItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoColPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoColQtde;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoColCodigo;
+        private System.Windows.Forms.Button btnNovoCliente;
     }
 }

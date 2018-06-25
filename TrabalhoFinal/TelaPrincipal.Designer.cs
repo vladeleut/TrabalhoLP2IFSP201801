@@ -291,7 +291,8 @@
             // 
             // panDGPedidos
             // 
-            this.panDGPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.panDGPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panDGPedidos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panDGPedidos.Controls.Add(this.dgPedidos);
@@ -305,9 +306,8 @@
             this.dgPedidos.AllowUserToAddRows = false;
             this.dgPedidos.AllowUserToDeleteRows = false;
             this.dgPedidos.AllowUserToOrderColumns = true;
-            this.dgPedidos.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgPedidos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgPedidos.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dgPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dgPedidosColNro,
@@ -316,6 +316,7 @@
             this.dgPedidosBairro,
             this.dgPedidosColTempo,
             this.dgPedidosValor});
+            this.dgPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgPedidos.Location = new System.Drawing.Point(0, 0);
             this.dgPedidos.Name = "dgPedidos";
             this.dgPedidos.ReadOnly = true;
@@ -378,7 +379,7 @@
             // 
             // pictureBox2
             // 
-            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(549, 6);
             this.pictureBox2.Name = "pictureBox2";
@@ -418,10 +419,11 @@
             // 
             // btnGerenciaTaxasDeEntrega
             // 
-            this.btnGerenciaTaxasDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnGerenciaTaxasDeEntrega.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnGerenciaTaxasDeEntrega.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnGerenciaTaxasDeEntrega.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGerenciaTaxasDeEntrega.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGerenciaTaxasDeEntrega.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnGerenciaTaxasDeEntrega.Location = new System.Drawing.Point(272, 286);
             this.btnGerenciaTaxasDeEntrega.Name = "btnGerenciaTaxasDeEntrega";
             this.btnGerenciaTaxasDeEntrega.Size = new System.Drawing.Size(247, 39);
@@ -431,10 +433,11 @@
             // 
             // btnVendas
             // 
-            this.btnVendas.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnVendas.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnVendas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnVendas.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnVendas.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVendas.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnVendas.Location = new System.Drawing.Point(272, 241);
             this.btnVendas.Name = "btnVendas";
             this.btnVendas.Size = new System.Drawing.Size(247, 39);
@@ -444,10 +447,11 @@
             // 
             // btnCliente
             // 
-            this.btnCliente.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCliente.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnCliente.Location = new System.Drawing.Point(272, 151);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(247, 39);
@@ -458,10 +462,11 @@
             // 
             // btnChamaProduto
             // 
-            this.btnChamaProduto.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.btnChamaProduto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnChamaProduto.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnChamaProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnChamaProduto.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChamaProduto.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnChamaProduto.Location = new System.Drawing.Point(272, 196);
             this.btnChamaProduto.Name = "btnChamaProduto";
             this.btnChamaProduto.Size = new System.Drawing.Size(247, 39);

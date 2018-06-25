@@ -107,6 +107,10 @@ namespace TrabalhoFinal
                 qry.AppendLine("aberturaPedido timestamp,");
                 qry.AppendLine("fechamentoPedido timestamp,");
                 qry.AppendLine("formaDePagto varchar(30),");
+                qry.AppendLine("situacao varchar(10) default 'aberto',");
+                qry.AppendLine("flagStatus int,");
+                qry.AppendLine("cliente int,");
+                qry.AppendLine("valor float,");
                 qry.AppendLine("constraint pedido_pk primary key(nro));");
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
