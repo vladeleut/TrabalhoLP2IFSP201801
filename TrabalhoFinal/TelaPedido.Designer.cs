@@ -53,22 +53,22 @@
             this.btnPedidoAdicionaBebida = new System.Windows.Forms.Button();
             this.btnPedidoAdicionaOutros = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.lblDescValorTotalPedido = new System.Windows.Forms.Label();
-            this.lblTotal = new System.Windows.Forms.Label();
             this.dgPedido = new System.Windows.Forms.DataGridView();
-            this.btnCancelaTelaPedido = new System.Windows.Forms.Button();
-            this.btnNovoCliente = new System.Windows.Forms.Button();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.txtDinheiro = new System.Windows.Forms.TextBox();
-            this.txtCartaoCredito = new System.Windows.Forms.TextBox();
-            this.txtCartaoDebito = new System.Windows.Forms.TextBox();
-            this.txtValeRefeicao = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.dgPedidoCoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColQtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblDescValorTotalPedido = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.btnCancelaTelaPedido = new System.Windows.Forms.Button();
+            this.btnNovoCliente = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtValeRefeicao = new System.Windows.Forms.TextBox();
+            this.txtCartaoDebito = new System.Windows.Forms.TextBox();
+            this.txtCartaoCredito = new System.Windows.Forms.TextBox();
+            this.txtDinheiro = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).BeginInit();
@@ -330,6 +330,53 @@
             this.panel2.Size = new System.Drawing.Size(300, 254);
             this.panel2.TabIndex = 25;
             // 
+            // dgPedido
+            // 
+            this.dgPedido.AllowUserToAddRows = false;
+            this.dgPedido.AllowUserToDeleteRows = false;
+            this.dgPedido.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.dgPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgPedidoCoItem,
+            this.dgPedidoColPreco,
+            this.dgPedidoColQtde,
+            this.dgPedidoColCodigo});
+            this.dgPedido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPedido.Location = new System.Drawing.Point(0, 0);
+            this.dgPedido.Name = "dgPedido";
+            this.dgPedido.ReadOnly = true;
+            this.dgPedido.Size = new System.Drawing.Size(300, 254);
+            this.dgPedido.TabIndex = 0;
+            this.dgPedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPedido_CellContentDoubleClick);
+            // 
+            // dgPedidoCoItem
+            // 
+            this.dgPedidoCoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgPedidoCoItem.HeaderText = "Item";
+            this.dgPedidoCoItem.Name = "dgPedidoCoItem";
+            this.dgPedidoCoItem.ReadOnly = true;
+            // 
+            // dgPedidoColPreco
+            // 
+            this.dgPedidoColPreco.HeaderText = "Preço";
+            this.dgPedidoColPreco.Name = "dgPedidoColPreco";
+            this.dgPedidoColPreco.ReadOnly = true;
+            this.dgPedidoColPreco.Width = 60;
+            // 
+            // dgPedidoColQtde
+            // 
+            this.dgPedidoColQtde.HeaderText = "Quantidade";
+            this.dgPedidoColQtde.Name = "dgPedidoColQtde";
+            this.dgPedidoColQtde.ReadOnly = true;
+            this.dgPedidoColQtde.Width = 65;
+            // 
+            // dgPedidoColCodigo
+            // 
+            this.dgPedidoColCodigo.HeaderText = "Código";
+            this.dgPedidoColCodigo.Name = "dgPedidoColCodigo";
+            this.dgPedidoColCodigo.ReadOnly = true;
+            this.dgPedidoColCodigo.Visible = false;
+            // 
             // lblDescValorTotalPedido
             // 
             this.lblDescValorTotalPedido.AutoSize = true;
@@ -349,25 +396,6 @@
             this.lblTotal.Size = new System.Drawing.Size(82, 22);
             this.lblTotal.TabIndex = 1;
             this.lblTotal.Text = "R$0,00";
-            // 
-            // dgPedido
-            // 
-            this.dgPedido.AllowUserToAddRows = false;
-            this.dgPedido.AllowUserToDeleteRows = false;
-            this.dgPedido.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.dgPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dgPedidoCoItem,
-            this.dgPedidoColPreco,
-            this.dgPedidoColQtde,
-            this.dgPedidoColCodigo});
-            this.dgPedido.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgPedido.Location = new System.Drawing.Point(0, 0);
-            this.dgPedido.Name = "dgPedido";
-            this.dgPedido.ReadOnly = true;
-            this.dgPedido.Size = new System.Drawing.Size(300, 254);
-            this.dgPedido.TabIndex = 0;
-            this.dgPedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPedido_CellContentDoubleClick);
             // 
             // btnCancelaTelaPedido
             // 
@@ -421,19 +449,12 @@
             this.panel3.Size = new System.Drawing.Size(292, 111);
             this.panel3.TabIndex = 28;
             // 
-            // txtDinheiro
+            // txtValeRefeicao
             // 
-            this.txtDinheiro.Location = new System.Drawing.Point(218, 9);
-            this.txtDinheiro.Name = "txtDinheiro";
-            this.txtDinheiro.Size = new System.Drawing.Size(62, 20);
-            this.txtDinheiro.TabIndex = 28;
-            // 
-            // txtCartaoCredito
-            // 
-            this.txtCartaoCredito.Location = new System.Drawing.Point(218, 33);
-            this.txtCartaoCredito.Name = "txtCartaoCredito";
-            this.txtCartaoCredito.Size = new System.Drawing.Size(62, 20);
-            this.txtCartaoCredito.TabIndex = 29;
+            this.txtValeRefeicao.Location = new System.Drawing.Point(218, 81);
+            this.txtValeRefeicao.Name = "txtValeRefeicao";
+            this.txtValeRefeicao.Size = new System.Drawing.Size(62, 20);
+            this.txtValeRefeicao.TabIndex = 31;
             // 
             // txtCartaoDebito
             // 
@@ -442,12 +463,19 @@
             this.txtCartaoDebito.Size = new System.Drawing.Size(62, 20);
             this.txtCartaoDebito.TabIndex = 30;
             // 
-            // txtValeRefeicao
+            // txtCartaoCredito
             // 
-            this.txtValeRefeicao.Location = new System.Drawing.Point(218, 81);
-            this.txtValeRefeicao.Name = "txtValeRefeicao";
-            this.txtValeRefeicao.Size = new System.Drawing.Size(62, 20);
-            this.txtValeRefeicao.TabIndex = 31;
+            this.txtCartaoCredito.Location = new System.Drawing.Point(218, 33);
+            this.txtCartaoCredito.Name = "txtCartaoCredito";
+            this.txtCartaoCredito.Size = new System.Drawing.Size(62, 20);
+            this.txtCartaoCredito.TabIndex = 29;
+            // 
+            // txtDinheiro
+            // 
+            this.txtDinheiro.Location = new System.Drawing.Point(218, 9);
+            this.txtDinheiro.Name = "txtDinheiro";
+            this.txtDinheiro.Size = new System.Drawing.Size(62, 20);
+            this.txtDinheiro.TabIndex = 28;
             // 
             // label6
             // 
@@ -458,34 +486,6 @@
             this.label6.Size = new System.Drawing.Size(229, 22);
             this.label6.TabIndex = 29;
             this.label6.Text = "Opções de Pagamento";
-            // 
-            // dgPedidoCoItem
-            // 
-            this.dgPedidoCoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgPedidoCoItem.HeaderText = "Item";
-            this.dgPedidoCoItem.Name = "dgPedidoCoItem";
-            this.dgPedidoCoItem.ReadOnly = true;
-            // 
-            // dgPedidoColPreco
-            // 
-            this.dgPedidoColPreco.HeaderText = "Preço";
-            this.dgPedidoColPreco.Name = "dgPedidoColPreco";
-            this.dgPedidoColPreco.ReadOnly = true;
-            this.dgPedidoColPreco.Width = 60;
-            // 
-            // dgPedidoColQtde
-            // 
-            this.dgPedidoColQtde.HeaderText = "Quantidade";
-            this.dgPedidoColQtde.Name = "dgPedidoColQtde";
-            this.dgPedidoColQtde.ReadOnly = true;
-            this.dgPedidoColQtde.Width = 65;
-            // 
-            // dgPedidoColCodigo
-            // 
-            this.dgPedidoColCodigo.HeaderText = "Código";
-            this.dgPedidoColCodigo.Name = "dgPedidoColCodigo";
-            this.dgPedidoColCodigo.ReadOnly = true;
-            this.dgPedidoColCodigo.Visible = false;
             // 
             // TelaPedido
             // 

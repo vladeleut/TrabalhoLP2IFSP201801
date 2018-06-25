@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Text.RegularExpressions;
 
 namespace TrabalhoFinal
 {
@@ -144,19 +145,13 @@ namespace TrabalhoFinal
 
         private void cbPeditoTelCliente_TextChanged(object sender, EventArgs e)
         {
-            
-            //int flagClienteCadastrado; //vou definir se preciso cadastrar novo cliente
             ClienteDAO clienteDAO = new ClienteDAO();
             Cliente cli = clienteDAO.Read(cbPeditoTelCliente.Text);
 
             setDTO(cli);
-            /*
-            if (cli.Logradouro is null || cli.Logradouro.Length < 4) // Se o cliente for cadastrado, teremos um retorno (não nulo) no retorno de Read
-                flagClienteCadastrado = 0; //não temos o cliente     //Caso contrário, podemos adicionar seus dados na tabela pois não temos.
-            else
-                flagClienteCadastrado = 1; //temos o cliente e não precisamos fazer nada
 
-            return flagClienteCadastrado;*/
+            cbPeditoTelCliente.Text = Regex.Replace(cbPeditoTelCliente.Text, "[^0-9]", "");
+
         }
 
         
@@ -223,6 +218,11 @@ namespace TrabalhoFinal
             TelaCliente telaCliente = new TelaCliente();
             telaCliente.StartPosition = FormStartPosition.CenterScreen;
             telaCliente.ShowDialog();
+        }
+
+        private void TelaPedido_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

@@ -21,3 +21,4 @@ C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\Traba
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\Delivery.csproj.CopyComplete
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.exe
 C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.pdb
+C:\Users\eleut\OneDrive\ADS 2017\2018-1\LP2\Trabalho\TrabalhoLP2IFSP201801\TrabalhoFinal\obj\Debug\TrabalhoFinal.TelaGerenciarCaixa.resources

@@ -17,7 +17,7 @@ namespace TrabalhoFinal
             InitializeComponent();
         }
 
-        //lista temporária de pedidos
+        //lista temporária de produtos
         List<Produto> pedidoTemp = new List<Produto>();
         float valorDoLanche = 0;
         //preciso usar esses itens nos eventos dos datagrids.
@@ -27,10 +27,11 @@ namespace TrabalhoFinal
             ProdutoDAO lancheDAO = new ProdutoDAO();
             List<Produto> lista = lancheDAO.ListaPorTipo("lanche");
 
+            //povoa lista de lanches
             foreach (Produto p in lista)
                 dgListaLanche.Rows.Add(p.Nome, p.Preco, p.Codigo);
 
-            //povoa lista de lanches
+            //povoa lista de adicionais
             lista = lancheDAO.ListaPorTipo("Adicionais - lanche");
             foreach (Produto adc in lista)
                 dgAdicionaisLanche.Rows.Add(adc.Nome, adc.Preco, adc.Codigo);

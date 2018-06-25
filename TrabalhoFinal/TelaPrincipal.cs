@@ -36,7 +36,11 @@ namespace TrabalhoFinal
                 MessageBox.Show("Caixa aberto com sucesso!!", "Operção concluida", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                 //btnChamaProduto.Enabled = true;
             }
-            lblAbertura.Text = Caixa.getInstance().Abertura.ToString();
+            lblAbertura.Text = Caixa.getInstance().Abertura.ToString();//pegar do banco
+            lblAbertoEm.Visible = true;
+            lblAbertura.Visible = true;
+            btnFechaCaixa.Visible = true;
+            btnAbreCaixa.Visible = false;
             
 
            
