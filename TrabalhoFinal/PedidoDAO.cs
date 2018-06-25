@@ -65,6 +65,30 @@ namespace TrabalhoFinal
             return pedido;
         }
 
+        /*
+        private String TempoAteFechamento(int nro_pedido)//usamos apenas dentro da classe (por enquanto)
+        {
+            String tempoDoPedido = "";
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = "Select timediff(fechamentoPedido, aberturaPedido from pedido where nro_pedido = @Nro_pedido";
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+            comm.Parameters.AddWithValue("@Nro_pedido", nro_pedido);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+                tempoDoPedido = dr.GetString(0);
+
+            dr.Close();
+            conn.Close();
+            return tempoDoPedido;
+        }
+        */
+
         public void Delete(int nro_pedido)
         {
             Database dbDelivery = Database.GetInstance();
@@ -91,7 +115,7 @@ namespace TrabalhoFinal
             dbDelivery.ExecuteSQL(comm);
         }
 
-        public List<Pedido> ListaPedidos()
+        public List<Pedido> ListaPedidos()//usada para povoar datagrid da tela de pedidos
         {
             List<Pedido> listaPedidos = new List<Pedido>();
 
@@ -99,8 +123,8 @@ namespace TrabalhoFinal
 
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
-
-            string qry = "select pd.nro, pd.situacao, pd.cliente, c.nome, c.bairro, timediff(sysdate(), pd.aberturaPedido) from pedido_dados pd, cliente c where c.codigo = pd.cliente;"; 
+                                                                                    //se a fechamento - dataAbertura for null, é pq está aberto. faz AGORA-dataAbertura
+            string qry = "select pd.nro, pd.situacao, pd.cliente, c.nome, c.bairro, ifnull(timediff(pd.fechamentoPedido, pd.aberturaPedido), timediff(sysdate(), pd.aberturaPedido)) from pedido_dados pd, cliente c where c.codigo = pd.cliente;"; 
     
             MySqlCommand comm = new MySqlCommand(qry, conn);
 
@@ -117,6 +141,11 @@ namespace TrabalhoFinal
                 pedido.NomeCliente = dr.GetString(3);
                 pedido.BairroCliente = dr.GetString(4);
                 pedido.Tempo = dr.GetString(5);
+                /*
+                if (pedido.Situacao.Equals("Aberto"))
+                    pedido.Tempo = dr.GetString(5);
+                else
+                    pedido.Tempo = dr.GetString(6);*/
 
                 listaPedidos.Add(pedido);
             }
@@ -138,6 +167,8 @@ namespace TrabalhoFinal
 
             dbDelivery.ExecuteSQL(comm);
         }
+
+
         public int EncontraPedidoNovo()
         {
             int nroPedido = 0;
@@ -160,7 +191,7 @@ namespace TrabalhoFinal
 
             return nroPedido;
         }
-        public List<Pedido> ListaPedidoPorNumero() //para preencher datagrid da tela pedido. quando é novo ou está em atividade (sendo editado).
+        public List<Pedido> ListaPedidoPorNumero(int nro) //para preencher datagrid da tela pedido. quando é novo ou está em atividade (sendo editado).
         {
             List<Pedido> listaPedidos = new List<Pedido>();
 
@@ -192,6 +223,19 @@ namespace TrabalhoFinal
             dr.Close();
             conn.Close();
             return listaPedidos;
+        }
+
+        public void AssociaClientePedido(int nroCliente, int nroPedido)
+        {
+            Database dbDelivery = Database.GetInstance();
+            String qry = "UPDATE pedido_dados set cliente = @NumeroCliente where nro = @Nro_pedido;";
+
+            MySqlCommand comm = new MySqlCommand(qry);
+
+            comm.Parameters.AddWithValue("@NumeroCliente", nroCliente);
+            comm.Parameters.AddWithValue("@Nro_pedido", nroPedido);
+
+            dbDelivery.ExecuteSQL(comm);
         }
     }
 }

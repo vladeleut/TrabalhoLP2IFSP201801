@@ -128,5 +128,31 @@ namespace TrabalhoFinal
             conn.Close();
             return listaCliente;
         }
+
+        public int EcontraNroCliente(string telefone)
+        {
+
+            int nroCliente = 0;
+
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = "Select codigo from cliente where telefone = @Telefone";
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+            comm.Parameters.AddWithValue("@Telefone", telefone);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+                nroCliente = dr.GetInt32(0);
+
+            dr.Close();
+            conn.Close();
+
+            return nroCliente;
+        }
     }
+
 }

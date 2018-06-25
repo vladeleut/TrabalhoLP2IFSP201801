@@ -18,17 +18,6 @@ namespace TrabalhoFinal
             cbPeditoTelCliente.Select();//inicia a tela de pedido com o cursor no campo de telefone. é só digitar
         }
 
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            List<Cliente> clientes = new List<Cliente>();
-            //clientes.Add(new Cliente(long.Parse(txtTelefone.Text), txtNome.Text, txtLogradouro.Text, int.Parse(txtNumero.Text)));
-            
-            Close();
-        }
-
-        
-
         private void bttAdcLanche_Click(object sender, EventArgs e)
         {
             TelaLanche lanche = new TelaLanche();
@@ -166,6 +155,25 @@ namespace TrabalhoFinal
         private void cbPeditoTelCliente_Leave(object sender, EventArgs e)
         {
             //if((cbPeditoTelCliente.Text.Length >=8)
+        }
+
+        private void btnFinalizaPedido_Click(object sender, EventArgs e)
+        {
+            //adiciona cliente no banco se não tiver
+
+            //associa pedido ao cliente. => update 
+
+            //acharemos o nro do pedido, o nro do cliente, e atualizamos a tabela
+
+            PedidoDAO pedidoDAO = new PedidoDAO();
+
+            ClienteDAO clienteDAO = new ClienteDAO();
+
+            pedidoDAO.AssociaClientePedido(clienteDAO.EcontraNroCliente(cbPeditoTelCliente.Text), pedidoDAO.EncontraPedidoNovo());
+
+            
+
+            this.Close();
         }
     }
 }

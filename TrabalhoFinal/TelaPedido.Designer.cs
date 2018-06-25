@@ -36,6 +36,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblBairro = new System.Windows.Forms.Label();
             this.cbTaxaDeEntrega = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.cbPeditoTelCliente = new System.Windows.Forms.ComboBox();
@@ -45,18 +47,16 @@
             this.txtComplemento = new System.Windows.Forms.TextBox();
             this.txtLogradouro = new System.Windows.Forms.TextBox();
             this.txtNome = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnFinalizaPedido = new System.Windows.Forms.Button();
             this.btnPedidoAdicionaPizza = new System.Windows.Forms.Button();
             this.btnPedidoAdicionaLanche = new System.Windows.Forms.Button();
             this.btnPedidoAdicionaBebida = new System.Windows.Forms.Button();
             this.btnPedidoAdicionaOutros = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnCancelaTelaPedido = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblBairro = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -156,6 +156,23 @@
             this.panel1.Size = new System.Drawing.Size(272, 227);
             this.panel1.TabIndex = 10;
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(122, 112);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(145, 20);
+            this.textBox1.TabIndex = 19;
+            // 
+            // lblBairro
+            // 
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairro.Location = new System.Drawing.Point(67, 112);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(49, 15);
+            this.lblBairro.TabIndex = 20;
+            this.lblBairro.Text = "Bairro";
+            // 
             // cbTaxaDeEntrega
             // 
             this.cbTaxaDeEntrega.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
@@ -231,17 +248,17 @@
             this.txtNome.Size = new System.Drawing.Size(145, 20);
             this.txtNome.TabIndex = 2;
             // 
-            // button1
+            // btnFinalizaPedido
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.button1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(643, 260);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(218, 74);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "Finalizar Pedido";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnFinalizaPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnFinalizaPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizaPedido.Location = new System.Drawing.Point(643, 260);
+            this.btnFinalizaPedido.Name = "btnFinalizaPedido";
+            this.btnFinalizaPedido.Size = new System.Drawing.Size(218, 74);
+            this.btnFinalizaPedido.TabIndex = 11;
+            this.btnFinalizaPedido.Text = "Finalizar Pedido";
+            this.btnFinalizaPedido.UseVisualStyleBackColor = false;
+            this.btnFinalizaPedido.Click += new System.EventHandler(this.btnFinalizaPedido_Click);
             // 
             // btnPedidoAdicionaPizza
             // 
@@ -302,6 +319,24 @@
             this.panel2.Size = new System.Drawing.Size(300, 335);
             this.panel2.TabIndex = 25;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(168, 286);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 13);
+            this.label10.TabIndex = 2;
+            this.label10.Text = "label10";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(48, 286);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(35, 13);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "label6";
+            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -322,41 +357,6 @@
             this.btnCancelaTelaPedido.UseVisualStyleBackColor = true;
             this.btnCancelaTelaPedido.Click += new System.EventHandler(this.btnCancelaTelaPedido_Click);
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 286);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(168, 286);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "label10";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(122, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 19;
-            // 
-            // lblBairro
-            // 
-            this.lblBairro.AutoSize = true;
-            this.lblBairro.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBairro.Location = new System.Drawing.Point(67, 112);
-            this.lblBairro.Name = "lblBairro";
-            this.lblBairro.Size = new System.Drawing.Size(49, 15);
-            this.lblBairro.TabIndex = 20;
-            this.lblBairro.Text = "Bairro";
-            // 
             // TelaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -368,7 +368,7 @@
             this.Controls.Add(this.btnPedidoAdicionaBebida);
             this.Controls.Add(this.btnPedidoAdicionaLanche);
             this.Controls.Add(this.btnPedidoAdicionaPizza);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnFinalizaPedido);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "TelaPedido";
@@ -399,7 +399,7 @@
         private System.Windows.Forms.TextBox txtComplemento;
         private System.Windows.Forms.TextBox txtLogradouro;
         private System.Windows.Forms.TextBox txtNome;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnFinalizaPedido;
         private System.Windows.Forms.Button btnPedidoAdicionaPizza;
         private System.Windows.Forms.Button btnPedidoAdicionaLanche;
         private System.Windows.Forms.Button btnPedidoAdicionaBebida;
