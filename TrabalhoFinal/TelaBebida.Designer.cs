@@ -107,7 +107,7 @@
             this.dgListaBebidas.Location = new System.Drawing.Point(12, 40);
             this.dgListaBebidas.Name = "dgListaBebidas";
             this.dgListaBebidas.ReadOnly = true;
-            this.dgListaBebidas.Size = new System.Drawing.Size(280, 390);
+            this.dgListaBebidas.Size = new System.Drawing.Size(280, 331);
             this.dgListaBebidas.TabIndex = 24;
             // 
             // dgListaPizzaColNome

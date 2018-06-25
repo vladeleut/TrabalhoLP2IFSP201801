@@ -24,5 +24,11 @@ namespace TrabalhoFinal
             foreach (Produto p in lista)
                 dgListaPizza.Rows.Add(p.Nome, p.Preco, p.Codigo);
 
-            }
+
+            lista = pizzaDAO.ListaPorTipo("Adicionais - pizza");
+            foreach (Produto adc in lista)
+                dgAdicionaisPizza.Rows.Add(adc.Nome, adc.Preco, adc.Codigo);
+
+        }
+
     } }

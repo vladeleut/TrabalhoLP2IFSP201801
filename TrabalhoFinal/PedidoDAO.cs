@@ -9,6 +9,7 @@ namespace TrabalhoFinal
 {
     class PedidoDAO
     {
+        /*
         public void Create(Pedido pedido)
         {
             Database dbDelivery = Database.GetInstance();
@@ -18,12 +19,20 @@ namespace TrabalhoFinal
             MySqlCommand comm = new MySqlCommand(qry); 
 
             dbDelivery.ExecuteSQL(comm);
+        }*/
+        public void CriaPedido()
+        {
+            Database dbDelivery = Database.GetInstance();
+
+            string qry = "insert into pedido_dados (aberturaPedido, flagStatus) values (sysdate(), 1);";
+
+            MySqlCommand comm = new MySqlCommand(qry);
+
+            dbDelivery.ExecuteSQL(comm);
         }
 
         public void AbrePedidoNovo(Pedido pedido)
         {
-            
-
             //return pedido.Nro_pedido;
         }
 
@@ -116,16 +125,73 @@ namespace TrabalhoFinal
             return listaPedidos;
         }
 
-        /*
-        public int CriaPedido()
+        public void InsereItem(int nro_pedido, int cod_produto)
         {
-            //?
-            
-            Pedido pedido = new Pedido();
-            pedido
+            Database dbDelivery = Database.GetInstance();
 
-            return ()
-        }*/
+            string qry = "insert into pedido_itens (nro_pedido, cod_produto) values (@Nro, @Cod);";
 
+            MySqlCommand comm = new MySqlCommand(qry);
+
+            comm.Parameters.AddWithValue("@Nro", nro_pedido);
+            comm.Parameters.AddWithValue("@Cod", cod_produto);
+
+            dbDelivery.ExecuteSQL(comm);
+        }
+        public int EncontraPedidoNovo()
+        {
+            int nroPedido = 0;
+
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = "Select nro from pedido_dados where flagStatus = 1";
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            if (dr.Read())
+                nroPedido = dr.GetInt32(0);
+
+            dr.Close();
+            conn.Close();
+
+            return nroPedido;
+        }
+        public List<Pedido> ListaPedidoPorNumero() //para preencher datagrid da tela pedido. quando é novo ou está em atividade (sendo editado).
+        {
+            List<Pedido> listaPedidos = new List<Pedido>();
+
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = "select pd.nro, pd.situacao, pd.cliente, c.nome, c.bairro, timediff(sysdate(), pd.aberturaPedido) from pedido_dados pd, cliente c where c.codigo = pd.cliente;";
+
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            //precisamos colocar as inf obtidas no objeto
+            while (dr.Read())
+            {
+                Pedido pedido = new Pedido();
+
+                pedido.Nro_pedido = dr.GetInt32(0);
+                pedido.Situacao = dr.GetString(1);
+                pedido.Cliente = dr.GetInt32(2);
+                pedido.NomeCliente = dr.GetString(3);
+                pedido.BairroCliente = dr.GetString(4);
+                pedido.Tempo = dr.GetString(5);
+
+                listaPedidos.Add(pedido);
+            }
+            dr.Close();
+            conn.Close();
+            return listaPedidos;
+        }
     }
 }

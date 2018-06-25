@@ -49,7 +49,6 @@ namespace TrabalhoFinal
             outro.StartPosition = FormStartPosition.CenterScreen;
             outro.ShowDialog();
         }
-
         private void TelaPedido_Load(object sender, EventArgs e)
         {
             mtxtDDD.Text = "16";
@@ -67,14 +66,8 @@ namespace TrabalhoFinal
                 cbPeditoTelCliente.Items.Add(s);
             }
 
-            /*
-            PedidoDAO pedidoDAO = new PedidoDAO();
-            Pedido pedidoAtual = new Pedido();
-            pedidoAtual.Nro_pedido = pedidoDAO.AbrePedidoNovo();
-
-            pedidoDAO.Create(pedidoAtual);*/
-            
-            
+            //pesquisar dados do pedido nro X, 
+            //colocar itens do pedido X no datagrid.
             
         }
 

@@ -122,7 +122,7 @@ namespace TrabalhoFinal
             String qry = "";
 
             if (tipo.Equals("outros"))
-                qry = "Select codigo, nome, preco, tipo from produto where tipo not in ('lanche','pizza','bebida')  order by tipo, nome;";
+                qry = "Select codigo, nome, preco, tipo from produto where tipo not in ('lanche','pizza','bebida') and tipo not like 'Adicionais%' order by tipo, nome;";
             else
                 qry = "Select codigo, nome, preco, tipo from produto where tipo like @Tipo order by nome;";
             
@@ -148,7 +148,7 @@ namespace TrabalhoFinal
             conn.Close();
             return listaPorTipo;
         }
-
+        
 
     }
 }

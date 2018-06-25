@@ -19,7 +19,7 @@ namespace TrabalhoFinal
         String bairroCliente;
         String tempo;
 
-        List<ItemPedido> itens = new List<ItemPedido>();
+        //List<Produto> itens = new List<Produto>();
 
         public int Nro_pedido { get { return nro_pedido; } set { nro_pedido = value; } }
         public DateTime AberturaPedido { get {return aberturaPedido; } set { aberturaPedido = value; } }
@@ -28,7 +28,7 @@ namespace TrabalhoFinal
         public int Cliente { get { return cliente; } set { cliente = value; } }
         public String NomeCliente { get { return nomeCliente; } set { nomeCliente = value; } }
         public String Situacao { get {return situacao; } set { situacao = value; } }
-        public List<ItemPedido> Itens { get { return Itens; } set { Itens = value; } }
+        //public List<Produto> Itens { get { return Itens; } set { Itens = value; } }
         public String BairroCliente { get { return bairroCliente; } set { bairroCliente = value; } }
         public String Tempo { get { return tempo; } set { tempo = value; } }
 

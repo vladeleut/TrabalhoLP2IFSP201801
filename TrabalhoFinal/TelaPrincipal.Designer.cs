@@ -49,6 +49,12 @@
             this.tabTelaPedido = new System.Windows.Forms.TabPage();
             this.panDGPedidos = new System.Windows.Forms.Panel();
             this.dgPedidos = new System.Windows.Forms.DataGridView();
+            this.dgPedidosColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosColTempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnNovoPedido = new System.Windows.Forms.Button();
@@ -57,12 +63,6 @@
             this.btnVendas = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.btnChamaProduto = new System.Windows.Forms.Button();
-            this.dgPedidosColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosColTempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabGeral.SuspendLayout();
             this.TabInicio.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -320,6 +320,42 @@
             this.dgPedidos.Size = new System.Drawing.Size(764, 220);
             this.dgPedidos.TabIndex = 0;
             // 
+            // dgPedidosColNro
+            // 
+            this.dgPedidosColNro.HeaderText = "Número";
+            this.dgPedidosColNro.Name = "dgPedidosColNro";
+            this.dgPedidosColNro.ReadOnly = true;
+            // 
+            // dgPedidosSituacao
+            // 
+            this.dgPedidosSituacao.HeaderText = "Situação";
+            this.dgPedidosSituacao.Name = "dgPedidosSituacao";
+            this.dgPedidosSituacao.ReadOnly = true;
+            // 
+            // dgPedidosCliente
+            // 
+            this.dgPedidosCliente.HeaderText = "Cliente";
+            this.dgPedidosCliente.Name = "dgPedidosCliente";
+            this.dgPedidosCliente.ReadOnly = true;
+            // 
+            // dgPedidosBairro
+            // 
+            this.dgPedidosBairro.HeaderText = "Bairro";
+            this.dgPedidosBairro.Name = "dgPedidosBairro";
+            this.dgPedidosBairro.ReadOnly = true;
+            // 
+            // dgPedidosColTempo
+            // 
+            this.dgPedidosColTempo.HeaderText = "Tempo";
+            this.dgPedidosColTempo.Name = "dgPedidosColTempo";
+            this.dgPedidosColTempo.ReadOnly = true;
+            // 
+            // dgPedidosValor
+            // 
+            this.dgPedidosValor.HeaderText = "Valor";
+            this.dgPedidosValor.Name = "dgPedidosValor";
+            this.dgPedidosValor.ReadOnly = true;
+            // 
             // pictureBox5
             // 
             this.pictureBox5.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
@@ -424,42 +460,6 @@
             this.btnChamaProduto.UseVisualStyleBackColor = false;
             this.btnChamaProduto.Click += new System.EventHandler(this.btnChamaProduto_Click);
             // 
-            // dgPedidosColNro
-            // 
-            this.dgPedidosColNro.HeaderText = "Número";
-            this.dgPedidosColNro.Name = "dgPedidosColNro";
-            this.dgPedidosColNro.ReadOnly = true;
-            // 
-            // dgPedidosSituacao
-            // 
-            this.dgPedidosSituacao.HeaderText = "Situação";
-            this.dgPedidosSituacao.Name = "dgPedidosSituacao";
-            this.dgPedidosSituacao.ReadOnly = true;
-            // 
-            // dgPedidosCliente
-            // 
-            this.dgPedidosCliente.HeaderText = "Cliente";
-            this.dgPedidosCliente.Name = "dgPedidosCliente";
-            this.dgPedidosCliente.ReadOnly = true;
-            // 
-            // dgPedidosBairro
-            // 
-            this.dgPedidosBairro.HeaderText = "Bairro";
-            this.dgPedidosBairro.Name = "dgPedidosBairro";
-            this.dgPedidosBairro.ReadOnly = true;
-            // 
-            // dgPedidosColTempo
-            // 
-            this.dgPedidosColTempo.HeaderText = "Tempo";
-            this.dgPedidosColTempo.Name = "dgPedidosColTempo";
-            this.dgPedidosColTempo.ReadOnly = true;
-            // 
-            // dgPedidosValor
-            // 
-            this.dgPedidosValor.HeaderText = "Valor";
-            this.dgPedidosValor.Name = "dgPedidosValor";
-            this.dgPedidosValor.ReadOnly = true;
-            // 
             // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,7 +468,7 @@
             this.Controls.Add(this.tabGeral);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Inicio";
-            this.Text = "Form1";
+            this.Text = "Barraquinha Delivery";
             this.Load += new System.EventHandler(this.Inicio_Load);
             this.tabGeral.ResumeLayout(false);
             this.TabInicio.ResumeLayout(false);

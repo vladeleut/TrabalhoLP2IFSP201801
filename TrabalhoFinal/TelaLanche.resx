@@ -117,19 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Lanche.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgPedidoTempLancheCoItem.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Quantidade.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgPedidoTempLancheColTipo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Preço.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgPedidoTempLancheCoICódigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Adicional.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgAdicionaisLancheColAdc.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Valor.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="dgAdicionaisLancheColPreco.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dgAdicionaisLancheColCodigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="dgListaPizzaColNome.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -141,4 +144,29 @@
   <metadata name="dgListaPizzaColCodigo.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMEeAADBHgAAAAAAAAAA
+        AAD///////////////////////////////////////////7+////////////////////////////////
+        /////////////////////////////////////////f3+//39/v/+/v7//Pz+////////////////////
+        ///////////////////////////////////+/v///f3+///////7+/3/+fr9///////9/f7//f7+////
+        /////////////////////////v7///z8/f/+/v7//v7////////T0+3/V1a3/0ZEr//CweX////////+
+        /////v7//f3+//7+/v///////v7///39/v/+/////////+/x+/+HjMj/LzSV/ywznP8vNp7/Ki6S/3Z5
+        vf/m5/f////+//7////+/v7//v7////////o7/f/aJG//0yLuP8tZ6X/F0uU/yNRl/8hQoz/IUSN/yRW
+        mf8YSpT/KWKj/0mKuP9ekb//1N/u///////49/7/maXO/0BTkv9HaZ3/Tmye/1RtoP9ZdKb/XXOk/2p9
+        qP9VcKT/Tm6f/0lom/9KbJ7/MkeJ/36Lv//4+P//0M/u/0RRnP/BwND/1NDb/8fE0/+8ucv/ycbU/8vI
+        1v+/vM3/wb7O/7m1yP/KyNb/z8zY/8vI1f9JVp//w8To//////+ywN3/iIuz/6yswP+2tsj/wsHR/7Cx
+        xf+kpr3/tbbK/7q6zP+4t8r/xMTS/7m5yv+foLv/s8Pc////////////5/D3/5+xz/+EksD/Slea/09d
+        m/+UmLf/yMjW/2Rlmf9dZ6P/WWeh/0JPk/99i7r/nq7L/9/s9P////////////7+///+/v7//////52h
+        0/8MEHj/Tk+R/////v/v7/D/PD+L/woOdP+Gi8X//v///////v/+/v/////////////+/v///f39//z8
+        /f//////wL/k/0VDlf/Jydn/dnSz/xoVhP+vrtn///////38/f/9/f3//v7/////////////////////
+        ////////+/v9///////k5PT/RkSk/yYjnP/T0+3///////v7/f/+/v//////////////////////////
+        ///////////////////8/P7///////Dw+v/r6/j///////z8/f//////////////////////////////
+        //////////////////////////////39/v/+/v7//v7+//39/v//////////////////////////////
+        /////////////////////////////////////////v7///7+////////////////////////////////
+        ////////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>

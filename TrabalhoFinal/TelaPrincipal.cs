@@ -100,9 +100,13 @@ namespace TrabalhoFinal
         private void btnNovoPedido_Click(object sender, EventArgs e)
         {
             //tela editar pedido?
+
+            PedidoDAO pedido = new PedidoDAO();
+            pedido.CriaPedido();
+
             TelaPedido telaPedido = new TelaPedido();
             telaPedido.StartPosition = FormStartPosition.CenterScreen;
-            telaPedido.Show();
+            telaPedido.ShowDialog();
 
         }
     }
