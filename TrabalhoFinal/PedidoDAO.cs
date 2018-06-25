@@ -35,9 +35,11 @@ namespace TrabalhoFinal
         {
             //return pedido.Nro_pedido;
         }
-
+/*
         public Pedido Read(int nro_pedido)
         {
+
+            
             MySqlConnection conn = Database.GetInstance().GetConnection();
             Pedido pedido = null;
 
@@ -64,8 +66,8 @@ namespace TrabalhoFinal
 
             return pedido;
         }
-
-        /*
+        
+        
         private String TempoAteFechamento(int nro_pedido)//usamos apenas dentro da classe (por enquanto)
         {
             String tempoDoPedido = "";
@@ -154,11 +156,14 @@ namespace TrabalhoFinal
             return listaPedidos;
         }
 
+
+        
+
         public void InsereItem(int nro_pedido, int cod_produto)
         {
             Database dbDelivery = Database.GetInstance();
 
-            string qry = "insert into pedido_itens (nro_pedido, cod_produto) values (@Nro, @Cod);";
+            string qry = "insert into pedido_itens (nro_pedido, cod_produto, qtde_produto) values (@Nro, @Cod, 1);";
 
             MySqlCommand comm = new MySqlCommand(qry);
 
@@ -189,41 +194,43 @@ namespace TrabalhoFinal
             dr.Close();
             conn.Close();
 
+            //nroPedido = 3;//tirar essa linha após testes
+
             return nroPedido;
         }
-        public List<Pedido> ListaPedidoPorNumero(int nro) //para preencher datagrid da tela pedido. quando é novo ou está em atividade (sendo editado).
+
+        public Pedido PedidoNro(int nroPedido)
         {
-            List<Pedido> listaPedidos = new List<Pedido>();
+            Pedido pedido = null;
 
             MySqlConnection conn = Database.GetInstance().GetConnection();
 
             if (conn.State != System.Data.ConnectionState.Open)
                 conn.Open();
 
-            string qry = "select pd.nro, pd.situacao, pd.cliente, c.nome, c.bairro, timediff(sysdate(), pd.aberturaPedido) from pedido_dados pd, cliente c where c.codigo = pd.cliente;";
 
+            //vou ter q ler os dados do pedido e a lista de prodoutos separadamente. vamos para os dados do pedido:
+            string qry = "select aberturaPedido, ifnull(cliente, 0) from pedido_dados  where nro = @Numero;";
             MySqlCommand comm = new MySqlCommand(qry, conn);
+            comm.Parameters.AddWithValue("@Numero", nroPedido);
 
             MySqlDataReader dr = comm.ExecuteReader();
 
-            //precisamos colocar as inf obtidas no objeto
-            while (dr.Read())
+            if (dr.Read())
             {
-                Pedido pedido = new Pedido();
-
-                pedido.Nro_pedido = dr.GetInt32(0);
-                pedido.Situacao = dr.GetString(1);
-                pedido.Cliente = dr.GetInt32(2);
-                pedido.NomeCliente = dr.GetString(3);
-                pedido.BairroCliente = dr.GetString(4);
-                pedido.Tempo = dr.GetString(5);
-
-                listaPedidos.Add(pedido);
+                pedido = new Pedido();
+                pedido.AberturaPedido = dr.GetMySqlDateTime(0);
+                pedido.Cliente = dr.GetInt32(1);
             }
+
             dr.Close();
             conn.Close();
-            return listaPedidos;
+
+            return pedido;
+
         }
+
+
 
         public void AssociaClientePedido(int nroCliente, int nroPedido)
         {
@@ -233,6 +240,19 @@ namespace TrabalhoFinal
             MySqlCommand comm = new MySqlCommand(qry);
 
             comm.Parameters.AddWithValue("@NumeroCliente", nroCliente);
+            comm.Parameters.AddWithValue("@Nro_pedido", nroPedido);
+
+            dbDelivery.ExecuteSQL(comm);
+        }
+
+        public void AtualizaEstado(int nroPedido, int novoEstado)
+        {
+            Database dbDelivery = Database.GetInstance();
+            String qry = "UPDATE pedido_dados set flagStatus = @FlagNovoStatus where nro = @Nro_pedido;";
+
+            MySqlCommand comm = new MySqlCommand(qry);
+
+            comm.Parameters.AddWithValue("@FlagNovoStatus", novoEstado);
             comm.Parameters.AddWithValue("@Nro_pedido", nroPedido);
 
             dbDelivery.ExecuteSQL(comm);

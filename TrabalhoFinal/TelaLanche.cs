@@ -41,6 +41,7 @@ namespace TrabalhoFinal
                 dgAdicionaisLanche.Rows.Add(adc.Nome, adc.Preco, adc.Codigo);
         }
 
+        
         private void dgListaLanche_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             

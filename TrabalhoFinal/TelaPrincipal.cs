@@ -73,7 +73,20 @@ namespace TrabalhoFinal
 
         private void Inicio_Load(object sender, EventArgs e)
         {
+            
             //preenche lista de pedidos recentes abertos e fechados
+            PedidoDAO pedido = new PedidoDAO();
+            List<Pedido> lista = pedido.ListaPedidos();
+
+            foreach (Pedido p in lista)
+            {
+                dgPedidos.Rows.Add(p.Nro_pedido, p.Situacao, p.NomeCliente, p.BairroCliente, p.Tempo);
+            }
+
+        }
+        private void AtualizaDataGrid()
+        {
+            dgPedidos.Rows.Clear();
             PedidoDAO pedido = new PedidoDAO();
             List<Pedido> lista = pedido.ListaPedidos();
 
@@ -110,6 +123,9 @@ namespace TrabalhoFinal
 
         }
 
-  
+        private void tabTelaPedido_MouseEnter(object sender, EventArgs e)
+        {
+            AtualizaDataGrid();
+        }
     }
 }

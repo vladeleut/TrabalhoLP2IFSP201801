@@ -148,7 +148,39 @@ namespace TrabalhoFinal
             conn.Close();
             return listaPorTipo;
         }
-        
 
+        //para preencher datagrid da tela pedido. quando é novo ou está em atividade (sendo editado).
+        public List<Produto> ListaItensDoPedidoPorNumero(int nro)
+        {
+            List<Produto> listaProdutosDoPedido = new List<Produto>();
+
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            //vamos para os dados do pedido:
+            string qry = "select pi.cod_produto, pi.qtde_produto, pr.preco, pr.nome from pedido_itens pi, produto pr where nro_pedido = @Numero and pi.cod_produto = pr.codigo;";
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+
+            comm.Parameters.AddWithValue("@Numero", nro);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Produto prod = new Produto();
+                prod.Codigo = dr.GetInt32(0);
+                prod.Qtde = dr.GetFloat(1);
+                prod.Preco = dr.GetFloat(2).ToString();
+                prod.Nome = dr.GetString(3);
+
+                listaProdutosDoPedido.Add(prod);
+
+            }
+            dr.Close();
+            conn.Close();
+            return listaProdutosDoPedido;
+        }
     }
 }

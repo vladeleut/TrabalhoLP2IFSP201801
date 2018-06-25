@@ -18,6 +18,7 @@ namespace TrabalhoFinal
             cbPeditoTelCliente.Select();//inicia a tela de pedido com o cursor no campo de telefone. é só digitar
         }
 
+        
         private void bttAdcLanche_Click(object sender, EventArgs e)
         {
             TelaLanche lanche = new TelaLanche();
@@ -32,6 +33,7 @@ namespace TrabalhoFinal
             bebida.ShowDialog();
         }
 
+
         private void bttAdcOutro_Click(object sender, EventArgs e)
         {
             TelaOutros outro = new TelaOutros();
@@ -40,6 +42,7 @@ namespace TrabalhoFinal
         }
         private void TelaPedido_Load(object sender, EventArgs e)
         {
+            //este bloco (até "Bloco termina aqui") trata do carregamendo dos dados dos clientes que já estão no banco
             mtxtDDD.Text = "16";
             ClienteDAO cliDAO = new ClienteDAO();
             List<Cliente> lista = cliDAO.listaCliente();
@@ -54,13 +57,25 @@ namespace TrabalhoFinal
             {
                 cbPeditoTelCliente.Items.Add(s);
             }
+            //bloco termina aqui.
 
-            //pesquisar dados do pedido nro X, 
-            //colocar itens do pedido X no datagrid.
             
         }
 
-        
+        public void AtualizaDataGrid()
+        {
+            //pesquisar dados do pedido nro X, 
+            //colocar itens do pedido X no datagrid.
+            dgPedido.Rows.Clear();
+            PedidoDAO pedidoDAO = new PedidoDAO();   //FINALZÃO - CHEFÃO
+            Pedido pedidoAtual = pedidoDAO.PedidoNro(pedidoDAO.EncontraPedidoNovo());
+            ProdutoDAO produtos = new ProdutoDAO();
+            List<Produto> listaDeItens = produtos.ListaItensDoPedidoPorNumero(pedidoDAO.EncontraPedidoNovo());
+            foreach (Produto p in listaDeItens)
+                dgPedido.Rows.Add(p.Nome, p.Preco, p.Qtde);
+        }
+
+
 
         private void cbPeditoTelCliente_KeyUp(object sender, KeyEventArgs e)
         {   
@@ -159,21 +174,24 @@ namespace TrabalhoFinal
 
         private void btnFinalizaPedido_Click(object sender, EventArgs e)
         {
-            //adiciona cliente no banco se não tiver
-
-            //associa pedido ao cliente. => update 
-
-            //acharemos o nro do pedido, o nro do cliente, e atualizamos a tabela
-
             PedidoDAO pedidoDAO = new PedidoDAO();
-
             ClienteDAO clienteDAO = new ClienteDAO();
 
+            //associa pedido ao cliente. => update 
+            //acharemos o nro do pedido, o nro do cliente, e atualizamos a tabela
             pedidoDAO.AssociaClientePedido(clienteDAO.EcontraNroCliente(cbPeditoTelCliente.Text), pedidoDAO.EncontraPedidoNovo());
 
-            
+            //mudar estado do pedido => update
+
+            pedidoDAO.AtualizaEstado(pedidoDAO.EncontraPedidoNovo(), 2);
+            //se finalizou o pedido ele deixa de ser novo para aguardar finalização.
 
             this.Close();
+        }
+
+        private void TelaPedido_MouseEnter(object sender, EventArgs e)
+        {
+            AtualizaDataGrid();
         }
     }
 }
