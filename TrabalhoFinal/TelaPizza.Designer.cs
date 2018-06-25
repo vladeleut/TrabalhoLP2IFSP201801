@@ -34,6 +34,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dgAdicionaisPizza = new System.Windows.Forms.DataGridView();
+            this.dgAdicionaisPizzaColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgAdicionaisPizzaColValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgAdicionaisPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoPizza = new System.Windows.Forms.DataGridView();
             this.Pizza = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,9 +45,6 @@
             this.dgListaPizzaColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgListaPizzaColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgListaPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgAdicionaisPizzaColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgAdicionaisPizzaColValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgAdicionaisPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgAdicionaisPizza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidoPizza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaPizza)).BeginInit();
@@ -71,15 +71,17 @@
             this.btnAddPedido.TabIndex = 3;
             this.btnAddPedido.Text = "Adicionar ao Pedido";
             this.btnAddPedido.UseVisualStyleBackColor = false;
+            this.btnAddPedido.Click += new System.EventHandler(this.btnAddPedido_Click);
             // 
             // btnCancelaPedido
             // 
-            this.btnCancelaPedido.Location = new System.Drawing.Point(670, 385);
+            this.btnCancelaPedido.Location = new System.Drawing.Point(659, 385);
             this.btnCancelaPedido.Name = "btnCancelaPedido";
             this.btnCancelaPedido.Size = new System.Drawing.Size(96, 33);
             this.btnCancelaPedido.TabIndex = 20;
             this.btnCancelaPedido.Text = "Cancelar Pedido";
             this.btnCancelaPedido.UseVisualStyleBackColor = true;
+            this.btnCancelaPedido.Click += new System.EventHandler(this.btnCancelaPedido_Click);
             // 
             // label3
             // 
@@ -115,6 +117,28 @@
             this.dgAdicionaisPizza.ReadOnly = true;
             this.dgAdicionaisPizza.Size = new System.Drawing.Size(240, 208);
             this.dgAdicionaisPizza.TabIndex = 17;
+            this.dgAdicionaisPizza.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgAdicionaisPizza_CellMouseDoubleClick);
+            // 
+            // dgAdicionaisPizzaColNome
+            // 
+            this.dgAdicionaisPizzaColNome.HeaderText = "Adicional";
+            this.dgAdicionaisPizzaColNome.Name = "dgAdicionaisPizzaColNome";
+            this.dgAdicionaisPizzaColNome.ReadOnly = true;
+            this.dgAdicionaisPizzaColNome.Width = 130;
+            // 
+            // dgAdicionaisPizzaColValor
+            // 
+            this.dgAdicionaisPizzaColValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dgAdicionaisPizzaColValor.HeaderText = "Valor";
+            this.dgAdicionaisPizzaColValor.Name = "dgAdicionaisPizzaColValor";
+            this.dgAdicionaisPizzaColValor.ReadOnly = true;
+            // 
+            // dgAdicionaisPizzaColCodigo
+            // 
+            this.dgAdicionaisPizzaColCodigo.HeaderText = "Código";
+            this.dgAdicionaisPizzaColCodigo.Name = "dgAdicionaisPizzaColCodigo";
+            this.dgAdicionaisPizzaColCodigo.ReadOnly = true;
+            this.dgAdicionaisPizzaColCodigo.Visible = false;
             // 
             // dgPedidoPizza
             // 
@@ -130,6 +154,7 @@
             this.dgPedidoPizza.ReadOnly = true;
             this.dgPedidoPizza.Size = new System.Drawing.Size(412, 143);
             this.dgPedidoPizza.TabIndex = 16;
+            this.dgPedidoPizza.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgPedidoPizza_CellMouseDoubleClick);
             // 
             // Pizza
             // 
@@ -167,6 +192,7 @@
             this.dgListaPizza.ReadOnly = true;
             this.dgListaPizza.Size = new System.Drawing.Size(280, 390);
             this.dgListaPizza.TabIndex = 15;
+            this.dgListaPizza.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgListaPizza_CellMouseDoubleClick);
             // 
             // dgListaPizzaColNome
             // 
@@ -186,27 +212,6 @@
             this.dgListaPizzaColCodigo.Name = "dgListaPizzaColCodigo";
             this.dgListaPizzaColCodigo.ReadOnly = true;
             this.dgListaPizzaColCodigo.Visible = false;
-            // 
-            // dgAdicionaisPizzaColNome
-            // 
-            this.dgAdicionaisPizzaColNome.HeaderText = "Adicional";
-            this.dgAdicionaisPizzaColNome.Name = "dgAdicionaisPizzaColNome";
-            this.dgAdicionaisPizzaColNome.ReadOnly = true;
-            this.dgAdicionaisPizzaColNome.Width = 130;
-            // 
-            // dgAdicionaisPizzaColValor
-            // 
-            this.dgAdicionaisPizzaColValor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dgAdicionaisPizzaColValor.HeaderText = "Valor";
-            this.dgAdicionaisPizzaColValor.Name = "dgAdicionaisPizzaColValor";
-            this.dgAdicionaisPizzaColValor.ReadOnly = true;
-            // 
-            // dgAdicionaisPizzaColCodigo
-            // 
-            this.dgAdicionaisPizzaColCodigo.HeaderText = "Código";
-            this.dgAdicionaisPizzaColCodigo.Name = "dgAdicionaisPizzaColCodigo";
-            this.dgAdicionaisPizzaColCodigo.ReadOnly = true;
-            this.dgAdicionaisPizzaColCodigo.Visible = false;
             // 
             // TelaPizza
             // 

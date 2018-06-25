@@ -76,7 +76,7 @@ namespace TrabalhoFinal
             
             //preenche lista de pedidos recentes abertos e fechados
             PedidoDAO pedido = new PedidoDAO();
-            List<Pedido> lista = pedido.ListaPedidos();
+            List<Pedido> lista = pedido.ListaPedidosDeHoje();
 
             foreach (Pedido p in lista)
             {
@@ -88,7 +88,7 @@ namespace TrabalhoFinal
         {
             dgPedidos.Rows.Clear();
             PedidoDAO pedido = new PedidoDAO();
-            List<Pedido> lista = pedido.ListaPedidos();
+            List<Pedido> lista = pedido.ListaPedidosDeHoje();
 
             foreach (Pedido p in lista)
             {
@@ -126,6 +126,18 @@ namespace TrabalhoFinal
         private void tabTelaPedido_MouseEnter(object sender, EventArgs e)
         {
             AtualizaDataGrid();
+        }
+
+        private void dgPedidos_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            PedidoDAO estePedido = new PedidoDAO();
+
+            if (MessageBox.Show("Deseja realmente fechar este pedido?", "FECHAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                int nroPedido = int.Parse(dgPedidos.Rows[e.RowIndex].Cells[0].Value.ToString());
+                estePedido.AtualizaEstado(nroPedido, 3);
+            }
+            
         }
     }
 }

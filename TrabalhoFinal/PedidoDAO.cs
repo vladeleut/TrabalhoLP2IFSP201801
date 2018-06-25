@@ -156,8 +156,45 @@ namespace TrabalhoFinal
             return listaPedidos;
         }
 
+        public List<Pedido> ListaPedidosDeHoje()//mostra apenas os pedidos do dia
+        {
+            List<Pedido> listaPedidos = new List<Pedido>();
 
-        
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+            //se a fechamento - dataAbertura for null, é pq está aberto. faz AGORA-dataAbertura
+            string qry = "select pd.nro, pd.situacao, pd.cliente, c.nome, c.bairro, ifnull(timediff(pd.fechamentoPedido, pd.aberturaPedido), timediff(sysdate(), pd.aberturaPedido)) from pedido_dados pd, cliente c where c.codigo = pd.cliente and timediff(sysdate(),pd.aberturaPedido)<'12:00:00';";
+            
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            //precisamos colocar as inf obtidas no objeto
+            while (dr.Read())
+            {
+                Pedido pedido = new Pedido();
+
+                pedido.Nro_pedido = dr.GetInt32(0);
+                pedido.Situacao = dr.GetString(1);
+                pedido.Cliente = dr.GetInt32(2);
+                pedido.NomeCliente = dr.GetString(3);
+                pedido.BairroCliente = dr.GetString(4);
+                pedido.Tempo = dr.GetString(5);
+                /*
+                if (pedido.Situacao.Equals("Aberto"))
+                    pedido.Tempo = dr.GetString(5);
+                else
+                    pedido.Tempo = dr.GetString(6);*/
+
+                listaPedidos.Add(pedido);
+            }
+            dr.Close();
+            conn.Close();
+            return listaPedidos;
+        }
+
 
         public void InsereItem(int nro_pedido, int cod_produto)
         {
@@ -248,7 +285,14 @@ namespace TrabalhoFinal
         public void AtualizaEstado(int nroPedido, int novoEstado)
         {
             Database dbDelivery = Database.GetInstance();
-            String qry = "UPDATE pedido_dados set flagStatus = @FlagNovoStatus where nro = @Nro_pedido;";
+
+            String qry = "";
+
+            if (novoEstado == 3)//3 signifca que o pedido está sendo fechado. precisa mudar a string da coluna Situacao
+                qry = "UPDATE pedido_dados set flagStatus = @FlagNovoStatus, situacao = 'Fechado', fechamentoPedido=sysdate() where nro = @Nro_pedido;";
+            else
+                qry = "UPDATE pedido_dados set flagStatus = @FlagNovoStatus where nro = @Nro_pedido;";
+
 
             MySqlCommand comm = new MySqlCommand(qry);
 

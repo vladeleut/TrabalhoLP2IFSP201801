@@ -53,18 +53,26 @@
             this.btnPedidoAdicionaBebida = new System.Windows.Forms.Button();
             this.btnPedidoAdicionaOutros = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblDescValorTotalPedido = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.dgPedido = new System.Windows.Forms.DataGridView();
             this.btnCancelaTelaPedido = new System.Windows.Forms.Button();
+            this.btnNovoCliente = new System.Windows.Forms.Button();
+            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtDinheiro = new System.Windows.Forms.TextBox();
+            this.txtCartaoCredito = new System.Windows.Forms.TextBox();
+            this.txtCartaoDebito = new System.Windows.Forms.TextBox();
+            this.txtValeRefeicao = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.dgPedidoCoItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColQtde = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnNovoCliente = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).BeginInit();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -257,7 +265,7 @@
             // 
             this.btnFinalizaPedido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.btnFinalizaPedido.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizaPedido.Location = new System.Drawing.Point(645, 289);
+            this.btnFinalizaPedido.Location = new System.Drawing.Point(52, 309);
             this.btnFinalizaPedido.Name = "btnFinalizaPedido";
             this.btnFinalizaPedido.Size = new System.Drawing.Size(218, 74);
             this.btnFinalizaPedido.TabIndex = 11;
@@ -269,7 +277,7 @@
             // 
             this.btnPedidoAdicionaPizza.BackColor = System.Drawing.Color.Silver;
             this.btnPedidoAdicionaPizza.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidoAdicionaPizza.Location = new System.Drawing.Point(350, 27);
+            this.btnPedidoAdicionaPizza.Location = new System.Drawing.Point(352, 37);
             this.btnPedidoAdicionaPizza.Name = "btnPedidoAdicionaPizza";
             this.btnPedidoAdicionaPizza.Size = new System.Drawing.Size(218, 74);
             this.btnPedidoAdicionaPizza.TabIndex = 7;
@@ -281,7 +289,7 @@
             // 
             this.btnPedidoAdicionaLanche.BackColor = System.Drawing.Color.Silver;
             this.btnPedidoAdicionaLanche.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidoAdicionaLanche.Location = new System.Drawing.Point(350, 111);
+            this.btnPedidoAdicionaLanche.Location = new System.Drawing.Point(352, 117);
             this.btnPedidoAdicionaLanche.Name = "btnPedidoAdicionaLanche";
             this.btnPedidoAdicionaLanche.Size = new System.Drawing.Size(218, 75);
             this.btnPedidoAdicionaLanche.TabIndex = 8;
@@ -293,7 +301,7 @@
             // 
             this.btnPedidoAdicionaBebida.BackColor = System.Drawing.Color.Silver;
             this.btnPedidoAdicionaBebida.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidoAdicionaBebida.Location = new System.Drawing.Point(350, 195);
+            this.btnPedidoAdicionaBebida.Location = new System.Drawing.Point(352, 198);
             this.btnPedidoAdicionaBebida.Name = "btnPedidoAdicionaBebida";
             this.btnPedidoAdicionaBebida.Size = new System.Drawing.Size(218, 72);
             this.btnPedidoAdicionaBebida.TabIndex = 9;
@@ -305,7 +313,7 @@
             // 
             this.btnPedidoAdicionaOutros.BackColor = System.Drawing.Color.Silver;
             this.btnPedidoAdicionaOutros.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPedidoAdicionaOutros.Location = new System.Drawing.Point(350, 283);
+            this.btnPedidoAdicionaOutros.Location = new System.Drawing.Point(352, 276);
             this.btnPedidoAdicionaOutros.Name = "btnPedidoAdicionaOutros";
             this.btnPedidoAdicionaOutros.Size = new System.Drawing.Size(218, 73);
             this.btnPedidoAdicionaOutros.TabIndex = 10;
@@ -316,31 +324,31 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Window;
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.dgPedido);
             this.panel2.Location = new System.Drawing.Point(12, 34);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(300, 335);
+            this.panel2.Size = new System.Drawing.Size(300, 254);
             this.panel2.TabIndex = 25;
             // 
-            // label10
+            // lblDescValorTotalPedido
             // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(168, 286);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(41, 13);
-            this.label10.TabIndex = 2;
-            this.label10.Text = "label10";
+            this.lblDescValorTotalPedido.AutoSize = true;
+            this.lblDescValorTotalPedido.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDescValorTotalPedido.Location = new System.Drawing.Point(396, 364);
+            this.lblDescValorTotalPedido.Name = "lblDescValorTotalPedido";
+            this.lblDescValorTotalPedido.Size = new System.Drawing.Size(127, 22);
+            this.lblDescValorTotalPedido.TabIndex = 2;
+            this.lblDescValorTotalPedido.Text = "Valor Total:";
             // 
-            // label6
+            // lblTotal
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(48, 286);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(35, 13);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "label6";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(417, 398);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(82, 22);
+            this.lblTotal.TabIndex = 1;
+            this.lblTotal.Text = "R$0,00";
             // 
             // dgPedido
             // 
@@ -353,16 +361,18 @@
             this.dgPedidoColPreco,
             this.dgPedidoColQtde,
             this.dgPedidoColCodigo});
-            this.dgPedido.Location = new System.Drawing.Point(0, 3);
+            this.dgPedido.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgPedido.Location = new System.Drawing.Point(0, 0);
             this.dgPedido.Name = "dgPedido";
             this.dgPedido.ReadOnly = true;
-            this.dgPedido.Size = new System.Drawing.Size(300, 248);
+            this.dgPedido.Size = new System.Drawing.Size(300, 254);
             this.dgPedido.TabIndex = 0;
             this.dgPedido.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgPedido_CellContentDoubleClick);
             // 
             // btnCancelaTelaPedido
             // 
-            this.btnCancelaTelaPedido.Location = new System.Drawing.Point(708, 377);
+            this.btnCancelaTelaPedido.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelaTelaPedido.Location = new System.Drawing.Point(108, 398);
             this.btnCancelaTelaPedido.Name = "btnCancelaTelaPedido";
             this.btnCancelaTelaPedido.Size = new System.Drawing.Size(87, 29);
             this.btnCancelaTelaPedido.TabIndex = 10;
@@ -371,12 +381,90 @@
             this.btnCancelaTelaPedido.UseVisualStyleBackColor = true;
             this.btnCancelaTelaPedido.Click += new System.EventHandler(this.btnCancelaTelaPedido_Click);
             // 
+            // btnNovoCliente
+            // 
+            this.btnNovoCliente.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNovoCliente.Location = new System.Drawing.Point(685, 260);
+            this.btnNovoCliente.Name = "btnNovoCliente";
+            this.btnNovoCliente.Size = new System.Drawing.Size(126, 38);
+            this.btnNovoCliente.TabIndex = 26;
+            this.btnNovoCliente.TabStop = false;
+            this.btnNovoCliente.Text = "Cadastrar Novo Cliente";
+            this.btnNovoCliente.UseVisualStyleBackColor = true;
+            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
+            // 
+            // checkedListBox1
+            // 
+            this.checkedListBox1.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBox1.Font = new System.Drawing.Font("Lucida Fax", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedListBox1.FormattingEnabled = true;
+            this.checkedListBox1.Items.AddRange(new object[] {
+            "Dinheiro",
+            "Cartão de Crédito",
+            "Cartão de Débito",
+            "Vale Refeição"});
+            this.checkedListBox1.Location = new System.Drawing.Point(20, 9);
+            this.checkedListBox1.Name = "checkedListBox1";
+            this.checkedListBox1.Size = new System.Drawing.Size(192, 92);
+            this.checkedListBox1.TabIndex = 27;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.txtValeRefeicao);
+            this.panel3.Controls.Add(this.txtCartaoDebito);
+            this.panel3.Controls.Add(this.txtCartaoCredito);
+            this.panel3.Controls.Add(this.txtDinheiro);
+            this.panel3.Controls.Add(this.checkedListBox1);
+            this.panel3.Location = new System.Drawing.Point(576, 331);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(292, 111);
+            this.panel3.TabIndex = 28;
+            // 
+            // txtDinheiro
+            // 
+            this.txtDinheiro.Location = new System.Drawing.Point(218, 9);
+            this.txtDinheiro.Name = "txtDinheiro";
+            this.txtDinheiro.Size = new System.Drawing.Size(62, 20);
+            this.txtDinheiro.TabIndex = 28;
+            // 
+            // txtCartaoCredito
+            // 
+            this.txtCartaoCredito.Location = new System.Drawing.Point(218, 33);
+            this.txtCartaoCredito.Name = "txtCartaoCredito";
+            this.txtCartaoCredito.Size = new System.Drawing.Size(62, 20);
+            this.txtCartaoCredito.TabIndex = 29;
+            // 
+            // txtCartaoDebito
+            // 
+            this.txtCartaoDebito.Location = new System.Drawing.Point(218, 57);
+            this.txtCartaoDebito.Name = "txtCartaoDebito";
+            this.txtCartaoDebito.Size = new System.Drawing.Size(62, 20);
+            this.txtCartaoDebito.TabIndex = 30;
+            // 
+            // txtValeRefeicao
+            // 
+            this.txtValeRefeicao.Location = new System.Drawing.Point(218, 81);
+            this.txtValeRefeicao.Name = "txtValeRefeicao";
+            this.txtValeRefeicao.Size = new System.Drawing.Size(62, 20);
+            this.txtValeRefeicao.TabIndex = 31;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Lucida Fax", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(623, 306);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(229, 22);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Opções de Pagamento";
+            // 
             // dgPedidoCoItem
             // 
+            this.dgPedidoCoItem.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dgPedidoCoItem.HeaderText = "Item";
             this.dgPedidoCoItem.Name = "dgPedidoCoItem";
             this.dgPedidoCoItem.ReadOnly = true;
-            this.dgPedidoCoItem.Width = 123;
             // 
             // dgPedidoColPreco
             // 
@@ -390,7 +478,7 @@
             this.dgPedidoColQtde.HeaderText = "Quantidade";
             this.dgPedidoColQtde.Name = "dgPedidoColQtde";
             this.dgPedidoColQtde.ReadOnly = true;
-            this.dgPedidoColQtde.Width = 70;
+            this.dgPedidoColQtde.Width = 65;
             // 
             // dgPedidoColCodigo
             // 
@@ -399,22 +487,15 @@
             this.dgPedidoColCodigo.ReadOnly = true;
             this.dgPedidoColCodigo.Visible = false;
             // 
-            // btnNovoCliente
-            // 
-            this.btnNovoCliente.Location = new System.Drawing.Point(708, 254);
-            this.btnNovoCliente.Name = "btnNovoCliente";
-            this.btnNovoCliente.Size = new System.Drawing.Size(87, 29);
-            this.btnNovoCliente.TabIndex = 26;
-            this.btnNovoCliente.TabStop = false;
-            this.btnNovoCliente.Text = "Cancelar";
-            this.btnNovoCliente.UseVisualStyleBackColor = true;
-            this.btnNovoCliente.Click += new System.EventHandler(this.btnNovoCliente_Click);
-            // 
             // TelaPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(880, 418);
+            this.ClientSize = new System.Drawing.Size(880, 443);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.panel3);
+            this.Controls.Add(this.lblTotal);
+            this.Controls.Add(this.lblDescValorTotalPedido);
             this.Controls.Add(this.btnNovoCliente);
             this.Controls.Add(this.btnCancelaTelaPedido);
             this.Controls.Add(this.panel2);
@@ -432,8 +513,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedido)).EndInit();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -468,12 +550,19 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblBairro;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label lblDescValorTotalPedido;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Button btnNovoCliente;
+        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtValeRefeicao;
+        private System.Windows.Forms.TextBox txtCartaoDebito;
+        private System.Windows.Forms.TextBox txtCartaoCredito;
+        private System.Windows.Forms.TextBox txtDinheiro;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoCoItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoColPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoColQtde;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidoColCodigo;
-        private System.Windows.Forms.Button btnNovoCliente;
     }
 }

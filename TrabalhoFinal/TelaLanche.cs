@@ -22,11 +22,6 @@ namespace TrabalhoFinal
         float valorDoLanche = 0;
         //preciso usar esses itens nos eventos dos datagrids.
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
-
         private void FormLanche_Load(object sender, EventArgs e)
         {
             ProdutoDAO lancheDAO = new ProdutoDAO();
@@ -108,6 +103,11 @@ namespace TrabalhoFinal
             //adiciona item no datagrid
             dgPedidoTempLanche.Rows.Clear();
             pedidoTemp = new List<Produto>();
+        }
+
+        private void btnCancelaPedido_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

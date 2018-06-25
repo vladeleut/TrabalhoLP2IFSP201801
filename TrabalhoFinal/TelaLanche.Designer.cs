@@ -49,6 +49,7 @@
             this.lblAvisoLanche = new System.Windows.Forms.Label();
             this.lblTelaValor = new System.Windows.Forms.Label();
             this.lblValorLanche = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidoTempLanche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgAdicionaisLanche)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaLanche)).BeginInit();
@@ -181,7 +182,7 @@
             this.btnCancelaPedido.TabIndex = 14;
             this.btnCancelaPedido.Text = "Cancelar Pedido";
             this.btnCancelaPedido.UseVisualStyleBackColor = true;
-            this.btnCancelaPedido.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancelaPedido.Click += new System.EventHandler(this.btnCancelaPedido_Click);
             // 
             // dgListaLanche
             // 
@@ -256,11 +257,23 @@
             this.lblValorLanche.Text = "R$";
             this.lblValorLanche.Visible = false;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Red;
+            this.label4.Location = new System.Drawing.Point(373, 213);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(211, 14);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "! Clique duplo para remover item!";
+            // 
             // TelaLanche
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 449);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.lblValorLanche);
             this.Controls.Add(this.lblTelaValor);
             this.Controls.Add(this.lblAvisoLanche);
@@ -305,5 +318,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgAdicionaisLancheColAdc;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgAdicionaisLancheColPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgAdicionaisLancheColCodigo;
+        private System.Windows.Forms.Label label4;
     }
 }

@@ -322,6 +322,7 @@
             this.dgPedidos.ReadOnly = true;
             this.dgPedidos.Size = new System.Drawing.Size(764, 220);
             this.dgPedidos.TabIndex = 0;
+            this.dgPedidos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgPedidos_CellMouseDoubleClick);
             // 
             // dgPedidosColNro
             // 
