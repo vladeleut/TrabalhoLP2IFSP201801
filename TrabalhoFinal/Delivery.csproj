@@ -85,6 +85,7 @@
   <ItemGroup>
     <Compile Include="CaixaC.cs" />
     <Compile Include="Caixa.cs" />
+    <Compile Include="caixaDAO.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ClienteDAO.cs" />
     <Compile Include="Database.cs" />

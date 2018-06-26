@@ -19,8 +19,9 @@ namespace TrabalhoFinal
 
         //lista temporária de pedidos
         List<Produto> pedidoTemp = new List<Produto>();
-        float valorDoLanche = 0;
+        float valorPizza = 0;
         //preciso usar esses itens nos eventos dos datagrids.
+        int contadorPartesPizza = 0;
 
         private void FormPizza_Load(object sender, EventArgs e)
         {
@@ -41,15 +42,29 @@ namespace TrabalhoFinal
             temp.Codigo = int.Parse(dgListaPizza.Rows[e.RowIndex].Cells[2].Value.ToString());
             temp.Nome = dgListaPizza.Rows[e.RowIndex].Cells[0].Value.ToString();
             temp.Preco = dgListaPizza.Rows[e.RowIndex].Cells[1].Value.ToString();
-            dgListaPizza.Enabled = false;
-            valorDoLanche += float.Parse(temp.Preco);
-            //lblValorPizza.Text = "R$" + valorDoLanche.ToString();
-            //lblValorPizza.Visible = true;
+            
+            lblTelaValorPizza.Visible = true;
             temp.Tipo = "Pizza";//nessa tela só pode ser pizza
             //adiciona item no pedido temporario pedido
             pedidoTemp.Add(temp);
             //adiciona item no datagrid
-            dgPedidoPizza.Rows.Add(temp.Nome, temp.Tipo, temp.Codigo);
+            dgPedidoPizza.Rows.Add(temp.Nome, temp.Codigo);
+
+            //determina preço da maior pizza
+            if(float.Parse(temp.Preco) > valorPizza)
+            {
+                valorPizza = float.Parse(temp.Preco);
+            }
+            lblTelaValorPizza.Text = valorPizza.ToString("C");
+            contadorPartesPizza += 1;
+            lblContadorDePartes.Text = contadorPartesPizza.ToString();
+            if(contadorPartesPizza == 3)
+            {
+                dgListaPizza.Enabled = false;
+                lblAvisoAvisoPizza1.Visible = true;
+                lblAvisoPizza2.Visible = true;
+                lblContadorDePartes.Text = "Máximo de 3 Sabores";
+            }
 
         }
 
@@ -59,21 +74,21 @@ namespace TrabalhoFinal
             temp.Codigo = int.Parse(dgAdicionaisPizza.Rows[e.RowIndex].Cells[2].Value.ToString());
             temp.Nome = dgAdicionaisPizza.Rows[e.RowIndex].Cells[0].Value.ToString();
             temp.Preco = dgAdicionaisPizza.Rows[e.RowIndex].Cells[1].Value.ToString();
-            valorDoLanche += float.Parse(temp.Preco);
-            //lblValorPizza.Text = "R$" + valorDoLanche.ToString(); //formatar como dinheiro
-            //lblValorPizza.Visible = true;
+            valorPizza += float.Parse(temp.Preco);
+            lblTelaValorPizza.Text = valorPizza.ToString("C");
+            lblTelaValorPizza.Visible = true;
 
             temp.Tipo = "Adicionais - Pizza";//nesse DG só pode ser adicionais - pizza
             //adiciona item no pedido temporario pedido
             pedidoTemp.Add(temp);
             //adiciona item no datagrid
-            dgPedidoPizza.Rows.Add(temp.Nome, temp.Tipo, temp.Codigo);
+            dgPedidoPizza.Rows.Add(temp.Nome, temp.Preco, temp.Codigo);
         }
 
         private void btnAddPedido_Click(object sender, EventArgs e)
         {
             PedidoDAO pedido = new PedidoDAO();
-
+            
             foreach (Produto p in pedidoTemp)
             {
                 pedido.InsereItem(pedido.EncontraPedidoNovo(), p.Codigo);
@@ -85,19 +100,25 @@ namespace TrabalhoFinal
         {
             //implementar um contador
             Produto temp = new Produto();
-            temp.Codigo = int.Parse(dgPedidoPizza.Rows[e.RowIndex].Cells[2].Value.ToString());
+            
+            temp.Codigo = int.Parse(dgPedidoPizza.Rows[e.RowIndex].Cells[1].Value.ToString());
             temp.Nome = dgPedidoPizza.Rows[e.RowIndex].Cells[0].Value.ToString();
-            temp.Preco = dgPedidoPizza.Rows[e.RowIndex].Cells[1].Value.ToString();
+            //temp.Preco = dgPedidoPizza.Rows[e.RowIndex].Cells[1].Value.ToString();
             dgListaPizza.Enabled = true;
-            valorDoLanche = 0;
-            //lblValorLanche.Text = "R$" + valorDoLanche.ToString();
-            //lblValorLanche.Visible = true;
+            lblAvisoAvisoPizza1.Visible = false;
+            lblAvisoPizza2.Visible = false;
+            valorPizza = 0;
+            lblTelaValorPizza.Text = valorPizza.ToString("C");
+            lblTelaValorPizza.Visible = true;
             temp.Tipo = "Lanche";//nessa tela só pode ser lanche
             //adiciona item no pedido temporario pedido
             pedidoTemp.Remove(temp);
             //adiciona item no datagrid
             dgPedidoPizza.Rows.Clear();
             pedidoTemp = new List<Produto>();
+            //dgPedidoPizza.Rows.RemoveAt(e.RowIndex);
+            contadorPartesPizza =0;
+            lblContadorDePartes.Text = contadorPartesPizza.ToString();
         }
 
         private void btnCancelaPedido_Click(object sender, EventArgs e)

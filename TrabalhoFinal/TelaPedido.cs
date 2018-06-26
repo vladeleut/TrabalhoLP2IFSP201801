@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using System.Globalization;
 
 namespace TrabalhoFinal
 {
@@ -66,15 +67,23 @@ namespace TrabalhoFinal
 
         public void AtualizaDataGrid()
         {
+            float valorTotal = 0;
             //pesquisar dados do pedido nro X, 
             //colocar itens do pedido X no datagrid.
             dgPedido.Rows.Clear();
-            PedidoDAO pedidoDAO = new PedidoDAO();   //FINALZÃO - CHEFÃO
+            PedidoDAO pedidoDAO = new PedidoDAO();
             Pedido pedidoAtual = pedidoDAO.PedidoNro(pedidoDAO.EncontraPedidoNovo());
             ProdutoDAO produtos = new ProdutoDAO();
             List<Produto> listaDeItens = produtos.ListaItensDoPedidoPorNumero(pedidoDAO.EncontraPedidoNovo());
             foreach (Produto p in listaDeItens)
+            {
                 dgPedido.Rows.Add(p.Nome, p.Preco, p.Qtde, p.Codigo);
+                valorTotal += float.Parse(p.Preco);
+            }
+
+            lblTotal.Text = valorTotal.ToString("C");
+
+
         }
 
 
@@ -223,6 +232,11 @@ namespace TrabalhoFinal
         private void TelaPedido_FormClosing(object sender, FormClosingEventArgs e)
         {
             e.Cancel = true;
+        }
+
+        private void txtNome_TextChanged(object sender, EventArgs e)
+        {
+            cbPeditoTelCliente.Text = Regex.Replace(cbPeditoTelCliente.Text, "[^0-9]", "");
         }
     }
 }

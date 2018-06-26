@@ -153,6 +153,44 @@ namespace TrabalhoFinal
 
             return nroCliente;
         }
+        public List<Cliente> listaClientePorNome(String nome)
+        {
+            List<Cliente> listaPorNome = new List<Cliente>();
+
+            nome = "%" + nome + "%";
+
+            MySqlConnection conn = Database.GetInstance().GetConnection();
+
+            if (conn.State != System.Data.ConnectionState.Open)
+                conn.Open();
+
+            string qry = "Select codigo, telefone, nome, logradouro, bairro, complemento, referencia, observacao from cliente where nome like @Nome or telefone like @Nome or logradouro like @Nome";
+            MySqlCommand comm = new MySqlCommand(qry, conn);
+
+            comm.Parameters.AddWithValue("@Nome", nome);
+
+            MySqlDataReader dr = comm.ExecuteReader();
+
+            //precisamos coocar as inf obtias no objeto
+            while (dr.Read())
+            {
+                Cliente cliente = new Cliente();
+                cliente.Codigo = dr.GetInt32(0);
+                cliente.Telefone = dr.GetString(1);
+                cliente.Nome = dr.GetString(2);
+                cliente.Logradouro = dr.GetString(3);
+                cliente.Bairro = dr.GetString(4);
+                cliente.Complemento = dr.GetString(5);
+                cliente.Referencia = dr.GetString(6);
+                cliente.Observacao = dr.GetString(7);
+
+
+                listaPorNome.Add(cliente);
+            }
+            dr.Close();
+            conn.Close();
+            return listaPorNome;
+        }
     }
 
 }

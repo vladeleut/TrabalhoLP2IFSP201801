@@ -48,7 +48,7 @@ namespace TrabalhoFinal
             temp.Preco = dgListaLanche.Rows[e.RowIndex].Cells[1].Value.ToString();
             dgListaLanche.Enabled = false;
             valorDoLanche += float.Parse(temp.Preco);
-            lblValorLanche.Text = "R$" + valorDoLanche.ToString();
+            lblValorLanche.Text = valorDoLanche.ToString("C");
             lblValorLanche.Visible = true;
             temp.Tipo = "Lanche";//nessa tela só pode ser lanche
             //adiciona item no pedido temporario pedido
@@ -67,7 +67,7 @@ namespace TrabalhoFinal
             temp.Nome = dgAdicionaisLanche.Rows[e.RowIndex].Cells[0].Value.ToString();
             temp.Preco = dgAdicionaisLanche.Rows[e.RowIndex].Cells[1].Value.ToString();
             valorDoLanche += float.Parse(temp.Preco);
-            lblValorLanche.Text = "R$" + valorDoLanche.ToString(); //formatar como dinheiro
+            lblValorLanche.Text =valorDoLanche.ToString("C"); //formatar como dinheiro
             lblValorLanche.Visible = true;
 
             temp.Tipo = "Adicionais - Lanche";//nesse DG só pode ser adicionais - lanche
@@ -96,7 +96,7 @@ namespace TrabalhoFinal
             temp.Preco = dgPedidoTempLanche.Rows[e.RowIndex].Cells[1].Value.ToString();
             dgListaLanche.Enabled = true;
             valorDoLanche = 0;
-            lblValorLanche.Text = "R$" + valorDoLanche.ToString();
+            lblValorLanche.Text =valorDoLanche.ToString("C");
             lblValorLanche.Visible = true;
             temp.Tipo = "Lanche";//nessa tela só pode ser lanche
             //adiciona item no pedido temporario pedido

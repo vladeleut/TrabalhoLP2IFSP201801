@@ -127,6 +127,18 @@ namespace TrabalhoFinal
 
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
+
+                qry.Clear();
+                qry.AppendLine("create table if not exists caixa(");
+                qry.AppendLine("id int auto_increment,");
+                qry.AppendLine("abertura datetime,");
+                qry.AppendLine("fechamento datetime,");
+                qry.AppendLine("estado varchar(10) default 'aberto',");
+                qry.AppendLine("movimentoDia float,");
+                qry.AppendLine("constraint caixa_pk primary key(id));");
+                comm = new MySqlCommand(qry.ToString(), conn);
+                comm.ExecuteNonQuery();
+
             }
             catch (Exception e )
             {

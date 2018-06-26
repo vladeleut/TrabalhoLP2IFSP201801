@@ -25,6 +25,8 @@ namespace TrabalhoFinal
 
         private void btnAbreCaixaClick(object sender, EventArgs e)
         {
+            caixaDAO caixa = new caixaDAO();
+            caixa.AbreCaixa();
             
             if (Caixa.getInstance().IsAberto)
             {
@@ -60,6 +62,10 @@ namespace TrabalhoFinal
         
         private void btnFechaCaixa_Click(object sender, EventArgs e)
         {
+            //fechar atualiza o id aberto
+            caixaDAO caixa = new caixaDAO();
+            int idCaixa = caixa.EncontraCaixaAberto();
+
             if (Caixa.getInstance().IsAberto)
             {
                 Caixa.getInstance().FechaCaixa();
@@ -72,7 +78,11 @@ namespace TrabalhoFinal
                 
                 MessageBox.Show("Caixa não está aberto!", "", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
             }
-            //lblFechamento.Text = Caixa.getInstance().getAbertura().ToString();
+            caixa.FechaCaixa(idCaixa);
+            btnFechaCaixa.Visible = false;
+            btnAbreCaixa.Visible = true;
+            lblAbertoEm.Visible = false;
+            lblAbertura.Visible = false;
         }
 
         private void Inicio_Load(object sender, EventArgs e)
@@ -142,6 +152,21 @@ namespace TrabalhoFinal
                 estePedido.AtualizaEstado(nroPedido, 3);
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Estamos trabalhando nessa funcionalidade", "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void btnVendas_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Estamos trabalhando nessa funcionalidade", "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        private void btnGerenciaTaxasDeEntrega_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Estamos trabalhando nessa funcionalidade", "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
         }
     }
 }

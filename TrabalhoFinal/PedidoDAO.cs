@@ -213,7 +213,7 @@ namespace TrabalhoFinal
 
         public int EncontraPedidoNovo()
         {
-            int nroPedido = 150;
+            int nroPedido = 0;
 
             MySqlConnection conn = Database.GetInstance().GetConnection();
 
@@ -314,5 +314,6 @@ namespace TrabalhoFinal
 
             dbDelivery.ExecuteSQL(comm);
         }
+        
     }
 }

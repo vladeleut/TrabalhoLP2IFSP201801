@@ -36,10 +36,10 @@ namespace TrabalhoFinal
         private Cliente getDTO()
         {
             Cliente cli = new Cliente();
-            cli.Telefone = cbTelCliente.Text;
-            cli.Nome = txtNomeCliente.Text;
+            cli.Telefone = txtTelefone.Text;
+            cli.Nome = txtNome.Text;
             cli.Logradouro = txtEndCliente.Text;
-            cli.Bairro = txtBairroCliente.Text;
+            cli.Bairro = txtBairro.Text;
             cli.Observacao = txtObsCliente.Text;
 
             return cli;
@@ -48,9 +48,9 @@ namespace TrabalhoFinal
         private void setDTO(Cliente cli)
         {
              //cbTelCliente.Text = cli.Telefone;
-             txtNomeCliente.Text = cli.Nome;
+             txtNome.Text = cli.Nome;
              txtEndCliente.Text = cli.Logradouro;
-             txtBairroCliente.Text = cli.Bairro;
+             txtBairro.Text = cli.Bairro;
              txtObsCliente.Text = cli.Observacao;
         }
 
@@ -72,11 +72,11 @@ namespace TrabalhoFinal
 
                 if (!listaAux.Contains(c.Telefone))
                     listaAux.Add(c.Telefone);
-            }
+            }/*
             foreach (String s in listaAux)
             {
                 cbTelCliente.Items.Add(s);
-            }
+            }*/
 
         }
 
@@ -90,5 +90,17 @@ namespace TrabalhoFinal
         }
 
         private void btnTelaProdCancela_Click(object sender, EventArgs e) => Close();
+
+        private void txtPesquisaProdutos_TextChanged(object sender, EventArgs e)
+        {
+            ClienteDAO clientes = new ClienteDAO();
+            List<Cliente> lista = new List<Cliente>();
+
+            lista = clientes.listaClientePorNome(txtPesquisaNomes.Text);
+            dgListaClientes.Rows.Clear();
+
+            foreach (Cliente c in lista)
+                dgListaClientes.Rows.Add(c.Telefone, c.Nome, c.Logradouro, c.Codigo);
+        }
     }
 }

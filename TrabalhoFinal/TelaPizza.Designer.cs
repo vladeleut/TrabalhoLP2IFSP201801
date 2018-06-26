@@ -38,13 +38,17 @@
             this.dgAdicionaisPizzaColValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgAdicionaisPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgPedidoPizza = new System.Windows.Forms.DataGridView();
-            this.Pizza = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Preço = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgListaPizza = new System.Windows.Forms.DataGridView();
             this.dgListaPizzaColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgListaPizzaColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgListaPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lblAvisoAvisoPizza1 = new System.Windows.Forms.Label();
+            this.lblAvisoPizza2 = new System.Windows.Forms.Label();
+            this.lblValorPizza = new System.Windows.Forms.Label();
+            this.lblTelaValorPizza = new System.Windows.Forms.Label();
+            this.lblContadorDePartes = new System.Windows.Forms.Label();
+            this.Pizza = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DgPedidoPizzaColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgAdicionaisPizza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgPedidoPizza)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaPizza)).BeginInit();
@@ -144,38 +148,17 @@
             // 
             this.dgPedidoPizza.AllowUserToAddRows = false;
             this.dgPedidoPizza.AllowUserToDeleteRows = false;
+            this.dgPedidoPizza.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgPedidoPizza.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgPedidoPizza.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Pizza,
-            this.Quantidade,
-            this.Preço});
+            this.DgPedidoPizzaColCodigo});
             this.dgPedidoPizza.Location = new System.Drawing.Point(372, 39);
             this.dgPedidoPizza.Name = "dgPedidoPizza";
             this.dgPedidoPizza.ReadOnly = true;
             this.dgPedidoPizza.Size = new System.Drawing.Size(412, 143);
             this.dgPedidoPizza.TabIndex = 16;
             this.dgPedidoPizza.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgPedidoPizza_CellMouseDoubleClick);
-            // 
-            // Pizza
-            // 
-            this.Pizza.HeaderText = "Pizza";
-            this.Pizza.Name = "Pizza";
-            this.Pizza.ReadOnly = true;
-            this.Pizza.Width = 200;
-            // 
-            // Quantidade
-            // 
-            this.Quantidade.HeaderText = "Quatidade";
-            this.Quantidade.Name = "Quantidade";
-            this.Quantidade.ReadOnly = true;
-            this.Quantidade.Width = 85;
-            // 
-            // Preço
-            // 
-            this.Preço.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Preço.HeaderText = "Preço";
-            this.Preço.Name = "Preço";
-            this.Preço.ReadOnly = true;
             // 
             // dgListaPizza
             // 
@@ -213,11 +196,87 @@
             this.dgListaPizzaColCodigo.ReadOnly = true;
             this.dgListaPizzaColCodigo.Visible = false;
             // 
+            // lblAvisoAvisoPizza1
+            // 
+            this.lblAvisoAvisoPizza1.AutoSize = true;
+            this.lblAvisoAvisoPizza1.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvisoAvisoPizza1.ForeColor = System.Drawing.Color.Red;
+            this.lblAvisoAvisoPizza1.Location = new System.Drawing.Point(637, 185);
+            this.lblAvisoAvisoPizza1.Name = "lblAvisoAvisoPizza1";
+            this.lblAvisoAvisoPizza1.Size = new System.Drawing.Size(130, 14);
+            this.lblAvisoAvisoPizza1.TabIndex = 21;
+            this.lblAvisoAvisoPizza1.Text = "Sabores adicionados:";
+            // 
+            // lblAvisoPizza2
+            // 
+            this.lblAvisoPizza2.AutoSize = true;
+            this.lblAvisoPizza2.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAvisoPizza2.ForeColor = System.Drawing.Color.Red;
+            this.lblAvisoPizza2.Location = new System.Drawing.Point(578, 199);
+            this.lblAvisoPizza2.Name = "lblAvisoPizza2";
+            this.lblAvisoPizza2.Size = new System.Drawing.Size(206, 14);
+            this.lblAvisoPizza2.TabIndex = 22;
+            this.lblAvisoPizza2.Text = " Remova ou adicione outra pizza.";
+            this.lblAvisoPizza2.Visible = false;
+            // 
+            // lblValorPizza
+            // 
+            this.lblValorPizza.AutoSize = true;
+            this.lblValorPizza.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.lblValorPizza.Font = new System.Drawing.Font("Lucida Fax", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorPizza.ForeColor = System.Drawing.Color.Black;
+            this.lblValorPizza.Location = new System.Drawing.Point(668, 263);
+            this.lblValorPizza.Name = "lblValorPizza";
+            this.lblValorPizza.Size = new System.Drawing.Size(39, 24);
+            this.lblValorPizza.TabIndex = 24;
+            this.lblValorPizza.Text = "R$";
+            this.lblValorPizza.Visible = false;
+            // 
+            // lblTelaValorPizza
+            // 
+            this.lblTelaValorPizza.AutoSize = true;
+            this.lblTelaValorPizza.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelaValorPizza.ForeColor = System.Drawing.Color.Black;
+            this.lblTelaValorPizza.Location = new System.Drawing.Point(661, 236);
+            this.lblTelaValorPizza.Name = "lblTelaValorPizza";
+            this.lblTelaValorPizza.Size = new System.Drawing.Size(94, 14);
+            this.lblTelaValorPizza.TabIndex = 23;
+            this.lblTelaValorPizza.Text = "Valor da Pizza:";
+            // 
+            // lblContadorDePartes
+            // 
+            this.lblContadorDePartes.AutoSize = true;
+            this.lblContadorDePartes.Font = new System.Drawing.Font("Lucida Fax", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContadorDePartes.ForeColor = System.Drawing.Color.Red;
+            this.lblContadorDePartes.Location = new System.Drawing.Point(770, 185);
+            this.lblContadorDePartes.Name = "lblContadorDePartes";
+            this.lblContadorDePartes.Size = new System.Drawing.Size(14, 14);
+            this.lblContadorDePartes.TabIndex = 25;
+            this.lblContadorDePartes.Text = "0";
+            // 
+            // Pizza
+            // 
+            this.Pizza.HeaderText = "Pizza";
+            this.Pizza.Name = "Pizza";
+            this.Pizza.ReadOnly = true;
+            // 
+            // DgPedidoPizzaColCodigo
+            // 
+            this.DgPedidoPizzaColCodigo.HeaderText = "Código";
+            this.DgPedidoPizzaColCodigo.Name = "DgPedidoPizzaColCodigo";
+            this.DgPedidoPizzaColCodigo.ReadOnly = true;
+            this.DgPedidoPizzaColCodigo.Visible = false;
+            // 
             // TelaPizza
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.lblContadorDePartes);
+            this.Controls.Add(this.lblValorPizza);
+            this.Controls.Add(this.lblTelaValorPizza);
+            this.Controls.Add(this.lblAvisoPizza2);
+            this.Controls.Add(this.lblAvisoAvisoPizza1);
             this.Controls.Add(this.btnCancelaPedido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -246,14 +305,18 @@
         private System.Windows.Forms.DataGridView dgAdicionaisPizza;
         private System.Windows.Forms.DataGridView dgPedidoPizza;
         private System.Windows.Forms.DataGridView dgListaPizza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pizza;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantidade;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Preço;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgListaPizzaColNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgListaPizzaColPreco;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgListaPizzaColCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgAdicionaisPizzaColNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgAdicionaisPizzaColValor;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgAdicionaisPizzaColCodigo;
+        private System.Windows.Forms.Label lblAvisoAvisoPizza1;
+        private System.Windows.Forms.Label lblAvisoPizza2;
+        private System.Windows.Forms.Label lblValorPizza;
+        private System.Windows.Forms.Label lblTelaValorPizza;
+        private System.Windows.Forms.Label lblContadorDePartes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Pizza;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DgPedidoPizzaColCodigo;
     }
 }

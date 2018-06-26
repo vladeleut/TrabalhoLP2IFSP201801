@@ -55,14 +55,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TrabalhoFinal.exe" size="854960">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="TrabalhoFinal.exe" size="859568">
       <assemblyIdentity name="TrabalhoFinal" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>aLKIVhMpyAmDdDPWlGhuPFL2KaxCZZOS4bmZvhq5sq4=</dsig:DigestValue>
+        <dsig:DigestValue>y5AYa8b3oQXaaHlFKrIggNvJT+3vh/AG9Iffxtw45j8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

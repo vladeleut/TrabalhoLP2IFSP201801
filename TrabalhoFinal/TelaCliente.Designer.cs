@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.cbTelCliente = new System.Windows.Forms.ComboBox();
             this.btnEditarProd = new System.Windows.Forms.Button();
             this.panProdutos = new System.Windows.Forms.Panel();
             this.lblPesqProd = new System.Windows.Forms.Label();
@@ -38,18 +37,24 @@
             this.dgClienteColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgClienteColEndereco = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgClienteColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtPesquisaProdutos = new System.Windows.Forms.TextBox();
+            this.txtPesquisaNomes = new System.Windows.Forms.TextBox();
             this.btnTelaProdCancela = new System.Windows.Forms.Button();
-            this.txtNomeCliente = new System.Windows.Forms.TextBox();
+            this.txtNome = new System.Windows.Forms.TextBox();
             this.txtEndCliente = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblEndereco = new System.Windows.Forms.Label();
+            this.lblTelefone = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
             this.btnCadastraProduto = new System.Windows.Forms.Button();
-            this.txtBairroCliente = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtBairro = new System.Windows.Forms.TextBox();
+            this.lblBairro = new System.Windows.Forms.Label();
             this.txtObsCliente = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lblObs = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtComplemento = new System.Windows.Forms.TextBox();
+            this.lblComplemento = new System.Windows.Forms.Label();
+            this.txtReferencia = new System.Windows.Forms.TextBox();
+            this.lblReferencia = new System.Windows.Forms.Label();
+            this.txtTelefone = new System.Windows.Forms.TextBox();
             this.panProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaClientes)).BeginInit();
             this.SuspendLayout();
@@ -58,23 +63,12 @@
             // 
             this.button1.Enabled = false;
             this.button1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(163, 209);
+            this.button1.Location = new System.Drawing.Point(163, 233);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(101, 35);
-            this.button1.TabIndex = 24;
+            this.button1.TabIndex = 8;
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cbTelCliente
-            // 
-            this.cbTelCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cbTelCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbTelCliente.FormattingEnabled = true;
-            this.cbTelCliente.Location = new System.Drawing.Point(120, 45);
-            this.cbTelCliente.Name = "cbTelCliente";
-            this.cbTelCliente.Size = new System.Drawing.Size(145, 21);
-            this.cbTelCliente.TabIndex = 0;
-            this.cbTelCliente.SelectionChangeCommitted += new System.EventHandler(this.cbTelCliente_SelectionChangeCommitted);
             // 
             // btnEditarProd
             // 
@@ -83,7 +77,7 @@
             this.btnEditarProd.Location = new System.Drawing.Point(30, 274);
             this.btnEditarProd.Name = "btnEditarProd";
             this.btnEditarProd.Size = new System.Drawing.Size(101, 35);
-            this.btnEditarProd.TabIndex = 22;
+            this.btnEditarProd.TabIndex = 9;
             this.btnEditarProd.Text = "Excluir";
             this.btnEditarProd.UseVisualStyleBackColor = true;
             // 
@@ -91,7 +85,8 @@
             // 
             this.panProdutos.Controls.Add(this.lblPesqProd);
             this.panProdutos.Controls.Add(this.dgListaClientes);
-            this.panProdutos.Controls.Add(this.txtPesquisaProdutos);
+            this.panProdutos.Controls.Add(this.txtPesquisaNomes);
+            this.panProdutos.Controls.Add(this.label8);
             this.panProdutos.Location = new System.Drawing.Point(302, 12);
             this.panProdutos.Name = "panProdutos";
             this.panProdutos.Size = new System.Drawing.Size(581, 297);
@@ -149,12 +144,13 @@
             this.dgClienteColCodigo.ReadOnly = true;
             this.dgClienteColCodigo.Visible = false;
             // 
-            // txtPesquisaProdutos
+            // txtPesquisaNomes
             // 
-            this.txtPesquisaProdutos.Location = new System.Drawing.Point(117, 6);
-            this.txtPesquisaProdutos.Name = "txtPesquisaProdutos";
-            this.txtPesquisaProdutos.Size = new System.Drawing.Size(461, 20);
-            this.txtPesquisaProdutos.TabIndex = 20;
+            this.txtPesquisaNomes.Location = new System.Drawing.Point(117, 6);
+            this.txtPesquisaNomes.Name = "txtPesquisaNomes";
+            this.txtPesquisaNomes.Size = new System.Drawing.Size(461, 20);
+            this.txtPesquisaNomes.TabIndex = 11;
+            this.txtPesquisaNomes.TextChanged += new System.EventHandler(this.txtPesquisaProdutos_TextChanged);
             // 
             // btnTelaProdCancela
             // 
@@ -162,119 +158,174 @@
             this.btnTelaProdCancela.Location = new System.Drawing.Point(164, 274);
             this.btnTelaProdCancela.Name = "btnTelaProdCancela";
             this.btnTelaProdCancela.Size = new System.Drawing.Size(100, 35);
-            this.btnTelaProdCancela.TabIndex = 21;
+            this.btnTelaProdCancela.TabIndex = 10;
             this.btnTelaProdCancela.Text = "Cancelar";
             this.btnTelaProdCancela.UseVisualStyleBackColor = true;
             this.btnTelaProdCancela.Click += new System.EventHandler(this.btnTelaProdCancela_Click);
             // 
-            // txtNomeCliente
+            // txtNome
             // 
-            this.txtNomeCliente.Location = new System.Drawing.Point(120, 73);
-            this.txtNomeCliente.Name = "txtNomeCliente";
-            this.txtNomeCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtNomeCliente.TabIndex = 1;
+            this.txtNome.Location = new System.Drawing.Point(137, 46);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(145, 20);
+            this.txtNome.TabIndex = 1;
             // 
             // txtEndCliente
             // 
-            this.txtEndCliente.Location = new System.Drawing.Point(120, 99);
+            this.txtEndCliente.Location = new System.Drawing.Point(137, 72);
             this.txtEndCliente.Name = "txtEndCliente";
             this.txtEndCliente.Size = new System.Drawing.Size(145, 20);
             this.txtEndCliente.TabIndex = 2;
             // 
-            // label3
+            // lblEndereco
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(27, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 18);
-            this.label3.TabIndex = 18;
-            this.label3.Text = "Endereço";
+            this.lblEndereco.AutoSize = true;
+            this.lblEndereco.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEndereco.Location = new System.Drawing.Point(44, 71);
+            this.lblEndereco.Name = "lblEndereco";
+            this.lblEndereco.Size = new System.Drawing.Size(87, 18);
+            this.lblEndereco.TabIndex = 18;
+            this.lblEndereco.Text = "Endereço";
             // 
-            // label2
+            // lblTelefone
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(30, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(84, 18);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "Telefone";
+            this.lblTelefone.AutoSize = true;
+            this.lblTelefone.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefone.Location = new System.Drawing.Point(47, 20);
+            this.lblTelefone.Name = "lblTelefone";
+            this.lblTelefone.Size = new System.Drawing.Size(84, 18);
+            this.lblTelefone.TabIndex = 16;
+            this.lblTelefone.Text = "Telefone";
             // 
-            // label1
+            // lblNome
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(57, 72);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(57, 18);
-            this.label1.TabIndex = 14;
-            this.label1.Text = "Nome";
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(74, 45);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(57, 18);
+            this.lblNome.TabIndex = 14;
+            this.lblNome.Text = "Nome";
             // 
             // btnCadastraProduto
             // 
             this.btnCadastraProduto.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastraProduto.Location = new System.Drawing.Point(30, 209);
+            this.btnCadastraProduto.Location = new System.Drawing.Point(30, 233);
             this.btnCadastraProduto.Name = "btnCadastraProduto";
             this.btnCadastraProduto.Size = new System.Drawing.Size(101, 35);
-            this.btnCadastraProduto.TabIndex = 5;
+            this.btnCadastraProduto.TabIndex = 7;
             this.btnCadastraProduto.Text = "Cadastrar";
             this.btnCadastraProduto.UseVisualStyleBackColor = true;
             this.btnCadastraProduto.Click += new System.EventHandler(this.btnCadastraProduto_Click);
             // 
-            // txtBairroCliente
+            // txtBairro
             // 
-            this.txtBairroCliente.Location = new System.Drawing.Point(120, 125);
-            this.txtBairroCliente.Name = "txtBairroCliente";
-            this.txtBairroCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtBairroCliente.TabIndex = 3;
+            this.txtBairro.Location = new System.Drawing.Point(137, 124);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(145, 20);
+            this.txtBairro.TabIndex = 4;
             // 
-            // label4
+            // lblBairro
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(55, 127);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(59, 18);
-            this.label4.TabIndex = 26;
-            this.label4.Text = "Bairro";
+            this.lblBairro.AutoSize = true;
+            this.lblBairro.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBairro.Location = new System.Drawing.Point(72, 123);
+            this.lblBairro.Name = "lblBairro";
+            this.lblBairro.Size = new System.Drawing.Size(59, 18);
+            this.lblBairro.TabIndex = 26;
+            this.lblBairro.Text = "Bairro";
             // 
             // txtObsCliente
             // 
-            this.txtObsCliente.Location = new System.Drawing.Point(120, 151);
+            this.txtObsCliente.Location = new System.Drawing.Point(137, 176);
             this.txtObsCliente.Name = "txtObsCliente";
             this.txtObsCliente.Size = new System.Drawing.Size(145, 20);
-            this.txtObsCliente.TabIndex = 4;
+            this.txtObsCliente.TabIndex = 6;
             // 
-            // label5
+            // lblObs
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(-3, 153);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(117, 18);
-            this.label5.TabIndex = 28;
-            this.label5.Text = "Observações";
+            this.lblObs.AutoSize = true;
+            this.lblObs.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblObs.Location = new System.Drawing.Point(14, 175);
+            this.lblObs.Name = "lblObs";
+            this.lblObs.Size = new System.Drawing.Size(117, 18);
+            this.lblObs.TabIndex = 28;
+            this.lblObs.Text = "Observações";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(20, 179);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(81, 15);
+            this.label8.TabIndex = 37;
+            this.label8.Text = "Referência";
+            // 
+            // txtComplemento
+            // 
+            this.txtComplemento.Location = new System.Drawing.Point(137, 98);
+            this.txtComplemento.Name = "txtComplemento";
+            this.txtComplemento.Size = new System.Drawing.Size(145, 20);
+            this.txtComplemento.TabIndex = 3;
+            // 
+            // lblComplemento
+            // 
+            this.lblComplemento.AutoSize = true;
+            this.lblComplemento.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblComplemento.Location = new System.Drawing.Point(4, 97);
+            this.lblComplemento.Name = "lblComplemento";
+            this.lblComplemento.Size = new System.Drawing.Size(127, 18);
+            this.lblComplemento.TabIndex = 39;
+            this.lblComplemento.Text = "Complemento";
+            // 
+            // txtReferencia
+            // 
+            this.txtReferencia.Location = new System.Drawing.Point(137, 150);
+            this.txtReferencia.Name = "txtReferencia";
+            this.txtReferencia.Size = new System.Drawing.Size(145, 20);
+            this.txtReferencia.TabIndex = 5;
+            // 
+            // lblReferencia
+            // 
+            this.lblReferencia.AutoSize = true;
+            this.lblReferencia.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReferencia.Location = new System.Drawing.Point(32, 149);
+            this.lblReferencia.Name = "lblReferencia";
+            this.lblReferencia.Size = new System.Drawing.Size(99, 18);
+            this.lblReferencia.TabIndex = 41;
+            this.lblReferencia.Text = "Referência";
+            // 
+            // txtTelefone
+            // 
+            this.txtTelefone.Location = new System.Drawing.Point(137, 21);
+            this.txtTelefone.Name = "txtTelefone";
+            this.txtTelefone.Size = new System.Drawing.Size(145, 20);
+            this.txtTelefone.TabIndex = 0;
             // 
             // TelaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(895, 322);
+            this.Controls.Add(this.txtTelefone);
+            this.Controls.Add(this.txtReferencia);
+            this.Controls.Add(this.lblReferencia);
+            this.Controls.Add(this.txtComplemento);
+            this.Controls.Add(this.lblComplemento);
             this.Controls.Add(this.txtObsCliente);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtBairroCliente);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblObs);
+            this.Controls.Add(this.txtBairro);
+            this.Controls.Add(this.lblBairro);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.cbTelCliente);
             this.Controls.Add(this.btnEditarProd);
             this.Controls.Add(this.panProdutos);
             this.Controls.Add(this.btnTelaProdCancela);
-            this.Controls.Add(this.txtNomeCliente);
+            this.Controls.Add(this.txtNome);
             this.Controls.Add(this.txtEndCliente);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblEndereco);
+            this.Controls.Add(this.lblTelefone);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnCadastraProduto);
             this.Name = "TelaCliente";
             this.ShowInTaskbar = false;
@@ -291,26 +342,31 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox cbTelCliente;
         private System.Windows.Forms.Button btnEditarProd;
         private System.Windows.Forms.Panel panProdutos;
         private System.Windows.Forms.Label lblPesqProd;
         private System.Windows.Forms.DataGridView dgListaClientes;
-        private System.Windows.Forms.TextBox txtPesquisaProdutos;
+        private System.Windows.Forms.TextBox txtPesquisaNomes;
         private System.Windows.Forms.Button btnTelaProdCancela;
-        private System.Windows.Forms.TextBox txtNomeCliente;
+        private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.TextBox txtEndCliente;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblEndereco;
+        private System.Windows.Forms.Label lblTelefone;
+        private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Button btnCadastraProduto;
-        private System.Windows.Forms.TextBox txtBairroCliente;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtBairro;
+        private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.TextBox txtObsCliente;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblObs;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgClienteColTel;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgClienteColNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgClienteColEndereco;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgClienteColCodigo;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtComplemento;
+        private System.Windows.Forms.Label lblComplemento;
+        private System.Windows.Forms.TextBox txtReferencia;
+        private System.Windows.Forms.Label lblReferencia;
+        private System.Windows.Forms.TextBox txtTelefone;
     }
 }
