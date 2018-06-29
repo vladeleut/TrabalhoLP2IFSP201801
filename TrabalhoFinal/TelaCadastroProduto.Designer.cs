@@ -34,20 +34,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txtCodigoProd = new System.Windows.Forms.TextBox();
-            this.txtPrecoProd = new System.Windows.Forms.TextBox();
             this.txtNomeProd = new System.Windows.Forms.TextBox();
             this.btnTelaProdCancela = new System.Windows.Forms.Button();
             this.panProdutos = new System.Windows.Forms.Panel();
             this.lblPesqProd = new System.Windows.Forms.Label();
             this.dgListaProd = new System.Windows.Forms.DataGridView();
-            this.txtPesquisaProdutos = new System.Windows.Forms.TextBox();
-            this.btnEditarProd = new System.Windows.Forms.Button();
-            this.cbTipoProd = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.dgProdColTipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgProdColCodigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgProdColNome = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dgProdColPreco = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtPesquisaProdutos = new System.Windows.Forms.TextBox();
+            this.btnEditarProd = new System.Windows.Forms.Button();
+            this.cbTipoProd = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.txtPrecoProd = new System.Windows.Forms.TextBox();
             this.panProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgListaProd)).BeginInit();
             this.SuspendLayout();
@@ -111,13 +111,6 @@
             this.txtCodigoProd.Size = new System.Drawing.Size(70, 20);
             this.txtCodigoProd.TabIndex = 3;
             // 
-            // txtPrecoProd
-            // 
-            this.txtPrecoProd.Location = new System.Drawing.Point(115, 117);
-            this.txtPrecoProd.Name = "txtPrecoProd";
-            this.txtPrecoProd.Size = new System.Drawing.Size(70, 20);
-            this.txtPrecoProd.TabIndex = 2;
-            // 
             // txtNomeProd
             // 
             this.txtNomeProd.Location = new System.Drawing.Point(115, 78);
@@ -175,6 +168,31 @@
             this.dgListaProd.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaProd_MouseClick);
             this.dgListaProd.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgListaProd_CellContentDoubleClick);
             // 
+            // dgProdColTipo
+            // 
+            this.dgProdColTipo.HeaderText = "Tipo";
+            this.dgProdColTipo.Name = "dgProdColTipo";
+            this.dgProdColTipo.ReadOnly = true;
+            // 
+            // dgProdColCodigo
+            // 
+            this.dgProdColCodigo.HeaderText = "Código";
+            this.dgProdColCodigo.Name = "dgProdColCodigo";
+            this.dgProdColCodigo.ReadOnly = true;
+            this.dgProdColCodigo.Visible = false;
+            // 
+            // dgProdColNome
+            // 
+            this.dgProdColNome.HeaderText = "Nome";
+            this.dgProdColNome.Name = "dgProdColNome";
+            this.dgProdColNome.ReadOnly = true;
+            // 
+            // dgProdColPreco
+            // 
+            this.dgProdColPreco.HeaderText = "Preço";
+            this.dgProdColPreco.Name = "dgProdColPreco";
+            this.dgProdColPreco.ReadOnly = true;
+            // 
             // txtPesquisaProdutos
             // 
             this.txtPesquisaProdutos.Location = new System.Drawing.Point(117, 6);
@@ -210,43 +228,27 @@
             this.button1.Text = "Editar";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // dgProdColTipo
+            // txtPrecoProd
             // 
-            this.dgProdColTipo.HeaderText = "Tipo";
-            this.dgProdColTipo.Name = "dgProdColTipo";
-            this.dgProdColTipo.ReadOnly = true;
-            // 
-            // dgProdColCodigo
-            // 
-            this.dgProdColCodigo.HeaderText = "Código";
-            this.dgProdColCodigo.Name = "dgProdColCodigo";
-            this.dgProdColCodigo.ReadOnly = true;
-            this.dgProdColCodigo.Visible = false;
-            // 
-            // dgProdColNome
-            // 
-            this.dgProdColNome.HeaderText = "Nome";
-            this.dgProdColNome.Name = "dgProdColNome";
-            this.dgProdColNome.ReadOnly = true;
-            // 
-            // dgProdColPreco
-            // 
-            this.dgProdColPreco.HeaderText = "Preço";
-            this.dgProdColPreco.Name = "dgProdColPreco";
-            this.dgProdColPreco.ReadOnly = true;
+            this.txtPrecoProd.Location = new System.Drawing.Point(115, 120);
+            this.txtPrecoProd.Name = "txtPrecoProd";
+            this.txtPrecoProd.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecoProd.TabIndex = 2;
+            this.txtPrecoProd.TextChanged += new System.EventHandler(this.txtPrecoProd_TextChanged);
+            this.txtPrecoProd.Leave += new System.EventHandler(this.txtPrecoProd_Leave);
             // 
             // TelaCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(814, 321);
+            this.Controls.Add(this.txtPrecoProd);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.cbTipoProd);
             this.Controls.Add(this.btnEditarProd);
             this.Controls.Add(this.panProdutos);
             this.Controls.Add(this.btnTelaProdCancela);
             this.Controls.Add(this.txtNomeProd);
-            this.Controls.Add(this.txtPrecoProd);
             this.Controls.Add(this.txtCodigoProd);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -272,7 +274,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtCodigoProd;
-        private System.Windows.Forms.TextBox txtPrecoProd;
         private System.Windows.Forms.TextBox txtNomeProd;
         private System.Windows.Forms.Button btnTelaProdCancela;
         private System.Windows.Forms.Panel panProdutos;
@@ -286,5 +287,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColCodigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColNome;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgProdColPreco;
+        private System.Windows.Forms.TextBox txtPrecoProd;
     }
 }

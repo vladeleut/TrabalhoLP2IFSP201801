@@ -38,12 +38,6 @@
             this.tabTelaPedido = new System.Windows.Forms.TabPage();
             this.panDGPedidos = new System.Windows.Forms.Panel();
             this.dgPedidos = new System.Windows.Forms.DataGridView();
-            this.dgPedidosColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosColTempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgPedidosValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnNovoPedido = new System.Windows.Forms.Button();
@@ -57,6 +51,13 @@
             this.btnAbreCaixa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.tabGeral = new System.Windows.Forms.TabControl();
+            this.btnFechaTodos = new System.Windows.Forms.Button();
+            this.dgPedidosColNro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosSituacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosBairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosColTempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgPedidosValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabGerenciamento.SuspendLayout();
             this.tabTelaPedido.SuspendLayout();
             this.panDGPedidos.SuspendLayout();
@@ -162,6 +163,7 @@
             // 
             // tabTelaPedido
             // 
+            this.tabTelaPedido.Controls.Add(this.btnFechaTodos);
             this.tabTelaPedido.Controls.Add(this.panDGPedidos);
             this.tabTelaPedido.Controls.Add(this.pictureBox5);
             this.tabTelaPedido.Controls.Add(this.pictureBox2);
@@ -209,49 +211,6 @@
             this.dgPedidos.Size = new System.Drawing.Size(764, 220);
             this.dgPedidos.TabIndex = 0;
             this.dgPedidos.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgPedidos_CellMouseDoubleClick);
-            // 
-            // dgPedidosColNro
-            // 
-            this.dgPedidosColNro.FillWeight = 148.2522F;
-            this.dgPedidosColNro.HeaderText = "Número";
-            this.dgPedidosColNro.Name = "dgPedidosColNro";
-            this.dgPedidosColNro.ReadOnly = true;
-            // 
-            // dgPedidosSituacao
-            // 
-            this.dgPedidosSituacao.FillWeight = 109.7102F;
-            this.dgPedidosSituacao.HeaderText = "Situação";
-            this.dgPedidosSituacao.Name = "dgPedidosSituacao";
-            this.dgPedidosSituacao.ReadOnly = true;
-            // 
-            // dgPedidosCliente
-            // 
-            this.dgPedidosCliente.FillWeight = 67.16373F;
-            this.dgPedidosCliente.HeaderText = "Cliente";
-            this.dgPedidosCliente.Name = "dgPedidosCliente";
-            this.dgPedidosCliente.ReadOnly = true;
-            // 
-            // dgPedidosBairro
-            // 
-            this.dgPedidosBairro.FillWeight = 135.567F;
-            this.dgPedidosBairro.HeaderText = "Bairro";
-            this.dgPedidosBairro.Name = "dgPedidosBairro";
-            this.dgPedidosBairro.ReadOnly = true;
-            // 
-            // dgPedidosColTempo
-            // 
-            this.dgPedidosColTempo.FillWeight = 123.4206F;
-            this.dgPedidosColTempo.HeaderText = "Tempo";
-            this.dgPedidosColTempo.Name = "dgPedidosColTempo";
-            this.dgPedidosColTempo.ReadOnly = true;
-            // 
-            // dgPedidosValor
-            // 
-            this.dgPedidosValor.FillWeight = 15.88616F;
-            this.dgPedidosValor.HeaderText = "Valor";
-            this.dgPedidosValor.Name = "dgPedidosValor";
-            this.dgPedidosValor.ReadOnly = true;
-            this.dgPedidosValor.Visible = false;
             // 
             // pictureBox5
             // 
@@ -421,6 +380,61 @@
             this.tabGeral.SelectedIndex = 0;
             this.tabGeral.Size = new System.Drawing.Size(776, 448);
             this.tabGeral.TabIndex = 1;
+            this.tabGeral.Enter += new System.EventHandler(this.tabGeral_Enter);
+            // 
+            // btnFechaTodos
+            // 
+            this.btnFechaTodos.Location = new System.Drawing.Point(571, 173);
+            this.btnFechaTodos.Name = "btnFechaTodos";
+            this.btnFechaTodos.Size = new System.Drawing.Size(194, 23);
+            this.btnFechaTodos.TabIndex = 12;
+            this.btnFechaTodos.Text = "Fechar todos os pedidos";
+            this.btnFechaTodos.UseVisualStyleBackColor = true;
+            this.btnFechaTodos.Click += new System.EventHandler(this.btnFechaTodos_Click);
+            // 
+            // dgPedidosColNro
+            // 
+            this.dgPedidosColNro.FillWeight = 148.2522F;
+            this.dgPedidosColNro.HeaderText = "Número";
+            this.dgPedidosColNro.Name = "dgPedidosColNro";
+            this.dgPedidosColNro.ReadOnly = true;
+            // 
+            // dgPedidosSituacao
+            // 
+            this.dgPedidosSituacao.FillWeight = 109.7102F;
+            this.dgPedidosSituacao.HeaderText = "Situação";
+            this.dgPedidosSituacao.Name = "dgPedidosSituacao";
+            this.dgPedidosSituacao.ReadOnly = true;
+            this.dgPedidosSituacao.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            // 
+            // dgPedidosCliente
+            // 
+            this.dgPedidosCliente.FillWeight = 67.16373F;
+            this.dgPedidosCliente.HeaderText = "Cliente";
+            this.dgPedidosCliente.Name = "dgPedidosCliente";
+            this.dgPedidosCliente.ReadOnly = true;
+            // 
+            // dgPedidosBairro
+            // 
+            this.dgPedidosBairro.FillWeight = 135.567F;
+            this.dgPedidosBairro.HeaderText = "Bairro";
+            this.dgPedidosBairro.Name = "dgPedidosBairro";
+            this.dgPedidosBairro.ReadOnly = true;
+            // 
+            // dgPedidosColTempo
+            // 
+            this.dgPedidosColTempo.FillWeight = 123.4206F;
+            this.dgPedidosColTempo.HeaderText = "Tempo";
+            this.dgPedidosColTempo.Name = "dgPedidosColTempo";
+            this.dgPedidosColTempo.ReadOnly = true;
+            // 
+            // dgPedidosValor
+            // 
+            this.dgPedidosValor.FillWeight = 15.88616F;
+            this.dgPedidosValor.HeaderText = "Valor";
+            this.dgPedidosValor.Name = "dgPedidosValor";
+            this.dgPedidosValor.ReadOnly = true;
+            this.dgPedidosValor.Visible = false;
             // 
             // Inicio
             // 
@@ -459,12 +473,6 @@
         private System.Windows.Forms.TabPage tabTelaPedido;
         private System.Windows.Forms.Panel panDGPedidos;
         public System.Windows.Forms.DataGridView dgPedidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosColNro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosSituacao;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosBairro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosColTempo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosValor;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnNovoPedido;
@@ -478,6 +486,13 @@
         private System.Windows.Forms.Button btnAbreCaixa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabGeral;
+        private System.Windows.Forms.Button btnFechaTodos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosColNro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosSituacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosBairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosColTempo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgPedidosValor;
     }
 }
 

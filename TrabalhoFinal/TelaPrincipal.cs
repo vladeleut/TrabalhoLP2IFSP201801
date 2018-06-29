@@ -166,7 +166,22 @@ namespace TrabalhoFinal
 
         private void btnGerenciaTaxasDeEntrega_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Estamos trabalhando nessa funcionalidade", "Desculpe", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+            TelaTaxaEntrega tela = new TelaTaxaEntrega();
+            tela.StartPosition = FormStartPosition.CenterScreen;
+            tela.ShowDialog();
+            
+        }
+
+        private void tabGeral_Enter(object sender, EventArgs e)
+        {
+            AtualizaDataGrid();
+        }
+
+        private void btnFechaTodos_Click(object sender, EventArgs e)
+        {
+            PedidoDAO pedido = new PedidoDAO();
+            pedido.FechaTodosAbertos();
+            AtualizaDataGrid();
         }
     }
 }

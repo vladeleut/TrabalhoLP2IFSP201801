@@ -91,6 +91,8 @@
     <Compile Include="Database.cs" />
     <Compile Include="PedidoDAO.cs" />
     <Compile Include="ProdutoDAO.cs" />
+    <Compile Include="TaxaDeEntrega.cs" />
+    <Compile Include="TaxaDeEntregaDAO.cs" />
     <Compile Include="TelaCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +151,12 @@
     <Compile Include="TelaOutros.Designer.cs">
       <DependentUpon>TelaOutros.cs</DependentUpon>
     </Compile>
+    <Compile Include="TelaTaxaEntrega.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TelaTaxaEntrega.Designer.cs">
+      <DependentUpon>TelaTaxaEntrega.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="TelaCadastroProduto.resx">
       <DependentUpon>TelaCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
@@ -184,6 +192,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TelaOutros.resx">
       <DependentUpon>TelaOutros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TelaTaxaEntrega.resx">
+      <DependentUpon>TelaTaxaEntrega.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

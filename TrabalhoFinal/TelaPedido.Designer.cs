@@ -36,7 +36,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBairro = new System.Windows.Forms.TextBox();
             this.lblBairro = new System.Windows.Forms.Label();
             this.cbTaxaDeEntrega = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -147,7 +147,7 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBairro);
             this.panel1.Controls.Add(this.lblBairro);
             this.panel1.Controls.Add(this.cbTaxaDeEntrega);
             this.panel1.Controls.Add(this.label2);
@@ -169,12 +169,13 @@
             this.panel1.Size = new System.Drawing.Size(272, 227);
             this.panel1.TabIndex = 10;
             // 
-            // textBox1
+            // txtBairro
             // 
-            this.textBox1.Location = new System.Drawing.Point(122, 112);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(145, 20);
-            this.textBox1.TabIndex = 19;
+            this.txtBairro.Location = new System.Drawing.Point(122, 112);
+            this.txtBairro.Name = "txtBairro";
+            this.txtBairro.Size = new System.Drawing.Size(145, 20);
+            this.txtBairro.TabIndex = 19;
+            this.txtBairro.TextChanged += new System.EventHandler(this.txtBairro_TextChanged);
             // 
             // lblBairro
             // 
@@ -549,7 +550,7 @@
         private System.Windows.Forms.ComboBox cbPeditoTelCliente;
         private System.Windows.Forms.ComboBox cbTaxaDeEntrega;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBairro;
         private System.Windows.Forms.Label lblBairro;
         private System.Windows.Forms.Label lblDescValorTotalPedido;
         private System.Windows.Forms.Label lblTotal;

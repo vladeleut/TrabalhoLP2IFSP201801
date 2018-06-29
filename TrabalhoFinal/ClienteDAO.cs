@@ -153,6 +153,7 @@ namespace TrabalhoFinal
 
             return nroCliente;
         }
+
         public List<Cliente> listaClientePorNome(String nome)
         {
             List<Cliente> listaPorNome = new List<Cliente>();

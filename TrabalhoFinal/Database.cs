@@ -139,6 +139,16 @@ namespace TrabalhoFinal
                 comm = new MySqlCommand(qry.ToString(), conn);
                 comm.ExecuteNonQuery();
 
+                qry.Clear();
+                qry.AppendLine("create table if not exists taxas(");
+                qry.AppendLine("id int auto_increment,");
+                qry.AppendLine("nomeBairro varchar(50),");
+                qry.AppendLine("distancia varchar(15),");
+                qry.AppendLine("preco float,");
+                qry.AppendLine("constraint taxas_pk primary key(id));");
+                comm = new MySqlCommand(qry.ToString(), conn);
+                comm.ExecuteNonQuery();
+
             }
             catch (Exception e )
             {

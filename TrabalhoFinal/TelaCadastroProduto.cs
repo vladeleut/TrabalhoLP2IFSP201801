@@ -98,5 +98,22 @@ namespace TrabalhoFinal
 
             setDTO(prod);*/
         }
+
+        
+
+        private void txtPrecoProd_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtPrecoProd_TextChanged(object sender, EventArgs e)
+        {
+            if(!(txtPrecoProd.Text == null))
+            {
+                //float preco = float.Parse(txtPrecoProd.Text);
+                //txtPrecoProd.Text.Replace(txtPrecoProd.Text, preco.ToString("C"));
+                //txtPrecoProd.Text = preco.ToString("C");
+            }
+        }
     }
 }

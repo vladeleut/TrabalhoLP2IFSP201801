@@ -137,16 +137,18 @@ namespace TrabalhoFinal
                 txtComplemento.Text = c.Complemento;
                 txtLogradouro.Text = c.Logradouro;
                 txtNome.Text = c.Nome;
+                txtBairro.Text = c.Bairro;
                 txtReferencia.Text = c.Referencia;
                 txtObservacao.Text = c.Observacao;
             }
             else
             {
-                txtComplemento.Text = " ";
-                txtLogradouro.Text = " ";
-                txtNome.Text = " ";
-                txtReferencia.Text = " ";
-                txtObservacao.Text = " ";
+                txtBairro.Text = "";
+                txtComplemento.Text = "";
+                txtLogradouro.Text = "";
+                txtNome.Text = "";
+                txtReferencia.Text = "";
+                txtObservacao.Text = "";
             }
             
         }
@@ -237,6 +239,15 @@ namespace TrabalhoFinal
         private void txtNome_TextChanged(object sender, EventArgs e)
         {
             cbPeditoTelCliente.Text = Regex.Replace(cbPeditoTelCliente.Text, "[^0-9]", "");
+        }
+
+        private void txtBairro_TextChanged(object sender, EventArgs e)
+        {
+            TaxaDeEntregaDAO taxa = new TaxaDeEntregaDAO();
+            float precotemp = taxa.PesquisaPreco(txtBairro.Text);
+
+            cbTaxaDeEntrega.Text = precotemp.ToString("C");
+
         }
     }
 }
